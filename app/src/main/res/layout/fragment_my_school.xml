@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_mobile_top_bar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Hero -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal">
+                <TextView android:text="MySchool MyVillage MyPlanet" android:textStyle="bold" android:textSize="32sp" android:textColor="@color/foreground" />
+                <Space android:layout_width="0dp" android:layout_height="12dp" />
+                <TextView android:text="Support SAID every time you shop" android:textColor="@color/muted_foreground" android:gravity="center" />
+            </LinearLayout>
+
+            <Space android:layout_width="0dp" android:layout_height="16dp" />
+
+            <!-- Sections -->
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" >
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+                    <TextView android:text="How It Works" android:textStyle="bold" android:textSize="20sp" />
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <TextView android:text="MySchool MyVillage MyPlanet is a fundraising programme that allows you to donate to SAID simply by using your MySchool card when shopping at partner retailers." android:textColor="@color/muted_foreground" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <Space android:layout_width="0dp" android:layout_height="16dp" />
+
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" >
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+                    <TextView android:text="Getting Started" android:textStyle="bold" android:textSize="20sp" />
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <TextView android:text="1. Register for a MySchool card
+2. Choose SAID as your beneficiary
+3. Use your card when shopping
+4. A percentage of your purchase goes to SAID" android:textColor="@color/muted_foreground" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <Space android:layout_width="0dp" android:layout_height="16dp" />
+
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" >
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+                    <TextView android:text="Partner Retailers" android:textStyle="bold" android:textSize="20sp" />
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <TextView android:text="Partner retailers include Woolworths, Engen, Waltons, and many more. Every swipe helps us help animals." android:textColor="@color/muted_foreground" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <include layout="@layout/include_footer" />
+
+</LinearLayout>
+
+

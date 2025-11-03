@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_mobile_top_bar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <!-- Header -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Gallery"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@color/foreground"
+            android:gravity="center"
+            android:paddingTop="12dp"
+            android:paddingBottom="8dp" />
+
+        <!-- Category chips -->
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chip_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:singleSelection="true"
+            app:selectionRequired="true"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp"
+            android:paddingBottom="8dp">
+
+            <com.google.android.material.chip.Chip android:id="@+id/chip_all" style="@style/Widget.Material3.Chip.Filter" android:text="All Photos" />
+            <com.google.android.material.chip.Chip android:id="@+id/chip_memory" style="@style/Widget.Material3.Chip.Filter" android:text="Memory" />
+            <com.google.android.material.chip.Chip android:id="@+id/chip_animals" style="@style/Widget.Material3.Chip.Filter" android:text="Animals" />
+            <com.google.android.material.chip.Chip android:id="@+id/chip_volunteers" style="@style/Widget.Material3.Chip.Filter" android:text="Volunteers" />
+            <com.google.android.material.chip.Chip android:id="@+id/chip_diamonds" style="@style/Widget.Material3.Chip.Filter" android:text="Diamonds" />
+            <com.google.android.material.chip.Chip android:id="@+id/chip_horses" style="@style/Widget.Material3.Chip.Filter" android:text="Horse Care" />
+            <com.google.android.material.chip.Chip android:id="@+id/chip_events" style="@style/Widget.Material3.Chip.Filter" android:text="Events" />
+        </com.google.android.material.chip.ChipGroup>
+
+        <!-- Grid -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/galleryRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp" />
+
+    </LinearLayout>
+
+    <include layout="@layout/include_footer" />
+
+</LinearLayout>
+
+

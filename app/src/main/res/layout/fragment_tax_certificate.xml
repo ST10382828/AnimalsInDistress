@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_mobile_top_bar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Hero -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal">
+                <TextView android:text="18A Tax Certificate" android:textStyle="bold" android:textSize="32sp" android:textColor="@color/foreground" />
+                <Space android:layout_width="0dp" android:layout_height="12dp" />
+                <TextView android:text="Request your tax certificate for donations" android:textColor="@color/muted_foreground" android:gravity="center" />
+            </LinearLayout>
+
+            <Space android:layout_width="0dp" android:layout_height="16dp" />
+
+            <!-- Sections -->
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" >
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+                    <TextView android:text="Tax-Deductible Donations" android:textStyle="bold" android:textSize="20sp" />
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <TextView android:text="SAID is a registered Public Benefit Organisation (PBO) and Non-Profit Organization (NPO). All monetary donations qualify for Section 18A tax certificates, which can be used to reduce your taxable income." android:textColor="@color/muted_foreground" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <Space android:layout_width="0dp" android:layout_height="16dp" />
+
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" >
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+                    <TextView android:text="How to Request" android:textStyle="bold" android:textSize="20sp" />
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <TextView android:text="To request your 18A tax certificate:
+1. Email animals@animalsindistress.org.za
+2. Provide your full name and donation details
+3. Include your proof of payment
+4. We'll send your certificate within 5 business days" android:textColor="@color/muted_foreground" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <Space android:layout_width="0dp" android:layout_height="16dp" />
+
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" >
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+                    <TextView android:text="Donor Information Required" android:textStyle="bold" android:textSize="20sp" />
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <TextView android:text="Please provide:
+• Full name
+• ID number or company registration
+• Contact details
+• Donation amount and date
+• Proof of payment" android:textColor="@color/muted_foreground" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <include layout="@layout/include_footer" />
+
+</LinearLayout>
+
+

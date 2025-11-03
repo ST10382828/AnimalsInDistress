@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_mobile_top_bar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Hero -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Make a Donation"
+                    android:textStyle="bold"
+                    android:textSize="32sp"
+                    android:textColor="@color/foreground"
+                    android:gravity="center" />
+                <Space android:layout_width="0dp" android:layout_height="12dp" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Any contribution, no matter how big or small, can have a profound impact on the lives of animals in need."
+                    android:textColor="@color/muted_foreground"
+                    android:textSize="16sp"
+                    android:gravity="center" />
+            </LinearLayout>
+
+            <Space android:layout_width="0dp" android:layout_height="16dp" />
+
+            <!-- Bank Transfer -->
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.Material3.CardView.Elevated"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bank Transfer"
+                        android:textStyle="bold"
+                        android:textSize="20sp" />
+                    <Space android:layout_width="0dp" android:layout_height="16dp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bank Details:"
+                        android:textStyle="bold"
+                        android:textSize="16sp" />
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="@color/muted">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="16dp">
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Bank:    Standard Bank" />
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Account Name:    Society for Animals in Distress" />
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Account Number:    [Contact us for details]" />
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Branch Code:    [Contact us for details]" />
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Reference:    Your name + DONATION" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Please use your name + &quot;DONATION&quot; as the reference when making a transfer."
+                        android:textColor="@color/muted_foreground"
+                        android:textSize="13sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <Space android:layout_width="0dp" android:layout_height="16dp" />
+
+            <!-- Credit Card Donation -->
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.Material3.CardView.Elevated"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Credit Card Donation"
+                        android:textStyle="bold"
+                        android:textSize="20sp" />
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Make a secure donation using your credit card through our online payment system."
+                        android:textColor="@color/muted_foreground" />
+                    <Space android:layout_width="0dp" android:layout_height="16dp" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btn_donate_100"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Donate R100"
+                                app:backgroundTint="@color/primary" />
+                            <Space android:layout_width="8dp" android:layout_height="0dp" />
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btn_donate_500"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Donate R500"
+                                app:backgroundTint="@color/primary" />
+                        </LinearLayout>
+                        <Space android:layout_width="0dp" android:layout_height="8dp" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="2">
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btn_donate_1000"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Donate R1000"
+                                app:backgroundTint="@color/primary" />
+                            <Space android:layout_width="8dp" android:layout_height="0dp" />
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btn_donate_custom"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="Custom Amount"
+                                app:backgroundTint="@color/primary" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <Space android:layout_width="0dp" android:layout_height="16dp" />
+
+            <!-- Monthly Debit Order -->
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.Material3.CardView.Elevated"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Monthly Debit Order"
+                        android:textStyle="bold"
+                        android:textSize="20sp" />
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Set up a monthly debit order to provide ongoing support for our animals. Even small monthly contributions make a big difference."
+                        android:textColor="@color/muted_foreground" />
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="#1A000000">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="16dp">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Benefits: Regular, predictable income helps us plan better care for our animals and ensures we can provide consistent support to communities in need."
+                                android:textColor="#E610B981"
+                                android:textSize="13sp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_monthly_debit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Set Up Monthly Debit Order"
+                        app:backgroundTint="@color/secondary" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <Space android:layout_width="0dp" android:layout_height="16dp" />
+
+            <!-- Need Help -->
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.Material3.CardView.Elevated"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Need Help?"
+                        android:textStyle="bold"
+                        android:textSize="20sp" />
+                    <Space android:layout_width="0dp" android:layout_height="16dp" />
+                    <TextView
+                        android:id="@+id/contact_phone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Phone: 011 466 0261" />
+                    <TextView
+                        android:id="@+id/contact_mobile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mobile: 083 640 8825" />
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <TextView
+                        android:id="@+id/contact_email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Email: animals@animalsindistress.org.za" />
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Our team is available to help you with any questions about donations or to provide additional information about our work."
+                        android:textColor="@color/muted_foreground" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <Space android:layout_width="0dp" android:layout_height="16dp" />
+
+            <!-- Tax Benefits -->
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.Material3.CardView.Elevated"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tax Benefits"
+                        android:textStyle="bold"
+                        android:textSize="20sp" />
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="The Society for Animals in Distress is a registered NPO and PBO, which means your donations may be tax-deductible."
+                        android:textColor="@color/muted_foreground" />
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardBackgroundColor="#1A10B981">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="16dp">
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="18A Tax Certificate: We provide 18A tax certificates for qualifying donations, which can be used to reduce your taxable income."
+                                android:textColor="#E610B981"
+                                android:textSize="13sp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_tax_certificate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Request Tax Certificate"
+                        app:backgroundTint="@color/accent" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <Space android:layout_width="0dp" android:layout_height="16dp" />
+
+            <!-- Your Impact -->
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.Material3.CardView.Elevated"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Your Impact"
+                        android:textStyle="bold"
+                        android:textSize="20sp" />
+                    <Space android:layout_width="0dp" android:layout_height="16dp" />
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                            <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_favorite_24" android:tint="@color/primary" />
+                            <Space android:layout_width="12dp" android:layout_height="0dp" />
+                            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                                <TextView android:text="R100" android:textStyle="bold" android:textSize="14sp" />
+                                <TextView android:text="Feeds a dog for a week" android:textColor="@color/muted_foreground" android:textSize="12sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                        <Space android:layout_width="0dp" android:layout_height="12dp" />
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                            <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_favorite_24" android:tint="@color/primary" />
+                            <Space android:layout_width="12dp" android:layout_height="0dp" />
+                            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                                <TextView android:text="R500" android:textStyle="bold" android:textSize="14sp" />
+                                <TextView android:text="Covers basic veterinary treatment" android:textColor="@color/muted_foreground" android:textSize="12sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                        <Space android:layout_width="0dp" android:layout_height="12dp" />
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                            <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_favorite_24" android:tint="@color/primary" />
+                            <Space android:layout_width="12dp" android:layout_height="0dp" />
+                            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                                <TextView android:text="R1000" android:textStyle="bold" android:textSize="14sp" />
+                                <TextView android:text="Supports mobile clinic outreach" android:textColor="@color/muted_foreground" android:textSize="12sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                        <Space android:layout_width="0dp" android:layout_height="12dp" />
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                            <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_favorite_24" android:tint="@color/primary" />
+                            <Space android:layout_width="12dp" android:layout_height="0dp" />
+                            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                                <TextView android:text="R5000" android:textStyle="bold" android:textSize="14sp" />
+                                <TextView android:text="Enables emergency surgery" android:textColor="@color/muted_foreground" android:textSize="12sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <Space android:layout_width="0dp" android:layout_height="16dp" />
+
+            <!-- Other Ways to Help -->
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.Material3.CardView.Elevated"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Other Ways to Help"
+                        android:textStyle="bold"
+                        android:textSize="20sp" />
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <TextView android:id="@+id/help_volunteer" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="→ Volunteer with us" android:textColor="@color/primary" android:textSize="14sp" android:layout_marginBottom="8dp" />
+                    <TextView android:id="@+id/help_shop" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="→ Shop with a purpose" android:textColor="@color/primary" android:textSize="14sp" android:layout_marginBottom="8dp" />
+                    <TextView android:id="@+id/help_preloved" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="→ Donate pre-loved items" android:textColor="@color/primary" android:textSize="14sp" android:layout_marginBottom="8dp" />
+                    <TextView android:id="@+id/help_myschool" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="→ Register with MySchool" android:textColor="@color/primary" android:textSize="14sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <include layout="@layout/include_footer" />
+
+</LinearLayout>
+
+

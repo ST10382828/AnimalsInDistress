@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_mobile_top_bar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+            <!-- Hero -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal">
+                <TextView android:text="Hope for Horses" android:textStyle="bold" android:textSize="32sp" android:textColor="@color/foreground" />
+                <Space android:layout_width="0dp" android:layout_height="12dp" />
+                <TextView android:text="Transforming Lives in Tembisa's Coal Yards" android:textColor="@color/muted_foreground" android:gravity="center" />
+            </LinearLayout>
+
+            <Space android:layout_width="0dp" android:layout_height="16dp" />
+
+            <!-- Mission Statement -->
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="16dp" android:layout_marginRight="16dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="20dp" android:gravity="center">
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Our Equine Support Unit is on a mission to bring positive change to the lives of horses in the coal yards of Tembisa. Our focus is clear: to enhance the welfare of these majestic animals by providing essential care and support." android:textColor="@color/muted_foreground" android:textSize="16sp" android:gravity="center" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <Space android:layout_width="0dp" android:layout_height="16dp" />
+
+            <!-- How We Make a Difference -->
+            <TextView android:text="How We Make a Difference" android:textStyle="bold" android:textSize="28sp" android:textColor="@color/foreground" android:gravity="center" android:layout_width="match_parent" />
+            <Space android:layout_width="0dp" android:layout_height="16dp" />
+
+            <!-- Pillar cards (4) -->
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                    <TextView android:text="Shelter" android:textStyle="bold" android:textSize="18sp" android:textColor="@color/foreground" />
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <TextView android:text="For horses in the coal yards, finding shelter can be a daily struggle. That's why we're committed to building safe havens where they can find respite from the elements, ensuring they have a place to call home." android:textColor="@color/muted_foreground" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                    <TextView android:text="Healthcare" android:textStyle="bold" android:textSize="18sp" android:textColor="@color/foreground" />
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <TextView android:text="Every horse deserves access to quality healthcare. Through our program, we provide essential veterinary services, including farrier work, dental care, deworming, and vaccinations." android:textColor="@color/muted_foreground" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                    <TextView android:text="Rehabilitation" android:textStyle="bold" android:textSize="18sp" android:textColor="@color/foreground" />
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <TextView android:text="In times of injury or illness, horses need rest and rehabilitation to heal. We provide specialized care for injured or sick horses at our facility." android:textColor="@color/muted_foreground" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                    <TextView android:text="Education" android:textStyle="bold" android:textSize="18sp" android:textColor="@color/foreground" />
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <TextView android:text="Education is key to ensuring the well-being of horses. We provide training to owners on basic care practices, equine health, and the use of appropriate, safe, and humane tack." android:textColor="@color/muted_foreground" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <Space android:layout_width="0dp" android:layout_height="16dp" />
+
+            <!-- How You Can Help -->
+            <TextView android:text="How You Can Help Neigh-borhood Heroes" android:textStyle="bold" android:textSize="28sp" android:textColor="@color/foreground" android:gravity="center" android:layout_width="match_parent" />
+            <Space android:layout_width="0dp" android:layout_height="8dp" />
+            <TextView android:text="Together we can make a difference, one hoof at a time. Here are some ways you can help us support our equine friends." android:textColor="@color/muted_foreground" android:gravity="center" android:layout_width="match_parent" />
+            <Space android:layout_width="0dp" android:layout_height="16dp" />
+
+            <!-- Help cards (3) -->
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                    <TextView android:text="Extend Your Support" android:textStyle="bold" android:textSize="18sp" android:textColor="@color/foreground" />
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <TextView android:text="Your generosity has the power to change lives. By donating, you're directly impacting the well-being of horses in Tembisa's coal yards. Your contributions enable us to provide vital veterinary care, build shelters, and offer rehabilitation services to those in need." android:textColor="@color/muted_foreground" />
+                    <Space android:layout_width="0dp" android:layout_height="8dp" />
+                    <TextView android:text="You can also donate second hand goods to our Barn Shop or tack that you are no longer using." android:textColor="@color/muted_foreground" android:textSize="13sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                    <TextView android:text="Volunteer Your Time" android:textStyle="bold" android:textSize="18sp" android:textColor="@color/foreground" />
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <TextView android:text="Join us in our mission to make a difference. Whether you're lending a helping hand at our facility, assisting with fundraising efforts, or spreading awareness in your community, your time and energy can create lasting change for these horses." android:textColor="@color/muted_foreground" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                    <TextView android:text="Spread the Word" android:textStyle="bold" android:textSize="18sp" android:textColor="@color/foreground" />
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <TextView android:text="Help us amplify our message of hope. Share our mission with your friends, family, and colleagues, and encourage them to join us in our cause. Together, we can create a brighter future for horses in Tembisa's coal yards." android:textColor="@color/muted_foreground" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <Space android:layout_width="0dp" android:layout_height="16dp" />
+
+            <!-- CTA -->
+            <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" app:cardBackgroundColor="#1A003D99">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp" android:gravity="center_horizontal">
+                    <TextView android:text="Join Our Stable Efforts Today" android:textStyle="bold" android:textSize="24sp" android:textColor="@color/foreground" android:gravity="center" />
+                    <Space android:layout_width="0dp" android:layout_height="8dp" />
+                    <TextView android:text="Don't be a neigh-sayer, support Equine Outreach" android:textColor="@color/muted_foreground" android:gravity="center" />
+                    <Space android:layout_width="0dp" android:layout_height="16dp" />
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:weightSum="2">
+                        <com.google.android.material.button.MaterialButton android:id="@+id/btn_donate_equine" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Donate Now" app:backgroundTint="@color/primary" />
+                        <Space android:layout_width="12dp" android:layout_height="0dp" />
+                        <com.google.android.material.button.MaterialButton android:id="@+id/btn_volunteer_equine" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Volunteer" app:backgroundTint="@color/secondary" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <include layout="@layout/include_footer" />
+
+</LinearLayout>
+
+

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_mobile_top_bar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Hero -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal">
+                <TextView android:text="Education" android:textStyle="bold" android:textSize="32sp" android:textColor="@color/foreground" />
+                <Space android:layout_width="0dp" android:layout_height="12dp" />
+                <TextView android:text="Education is the cornerstone of The Society's approach to animal welfare" android:textColor="@color/muted_foreground" android:gravity="center" />
+            </LinearLayout>
+
+            <Space android:layout_width="0dp" android:layout_height="16dp" />
+
+            <!-- Introduction Card -->
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="16dp" android:layout_marginRight="16dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="20dp" android:gravity="center">
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Poverty has a huge impact in the communities that our mobile units serve and it is only through educating people about animal care and backing up this education with accessible veterinary services, that we are able to make a meaningful and sustainable impact in the lives of animals and their owners." android:textColor="@color/muted_foreground" android:textSize="16sp" android:gravity="center" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <Space android:layout_width="0dp" android:layout_height="16dp" />
+
+            <!-- Our Educational Approach -->
+            <TextView android:text="Our Educational Approach" android:textStyle="bold" android:textSize="28sp" android:textColor="@color/foreground" android:gravity="center" android:layout_width="match_parent" android:layout_height="wrap_content" />
+            <Space android:layout_width="0dp" android:layout_height="16dp" />
+
+            <!-- Pillar cards (6) -->
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                    <TextView android:text="Community Education" android:textStyle="bold" android:textSize="18sp" android:textColor="@color/foreground" />
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <TextView android:text="We provide comprehensive education to community members on proper animal care practices, nutrition, health management, and responsible pet ownership." android:textColor="@color/muted_foreground" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                    <TextView android:text="Veterinary Training" android:textStyle="bold" android:textSize="18sp" android:textColor="@color/foreground" />
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <TextView android:text="Our Animal Health Technician (AHT) Mentorship Program trains para-veterinary professionals to provide essential veterinary care in underserved communities." android:textColor="@color/muted_foreground" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                    <TextView android:text="Owner Empowerment" android:textStyle="bold" android:textSize="18sp" android:textColor="@color/foreground" />
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <TextView android:text="We empower animal owners with knowledge and resources to provide better care for their animals, creating lasting change in communities." android:textColor="@color/muted_foreground" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                    <TextView android:text="Youth Education" android:textStyle="bold" android:textSize="18sp" android:textColor="@color/foreground" />
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <TextView android:text="Teaching young people to respect and care for animals creates a foundation for compassion that extends to all living beings." android:textColor="@color/muted_foreground" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                    <TextView android:text="Health Awareness" android:textStyle="bold" android:textSize="18sp" android:textColor="@color/foreground" />
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <TextView android:text="We educate communities about disease prevention, vaccination importance, and the link between animal and human health." android:textColor="@color/muted_foreground" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                    <TextView android:text="Welfare Standards" android:textStyle="bold" android:textSize="18sp" android:textColor="@color/foreground" />
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <TextView android:text="Promoting humane treatment of animals and teaching proper handling, housing, and care standards for all species." android:textColor="@color/muted_foreground" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <Space android:layout_width="0dp" android:layout_height="16dp" />
+
+            <!-- Educational Impact -->
+            <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" app:cardBackgroundColor="#1A003D99">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+                    <TextView android:text="Educational Impact" android:textStyle="bold" android:textSize="24sp" android:textColor="@color/foreground" android:gravity="center" android:layout_width="match_parent" />
+                    <Space android:layout_width="0dp" android:layout_height="16dp" />
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:orientation="vertical" android:layout_weight="1">
+                            <TextView android:text="Measurable Results" android:textStyle="bold" android:textSize="16sp" />
+                            <Space android:layout_width="0dp" android:layout_height="12dp" />
+                            <TextView android:text="Increased voluntary veterinary visits" android:textColor="@color/muted_foreground" android:textSize="13sp" />
+                            <TextView android:text="Higher responsibility donations for treatments" android:textColor="@color/muted_foreground" android:textSize="13sp" />
+                            <TextView android:text="Improved animal welfare practices" android:textColor="@color/muted_foreground" android:textSize="13sp" />
+                            <TextView android:text="Enhanced community collaboration" android:textColor="@color/muted_foreground" android:textSize="13sp" />
+                        </LinearLayout>
+                        <Space android:layout_width="12dp" android:layout_height="0dp" />
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:orientation="vertical" android:layout_weight="1">
+                            <TextView android:text="Long-term Benefits" android:textStyle="bold" android:textSize="16sp" />
+                            <Space android:layout_width="0dp" android:layout_height="12dp" />
+                            <TextView android:text="Sustainable animal care practices" android:textColor="@color/secondary" android:textSize="13sp" />
+                            <TextView android:text="Reduced disease transmission" android:textColor="@color/secondary" android:textSize="13sp" />
+                            <TextView android:text="Stronger human-animal bonds" android:textColor="@color/secondary" android:textSize="13sp" />
+                            <TextView android:text="Community empowerment" android:textColor="@color/secondary" android:textSize="13sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <Space android:layout_width="0dp" android:layout_height="16dp" />
+
+            <!-- CTA -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal" android:paddingLeft="16dp" android:paddingRight="16dp">
+                <TextView android:text="Support Our Educational Mission" android:textStyle="bold" android:textSize="24sp" android:textColor="@color/foreground" android:gravity="center" />
+                <Space android:layout_width="0dp" android:layout_height="8dp" />
+                <TextView android:text="Education is the foundation of lasting change. Help us continue our educational programs in underserved communities." android:textColor="@color/muted_foreground" android:gravity="center" />
+                <Space android:layout_width="0dp" android:layout_height="16dp" />
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:weightSum="2">
+                    <com.google.android.material.button.MaterialButton android:id="@+id/btn_support_education" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Support Education" app:backgroundTint="@color/primary" />
+                    <Space android:layout_width="12dp" android:layout_height="0dp" />
+                    <com.google.android.material.button.MaterialButton android:id="@+id/btn_volunteer_teach" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Volunteer to Teach" app:backgroundTint="@color/secondary" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <include layout="@layout/include_footer" />
+
+</LinearLayout>
+
+

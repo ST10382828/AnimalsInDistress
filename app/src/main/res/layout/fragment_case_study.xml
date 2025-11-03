@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_mobile_top_bar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+            <!-- Hero -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal">
+                <TextView android:text="Case Study" android:textStyle="bold" android:textSize="32sp" android:textColor="@color/foreground" />
+                <Space android:layout_width="0dp" android:layout_height="12dp" />
+                <TextView android:text="Breaking Barriers For Animals In Diepsloot Extensions" android:textStyle="bold" android:textSize="24sp" android:textColor="@color/primary" android:gravity="center" />
+            </LinearLayout>
+
+            <Space android:layout_width="0dp" android:layout_height="16dp" />
+
+            <!-- About Diepsloot -->
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+                    <TextView android:text="About Diepsloot" android:textStyle="bold" android:textSize="18sp" />
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <TextView android:text="A densely populated township in Gauteng, South Africa with a conservatively estimated population of between 350,000 and 400,000 people, living in a district divided into &quot;12 extensions&quot;." android:textColor="@color/muted_foreground" />
+                    <Space android:layout_width="0dp" android:layout_height="8dp" />
+                    <TextView android:text="The Society has been serving the population of Diepsloot for 17 years." android:textColor="@color/muted_foreground" />
+                    <Space android:layout_width="0dp" android:layout_height="8dp" />
+                    <TextView android:text="It is made up of brick houses built by landowners, a mix of public housing blocks, and shacks made of corrugated iron and plastic lining. Residents reliant on outbuildings for sanitation." android:textColor="@color/muted_foreground" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <Space android:layout_width="0dp" android:layout_height="16dp" />
+
+            <!-- Community Structure -->
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+                    <TextView android:text="Community Structure" android:textStyle="bold" android:textSize="18sp" />
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <TextView android:text="• 45.5% of residents rent their property from a landowner who has subdivided their land" />
+                    <TextView android:text="• While the main road is paved, the side streets are gravel, ditches, and stagnant waste. The informal streets are a maze" android:layout_marginTop="8dp" />
+                    <TextView android:text="• The township is surrounded by open fields and farms, while the closest neighbourhoods are wealthy gated communities" android:layout_marginTop="8dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <Space android:layout_width="0dp" android:layout_height="16dp" />
+
+            <!-- The Problem -->
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+                    <TextView android:text="The Problem" android:textStyle="bold" android:textSize="18sp" />
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <TextView android:text="The problem in Diepsloot was the critical need for veterinary care at the outset, confirmed by veterinary intervention need's assessments conducted by SAID veterinary professionals, engaged potential collaborators, and connected community actors to evaluate approaches." android:textColor="@color/muted_foreground" />
+                    <Space android:layout_width="0dp" android:layout_height="8dp" />
+                    <TextView android:text="Maintaining dog population size and demography in balance with human ideals with aims including reducing the number of unwanted dogs, keeping wanted dogs in a good state of health and welfare, and minimising risks presented by dogs to public health and other animals." android:textColor="@color/muted_foreground" />
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" app:cardBackgroundColor="#1AEF4444">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp">
+                            <TextView android:text="Findings exposed thin, free-roaming, and hungry dogs and cats with ticks, uncontrolled breeding, unhealthy and unsafe environments, untreated injuries, prevalence of infectious diseases, most not immunised by vaccination. High numbers of free-roaming dogs a concern." android:textStyle="bold" android:textColor="#E6EF4444" android:textSize="14sp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <Space android:layout_width="0dp" android:layout_height="16dp" />
+
+            <!-- Vaccination Targets -->
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+                    <TextView android:text="Vaccination Targets" android:textStyle="bold" android:textSize="18sp" />
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" app:cardBackgroundColor="#1A3B82F6">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp">
+                            <TextView android:text="70% Vaccination Coverage" android:textStyle="bold" android:textColor="#1E40AF" />
+                            <Space android:layout_width="0dp" android:layout_height="4dp" />
+                            <TextView android:text="According to the World Animal Health Association (OIE), there is much evidence that achieving 70% vaccination coverage, even where dog population turnover is high, is feasible but challenging." android:textColor="#1E3A8A" android:textSize="13sp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" app:cardBackgroundColor="#1A10B981">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp">
+                            <TextView android:text="70-83% Sterilisation Target" android:textStyle="bold" android:textColor="#047857" />
+                            <Space android:layout_width="0dp" android:layout_height="4dp" />
+                            <TextView android:text="Sterilisation of at least 70% to 83% of females is often mentioned as a target to achieve for population reduction. A sustainable remedy for both disease and animal welfare problems posed by free-roaming dogs in developing countries." android:textColor="#065F46" android:textSize="13sp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <Space android:layout_width="0dp" android:layout_height="16dp" />
+
+            <!-- Key Issues -->
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+                    <TextView android:text="Key Issues Identified" android:textStyle="bold" android:textSize="18sp" />
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <TextView android:text="• No access to affordable veterinary services in the community" />
+                    <TextView android:text="• Lack of knowledge amongst community members on how to better care of their animals" android:layout_marginTop="8dp" />
+                    <TextView android:text="• Diseases know no boundaries" android:layout_marginTop="8dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <Space android:layout_width="0dp" android:layout_height="16dp" />
+
+            <!-- Success Indicators -->
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+                    <TextView android:text="Success Indicators" android:textStyle="bold" android:textSize="18sp" />
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <TextView android:text="✓ Increased Improved Ownership — A notable indicator of people being more receptive to animal welfare education and collaboration" />
+                    <TextView android:text="✓ Owner Engagement — A further indicator of care or 'responsibility' by owners is owner engagement in the intervention itself" android:layout_marginTop="8dp" />
+                    <TextView android:text="✓ Increased Hospital Visits — Increase in the number of dogs voluntarily brought to The Society's hospital" android:layout_marginTop="8dp" />
+                    <TextView android:text="✓ Responsibility Donations — Increase in the number of responsibility donations by animal owners for veterinary treatments" android:layout_marginTop="8dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <Space android:layout_width="0dp" android:layout_height="16dp" />
+
+            <!-- Program Impact -->
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+                    <TextView android:text="Program Impact" android:textStyle="bold" android:textSize="18sp" />
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <TextView android:text="• Significantly improved perceptions of the value of veterinary interventions" />
+                    <TextView android:text="• Strengthened South African Veterinary Services to deliver effective control" android:layout_marginTop="6dp" />
+                    <TextView android:text="• Significant change in attitude of dog and cat owners" android:layout_marginTop="6dp" />
+                    <TextView android:text="• Improved collaboration between The Society's veterinary services and local animal welfare organisations" android:layout_marginTop="6dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <Space android:layout_width="0dp" android:layout_height="16dp" />
+
+            <!-- Conclusion -->
+            <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" app:cardBackgroundColor="#1A003D99">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+                    <TextView android:text="Conclusion" android:textStyle="bold" android:textSize="22sp" android:textColor="@color/foreground" />
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <TextView android:text="The Society for Animals in Distress programmes have demonstrated that strategically targeted animal health, social interventions and partner funding can make a big impact." android:textColor="@color/muted_foreground" android:textSize="16sp" />
+                    <Space android:layout_width="0dp" android:layout_height="8dp" />
+                    <TextView android:text="The programme is part of a continuing process at promoting best practices, transparency, and capacity of Veterinary Services to address animal health and welfare and public health problems." android:textColor="@color/muted_foreground" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <include layout="@layout/include_footer" />
+
+</LinearLayout>
+
+

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_mobile_top_bar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+            <!-- Hero -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal">
+                <TextView android:text="Shop" android:textStyle="bold" android:textSize="32sp" android:textColor="@color/foreground" />
+                <Space android:layout_width="0dp" android:layout_height="12dp" />
+                <TextView android:text="Shop with a purpose - Every purchase supports animals in need" android:textColor="@color/muted_foreground" android:gravity="center" />
+            </LinearLayout>
+
+            <Space android:layout_width="0dp" android:layout_height="16dp" />
+
+            <!-- SAID Shop card -->
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                        <TextView android:text="🛒" />
+                        <Space android:layout_width="12dp" android:layout_height="0dp" />
+                        <TextView android:text="SAID Shop" android:textStyle="bold" android:textSize="20sp" />
+                    </LinearLayout>
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <TextView android:text="Visit our shop to find unique items, merchandise, and pre-loved goods. All proceeds go directly to animal care and welfare programs." android:textColor="@color/muted_foreground" />
+                    <Space android:layout_width="0dp" android:layout_height="16dp" />
+                    <com.google.android.material.button.MaterialButton android:id="@+id/btn_visit_online_shop" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Visit Online Shop" app:backgroundTint="@color/primary" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <Space android:layout_width="0dp" android:layout_height="16dp" />
+
+            <!-- Popular Items -->
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+                    <TextView android:text="Popular Items" android:textStyle="bold" android:textSize="20sp" />
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <TextView android:text="• SAID Merchandise — T-shirts, hoodies, caps, and more" />
+                    <TextView android:text="• Socks Collection — Comfortable socks with animal designs" android:layout_marginTop="12dp" />
+                    <TextView android:text="• Pre-Loved Items — Quality second-hand items" android:layout_marginTop="12dp" />
+                    <TextView android:text="• Gift Items — Perfect gifts for animal lovers" android:layout_marginTop="12dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <include layout="@layout/include_footer" />
+
+</LinearLayout>
+
+

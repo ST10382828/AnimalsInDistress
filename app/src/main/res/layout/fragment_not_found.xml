@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="32dp"
+    android:background="@color/background">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="404"
+        android:textStyle="bold"
+        android:textSize="64sp"
+        android:textColor="@color/primary" />
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="24dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Page Not Found"
+        android:textStyle="bold"
+        android:textSize="28sp"
+        android:textColor="@color/foreground" />
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="12dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sorry, we couldn't find the page you're looking for. It might have been moved or doesn't exist."
+        android:textColor="@color/muted_foreground"
+        android:textSize="16sp"
+        android:gravity="center" />
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="24dp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_go_home"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:text="Go Home"
+            android:textStyle="bold"
+            app:backgroundTint="@color/primary" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="12dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_go_back"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:text="Go Back"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+</LinearLayout>
+
+
+

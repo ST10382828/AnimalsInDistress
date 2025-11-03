@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_mobile_top_bar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+            <TextView android:text="Frequently Asked Questions" android:textStyle="bold" android:textSize="24sp" />
+            <Space android:layout_width="0dp" android:layout_height="12dp" />
+            <TextView android:text="Q: What are your operating hours?" android:textStyle="bold" />
+            <TextView android:text="A: Monday–Friday 07:00–16:00, Saturday 09:00–12:00, Sunday Closed." />
+            <Space android:layout_width="0dp" android:layout_height="8dp" />
+            <TextView android:text="Q: Who can use your services?" android:textStyle="bold" />
+            <TextView android:text="A: Persons earning low to no income. Referral letter required if previously used private veterinary clinic." />
+            <Space android:layout_width="0dp" android:layout_height="8dp" />
+            <TextView android:text="Q: How can I volunteer?" android:textStyle="bold" />
+            <TextView android:text="A: Contact us at animals@animalsindistress.org.za or call 011 466 0261 to discuss opportunities." />
+            <Space android:layout_width="0dp" android:layout_height="8dp" />
+            <TextView android:text="Q: Do you provide tax certificates?" android:textStyle="bold" />
+            <TextView android:text="A: Yes, we provide Section 18A tax certificates for qualifying donations. Email us to request." />
+            <Space android:layout_width="0dp" android:layout_height="8dp" />
+            <TextView android:text="Q: Where is your facility located?" android:textStyle="bold" />
+            <TextView android:text="A: Our state-of-the-art hospital is located in Midrand with 203 kennels and equine care facilities." />
+        </LinearLayout>
+    </ScrollView>
+
+    <include layout="@layout/include_footer" />
+
+</LinearLayout>
+
+

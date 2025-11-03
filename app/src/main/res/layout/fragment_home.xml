@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_mobile_top_bar" />
+    <include layout="@layout/include_important_announcement" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Hero Section -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="48dp"
+                android:paddingBottom="48dp"
+                android:background="@drawable/bg_home_hero_gradient"
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:id="@+id/home_hero_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="The voice for the voiceless"
+                    android:textColor="@color/primary_foreground"
+                    android:textSize="32sp"
+                    android:textStyle="bold"
+                    android:gravity="center" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="16dp" />
+
+                <TextView
+                    android:id="@+id/home_hero_subtitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="The Society for Animals in Distress provides professional veterinary care that is built on a foundation of focused animal care education within marginalised communities. We achieve this by focusing our efforts on our tri-pillar approach."
+                    android:textColor="@color/primary_foreground"
+                    android:textSize="16sp"
+                    android:alpha="0.9"
+                    android:gravity="center" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="24dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/home_donate_btn"
+                    style="@style/Widget.Material3.Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Make a donation"
+                    android:textStyle="bold"
+                    android:textColor="@color/primary"
+                    app:icon="@drawable/ic_favorite_24"
+                    app:iconTint="@color/primary"
+                    app:iconPadding="8dp"
+                    app:iconGravity="textStart"
+                    app:backgroundTint="@color/white"
+                    android:paddingLeft="32dp"
+                    android:paddingRight="32dp"
+                    android:paddingTop="12dp"
+                    android:paddingBottom="12dp" />
+            </LinearLayout>
+
+            <!-- What We Do -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="What We Do"
+                    android:textColor="@color/foreground"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    android:gravity="center" />
+
+                <Space android:layout_width="0dp" android:layout_height="24dp" />
+
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/Widget.Material3.CardView.Elevated"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Education"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                        <Space android:layout_width="0dp" android:layout_height="8dp" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Education is the cornerstone of The Society's approach. Poverty has a huge impact in the communities that our mobile units serve and it is only through educating people about animal care and backing up this education with accessible veterinary services, that we are able to make a meaningful and sustainable impact in the lives of animals and their owners."
+                            android:textColor="@color/muted_foreground"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/Widget.Material3.CardView.Elevated"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Professional Veterinary Care"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                        <Space android:layout_width="0dp" android:layout_height="8dp" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="The Society's facility in Midrand comprises a state of the art hospital where a Senior Veterinarian, para-veterinary professionals and support staff provide the highest standard of veterinary care, internal outreach programs and the mentorship of para-veterinary graduates. The facility incorporates 203 fit for purpose kennels, an equine care centre, paddocking for herd animals and equine, administration offices and storage facilities."
+                            android:textColor="@color/muted_foreground"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/Widget.Material3.CardView.Elevated"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Eligibility To Receive Veterinary Services"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                        <Space android:layout_width="0dp" android:layout_height="8dp" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Persons earning low to no income are welcome to make use of The Society's hospital services. All persons who have previously used a private veterinary clinic must produce a referral letter from the veterinarian of that practise. This referral letter will enable us to access the veterinary records critical to the patients care."
+                            android:textColor="@color/muted_foreground"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <!-- Join the Purr-suit -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Join the Purr-suit"
+                    android:textColor="@color/foreground"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    android:gravity="center" />
+
+                <Space android:layout_width="0dp" android:layout_height="8dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Together we can make a difference, one paw at a time."
+                    android:textColor="@color/muted_foreground"
+                    android:textSize="16sp"
+                    android:gravity="center" />
+
+                <Space android:layout_width="0dp" android:layout_height="8dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Here are some ways you can help us help our furry friends."
+                    android:textColor="@color/muted_foreground"
+                    android:textSize="14sp"
+                    android:gravity="center" />
+
+                <Space android:layout_width="0dp" android:layout_height="24dp" />
+
+                <!-- Action cards (6) -->
+                <include layout="@layout/item_home_action_card" />
+                <include layout="@layout/item_home_action_card_volunteer" />
+                <include layout="@layout/item_home_action_card_partners" />
+                <include layout="@layout/item_home_action_card_shop" />
+                <include layout="@layout/item_home_action_card_share" />
+                <include layout="@layout/item_home_action_card_events" />
+            </LinearLayout>
+
+            <!-- Latest Mews -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/muted"
+                android:padding="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="latest Mews"
+                    android:textColor="@color/foreground"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    android:gravity="center" />
+
+                <Space android:layout_width="0dp" android:layout_height="24dp" />
+
+                <com.google.android.material.card.MaterialCardView
+                    style="@style/Widget.Material3.CardView.Elevated"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/white">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="24dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Em-bark on a mission"
+                            android:textStyle="bold"
+                            android:textSize="20sp" />
+
+                        <Space android:layout_width="0dp" android:layout_height="12dp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Our mission is to provide professional veterinary services in underprivileged areas and ensure the welfare of animals everywhere."
+                            android:textColor="@color/muted_foreground"
+                            android:gravity="center" />
+
+                        <Space android:layout_width="0dp" android:layout_height="8dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="You can be a part of our journey!"
+                            android:textColor="@color/muted_foreground" />
+
+                        <Space android:layout_width="0dp" android:layout_height="8dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Get in touch to see how you can help today"
+                            android:textColor="@color/muted_foreground" />
+
+                        <Space android:layout_width="0dp" android:layout_height="20dp" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/home_contact_btn"
+                            style="@style/Widget.Material3.Button"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Contact Us"
+                            app:backgroundTint="@color/primary"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+            </LinearLayout>
+
+            <!-- Final CTA -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:background="@drawable/bg_home_final_cta_gradient"
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Together we can make a difference, one paw at a time."
+                    android:textColor="@android:color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:gravity="center" />
+
+                <Space android:layout_width="0dp" android:layout_height="12dp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Join our mission—donate, volunteer, or spread the word."
+                    android:textColor="#E6FFFFFF"
+                    android:textSize="16sp"
+                    android:gravity="center" />
+
+                <Space android:layout_width="0dp" android:layout_height="20dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:weightSum="2">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/home_donate_outline_btn"
+                        style="@style/Widget.Material3.Button"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Donate"
+                        android:textColor="@color/primary"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        app:icon="@drawable/ic_favorite_24"
+                        app:iconTint="@color/primary"
+                        app:iconPadding="6dp"
+                        app:iconSize="18dp"
+                        app:backgroundTint="@color/white" />
+
+                    <Space android:layout_width="12dp" android:layout_height="0dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/home_contact_outline_btn"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Contact Us"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <include layout="@layout/include_bottom_nav" />
+    <include layout="@layout/include_footer" />
+
+</LinearLayout>
+
+

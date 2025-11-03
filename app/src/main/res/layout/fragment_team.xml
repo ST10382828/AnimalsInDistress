@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_mobile_top_bar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Hero -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal">
+                <TextView android:text="Meet The Team" android:textStyle="bold" android:textSize="32sp" android:textColor="@color/foreground" />
+                <Space android:layout_width="0dp" android:layout_height="12dp" />
+                <TextView android:text="Meet the wonderful team behind the SAID scenes that help keep the wheels turning." android:textColor="@color/muted_foreground" android:gravity="center" />
+            </LinearLayout>
+
+            <Space android:layout_width="0dp" android:layout_height="16dp" />
+
+            <!-- Meg Harvey Card -->
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                        <com.google.android.material.card.MaterialCardView android:layout_width="64dp" android:layout_height="64dp" app:cardBackgroundColor="#1A003D99" android:radius="32dp" />
+                        <Space android:layout_width="16dp" android:layout_height="0dp" />
+                        <LinearLayout android:orientation="vertical">
+                            <TextView android:text="Meg Harvey" android:textStyle="bold" android:textSize="24sp" />
+                            <TextView android:text="CEO/Board Member" android:textStyle="bold" android:textColor="@color/primary" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <Space android:layout_width="0dp" android:layout_height="16dp" />
+                    <TextView android:text="Meg has been involved in animal welfare for over a decade – with an undeniable passion and affinity to animals, she has dedicated the majority of her adult life to serving and protecting animals." android:textColor="@color/muted_foreground" />
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <TextView android:text="Her career started at the NSPCA in an administration role where she soon qualified as an inspector and worked through the ranks of the organization – she then went on to manage a local SPCA." android:textColor="@color/muted_foreground" />
+                    <Space android:layout_width="0dp" android:layout_height="16dp" />
+                    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" app:cardBackgroundColor="#1A3B82F6">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp">
+                            <TextView android:text="Areas of Interest" android:textStyle="bold" android:textColor="#1E40AF" />
+                            <Space android:layout_width="0dp" android:layout_height="8dp" />
+                            <TextView android:text="She has a keen interest in law, human psychology, and the link between crimes against animals and crimes against humans, as well as the positive mental health impact that animals have in people." android:textColor="#1E3A8A" android:textSize="13sp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" app:cardBackgroundColor="#1A10B981">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp">
+                            <TextView android:text="Personal Life" android:textStyle="bold" android:textColor="#047857" />
+                            <Space android:layout_width="0dp" android:layout_height="8dp" />
+                            <TextView android:text="Meg is married and has a daughter (8) and son (2) who are both animal crazy, and a rescue cat and dog. In 2017, she summited Mt. Kilimanjaro while on a quest to raise funds and awareness for animal welfare in South Africa and enjoys mountaineering and the outdoors." android:textColor="#065F46" android:textSize="13sp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" app:cardBackgroundColor="#1A8B5CF6">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp">
+                            <TextView android:text="Philosophy" android:textStyle="bold" android:textColor="#6D28D9" />
+                            <Space android:layout_width="0dp" android:layout_height="8dp" />
+                            <TextView android:text="She believes that the change that our country and world desperately needs starts with engendering compassion to all animals in the youth – that if young people were taught to respect every creature – they would in turn respect humans too." android:textColor="#5B21B6" android:textSize="13sp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <Space android:layout_width="0dp" android:layout_height="16dp" />
+
+            <!-- Dr Isabel Meyer Card -->
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                        <com.google.android.material.card.MaterialCardView android:layout_width="64dp" android:layout_height="64dp" app:cardBackgroundColor="#1A3366CC" android:radius="32dp" />
+                        <Space android:layout_width="16dp" android:layout_height="0dp" />
+                        <LinearLayout android:orientation="vertical">
+                            <TextView android:text="Dr Isabel Meyer" android:textStyle="bold" android:textSize="24sp" />
+                            <TextView android:text="Board Member" android:textStyle="bold" android:textColor="@color/secondary" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <Space android:layout_width="0dp" android:layout_height="16dp" />
+                    <TextView android:text="Isabel joined the society as board member in 2021." android:textColor="@color/muted_foreground" />
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <TextView android:text="Isabel is a systems researcher and veterinarian, with a passion for finding ways to ensure that development efforts deliver impact and sustain their benefits. Her research includes community development projects, and sustainable welfare management strategies for animals at industrial sites." android:textColor="@color/muted_foreground" />
+                    <Space android:layout_width="0dp" android:layout_height="16dp" />
+                    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" app:cardBackgroundColor="#1A3B82F6">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp">
+                            <TextView android:text="Research Focus" android:textStyle="bold" android:textColor="#1E40AF" />
+                            <Space android:layout_width="0dp" android:layout_height="8dp" />
+                            <TextView android:text="She collaborates with universities to create opportunities for student research on animal health and welfare systems. Isabel considers access to veterinary services as critical to animal welfare and is keen to contribute to the Society's vision of access to care for animals in resource-constrained environments." android:textColor="#1E3A8A" android:textSize="13sp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <Space android:layout_width="0dp" android:layout_height="16dp" />
+
+            <!-- Vacancy Card -->
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" app:strokeWidth="2dp" app:strokeColor="#4D003D99">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">\
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                        <com.google.android.material.card.MaterialCardView android:layout_width="64dp" android:layout_height="64dp" app:cardBackgroundColor="#1A003D99" android:radius="32dp" />
+                        <Space android:layout_width="16dp" android:layout_height="0dp" />
+                        <LinearLayout android:orientation="vertical">
+                            <TextView android:text="Vacancy" android:textStyle="bold" android:textSize="24sp" />
+                            <TextView android:text="Board Member Position Available" android:textStyle="bold" android:textColor="@color/primary" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <Space android:layout_width="0dp" android:layout_height="16dp" />
+                    <TextView android:text="We are seeking passionate individuals to join our Board of Directors and help drive our mission forward! If you have the skills, experience, and dedication to make a meaningful impact, we'd love to hear from you." android:textColor="@color/muted_foreground" />
+                    <Space android:layout_width="0dp" android:layout_height="16dp" />
+                    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" app:cardBackgroundColor="#1A003D99">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp">
+                            <TextView android:text="How to Apply" android:textStyle="bold" android:textColor="@color/primary" />
+                            <Space android:layout_width="0dp" android:layout_height="8dp" />
+                            <TextView android:text="To apply, please send your CV and a one-page motivation outlining how you can add value to SAID to:" android:textColor="@color/primary" android:textSize="13sp" />
+                            <Space android:layout_width="0dp" android:layout_height="8dp" />
+                            <TextView android:text="meg@animalsindistress.org.za" android:textStyle="bold" android:textColor="@color/primary" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" app:cardBackgroundColor="#1A10B981">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp" android:gravity="center">
+                            <TextView android:text="Join us in creating a brighter future for animals and communities!" android:textStyle="bold" android:textColor="#E610B981" android:gravity="center" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <include layout="@layout/include_footer" />
+
+</LinearLayout>
+
+

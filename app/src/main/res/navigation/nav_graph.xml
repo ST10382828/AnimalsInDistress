@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="student.projects.animalsindistress.ui.fragments.HomeFragment"
+        android:label="home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/donateFragment"
+        android:name="student.projects.animalsindistress.ui.fragments.DonateFragment"
+        android:label="donate"
+        tools:layout="@layout/fragment_donate" />
+
+    <fragment
+        android:id="@+id/contactFragment"
+        android:name="student.projects.animalsindistress.ui.fragments.ContactFragment"
+        android:label="contact"
+        tools:layout="@layout/fragment_contact" />
+
+    <fragment
+        android:id="@+id/servicesFragment"
+        android:name="student.projects.animalsindistress.ui.fragments.ServicesFragment"
+        android:label="services"
+        tools:layout="@layout/fragment_services" />
+
+    <fragment
+        android:id="@+id/programsFragment"
+        android:name="student.projects.animalsindistress.ui.fragments.ProgramsFragment"
+        android:label="programs"
+        tools:layout="@layout/fragment_programs" />
+
+    <fragment
+        android:id="@+id/newsListFragment"
+        android:name="student.projects.animalsindistress.ui.fragments.NewsListFragment"
+        android:label="news"
+        tools:layout="@layout/fragment_news_list">
+        <action
+            android:id="@+id/action_newsListFragment_to_newsDetailFragment"
+            app:destination="@id/newsDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/newsDetailFragment"
+        android:name="student.projects.animalsindistress.ui.fragments.NewsDetailFragment"
+        android:label="news_detail">
+        <argument
+            android:name="slug"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/galleryFragment"
+        android:name="student.projects.animalsindistress.ui.fragments.GalleryFragment"
+        android:label="gallery"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/teamFragment"
+        android:name="student.projects.animalsindistress.ui.fragments.TeamFragment"
+        android:label="team"
+        tools:layout="@layout/fragment_team" />
+
+    <fragment
+        android:id="@+id/partnersFragment"
+        android:name="student.projects.animalsindistress.ui.fragments.PartnersFragment"
+        android:label="partners"
+        tools:layout="@layout/fragment_partners" />
+
+    <fragment
+        android:id="@+id/equineOutreachFragment"
+        android:name="student.projects.animalsindistress.ui.fragments.EquineOutreachFragment"
+        android:label="equine-outreach"
+        tools:layout="@layout/fragment_equine_outreach" />
+
+    <fragment
+        android:id="@+id/caseStudyFragment"
+        android:name="student.projects.animalsindistress.ui.fragments.CaseStudyFragment"
+        android:label="case-study"
+        tools:layout="@layout/fragment_case_study" />
+
+    <fragment
+        android:id="@+id/dancingDonkeyFragment"
+        android:name="student.projects.animalsindistress.ui.fragments.DancingDonkeyFragment"
+        android:label="dancing-donkey"
+        tools:layout="@layout/fragment_dancing_donkey" />
+
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="student.projects.animalsindistress.ui.fragments.AboutFragment"
+        android:label="about"
+        tools:layout="@layout/fragment_about" />
+
+    <fragment
+        android:id="@+id/shopFragment"
+        android:name="student.projects.animalsindistress.ui.fragments.ShopFragment"
+        android:label="shop"
+        tools:layout="@layout/fragment_shop" />
+
+    <fragment
+        android:id="@+id/faqFragment"
+        android:name="student.projects.animalsindistress.ui.fragments.FAQFragment"
+        android:label="faq"
+        tools:layout="@layout/fragment_faq" />
+
+    <fragment
+        android:id="@+id/volunteerFragment"
+        android:name="student.projects.animalsindistress.ui.fragments.VolunteerFragment"
+        android:label="volunteer"
+        tools:layout="@layout/fragment_volunteer" />
+
+    <fragment
+        android:id="@+id/annualReportFragment"
+        android:name="student.projects.animalsindistress.ui.fragments.AnnualReportFragment"
+        android:label="annual-report"
+        tools:layout="@layout/fragment_annual_report" />
+
+    <fragment
+        android:id="@+id/thousandHeroesFragment"
+        android:name="student.projects.animalsindistress.ui.fragments.ThousandHeroesFragment"
+        android:label="thousand-heroes"
+        tools:layout="@layout/fragment_thousand_heroes" />
+
+    <fragment
+        android:id="@+id/mySchoolFragment"
+        android:name="student.projects.animalsindistress.ui.fragments.MySchoolFragment"
+        android:label="myschool"
+        tools:layout="@layout/fragment_my_school" />
+
+    <fragment
+        android:id="@+id/monthlyDebitFragment"
+        android:name="student.projects.animalsindistress.ui.fragments.MonthlyDebitFragment"
+        android:label="monthly-debit"
+        tools:layout="@layout/fragment_monthly_debit" />
+
+    <fragment
+        android:id="@+id/payrollGivingFragment"
+        android:name="student.projects.animalsindistress.ui.fragments.PayrollGivingFragment"
+        android:label="payroll-giving"
+        tools:layout="@layout/fragment_payroll_giving" />
+
+    <fragment
+        android:id="@+id/legaciesFragment"
+        android:name="student.projects.animalsindistress.ui.fragments.LegaciesFragment"
+        android:label="legacies"
+        tools:layout="@layout/fragment_legacies" />
+
+    <fragment
+        android:id="@+id/preLovedFragment"
+        android:name="student.projects.animalsindistress.ui.fragments.PreLovedFragment"
+        android:label="pre-loved"
+        tools:layout="@layout/fragment_pre_loved" />
+
+    <fragment
+        android:id="@+id/taxCertificateFragment"
+        android:name="student.projects.animalsindistress.ui.fragments.TaxCertificateFragment"
+        android:label="tax-certificate"
+        tools:layout="@layout/fragment_tax_certificate" />
+
+    <fragment
+        android:id="@+id/heartSoleStoreFragment"
+        android:name="student.projects.animalsindistress.ui.fragments.HeartSoleStoreFragment"
+        android:label="heart-sole-store"
+        tools:layout="@layout/fragment_heart_sole_store" />
+
+    <fragment
+        android:id="@+id/golfDay2025Fragment"
+        android:name="student.projects.animalsindistress.ui.fragments.GolfDay2025Fragment"
+        android:label="golf-day-2025"
+        tools:layout="@layout/fragment_golf_day_2025" />
+
+    <fragment
+        android:id="@+id/educationFragment"
+        android:name="student.projects.animalsindistress.ui.fragments.EducationFragment"
+        android:label="education"
+        tools:layout="@layout/fragment_education" />
+
+    <fragment
+        android:id="@+id/moreFragment"
+        android:name="student.projects.animalsindistress.ui.fragments.MoreFragment"
+        android:label="more"
+        tools:layout="@layout/fragment_more" />
+
+    <fragment
+        android:id="@+id/notFoundFragment"
+        android:name="student.projects.animalsindistress.ui.fragments.NotFoundFragment"
+        android:label="not-found"
+        tools:layout="@layout/fragment_not_found" />
+
+</navigation>
+
+

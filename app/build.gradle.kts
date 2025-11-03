@@ -1,8 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.kotlin.compose)
-    // Hilt removed for now to resolve build issues; can reintroduce later
+    // Compose plugin removed - now using Fragments + XML
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -42,7 +42,9 @@ android {
         jvmTarget = "11"
     }
     buildFeatures {
-        compose = true
+        // Compose disabled - now using Fragments + XML
+        compose = false
+        viewBinding = true
     }
 }
 
@@ -50,28 +52,43 @@ dependencies {
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation(libs.androidx.activity.compose)
-    implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.compose.ui)
-    implementation(libs.androidx.compose.ui.graphics)
-    implementation(libs.androidx.compose.ui.tooling.preview)
-    implementation(libs.androidx.compose.material3)
-    // Navigation
-    implementation(libs.androidx.navigation.compose)
-    // Hilt temporarily omitted
-    // Coil for images
-    implementation(libs.coil.compose)
-    // Material Icons Extended
-    implementation(libs.androidx.compose.material.icons.extended)
+    
+    // Compose dependencies removed - now using Fragments + XML
+    // implementation(libs.androidx.activity.compose)
+    // implementation(platform(libs.androidx.compose.bom))
+    // implementation(libs.androidx.compose.ui)
+    // implementation(libs.androidx.compose.ui.graphics)
+    // implementation(libs.androidx.compose.ui.tooling.preview)
+    // implementation(libs.androidx.compose.material3)
+    // implementation(libs.androidx.navigation.compose)
+    // implementation(libs.coil.compose)
+    // implementation(libs.androidx.compose.material.icons.extended)
+    // implementation(libs.androidx.compose.ui.text.google.fonts)
+    
+    // XML-based UI components
+    implementation(libs.material)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.recyclerview)
+    implementation(libs.androidx.cardview)
+    implementation(libs.androidx.fragment.ktx)
+    
+    // Navigation for Fragments
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
+    
+    // Coil for ImageView in XML-based RecyclerView
+    implementation("io.coil-kt:coil:2.6.0")
+    
     // Kotlinx Serialization (optional for future data parsing)
     implementation(libs.kotlinx.serialization.json)
-    // Google Fonts in Compose
-    implementation(libs.androidx.compose.ui.text.google.fonts)
+    
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.androidx.compose.ui.test.junit4)
-    debugImplementation(libs.androidx.compose.ui.tooling)
-    debugImplementation(libs.androidx.compose.ui.test.manifest)
+    // Compose test dependencies removed
+    // androidTestImplementation(platform(libs.androidx.compose.bom))
+    // androidTestImplementation(libs.androidx.compose.ui.test.junit4)
+    // debugImplementation(libs.androidx.compose.ui.tooling)
+    // debugImplementation(libs.androidx.compose.ui.test.manifest)
 }
