@@ -5,15 +5,19 @@
         android:icon="@drawable/ic_home_24"
         android:title="Home" />
     <item
-        android:id="@+id/donateFragment"
-        android:icon="@drawable/ic_favorite_24"
-        android:title="Donate" />
+        android:id="@+id/aboutFragment"
+        android:icon="@drawable/ic_info_24"
+        android:title="About" />
     <item
-        android:id="@+id/newsListFragment"
-        android:icon="@drawable/ic_news_24"
-        android:title="News" />
+        android:id="@+id/galleryFragment"
+        android:icon="@drawable/ic_collections_24"
+        android:title="Gallery" />
+    <item
+        android:id="@+id/favoritesFragment"
+        android:icon="@drawable/ic_favorite_24"
+        android:title="Favorites" />
     <item
         android:id="@+id/moreFragment"
-        android:icon="@drawable/ic_more_24"
+        android:icon="@drawable/ic_more_horiz_24"
         android:title="More" />
 </menu>

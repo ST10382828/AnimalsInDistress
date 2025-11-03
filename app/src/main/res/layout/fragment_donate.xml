@@ -339,8 +339,8 @@
                             <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_favorite_24" android:tint="@color/primary" />
                             <Space android:layout_width="12dp" android:layout_height="0dp" />
                             <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
-                                <TextView android:text="R100" android:textStyle="bold" android:textSize="14sp" />
-                                <TextView android:text="Feeds a dog for a week" android:textColor="@color/muted_foreground" android:textSize="12sp" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="R100" android:textStyle="bold" android:textSize="14sp" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Feeds a dog for a week" android:textColor="@color/muted_foreground" android:textSize="12sp" />
                             </LinearLayout>
                         </LinearLayout>
                         <Space android:layout_width="0dp" android:layout_height="12dp" />
@@ -348,8 +348,8 @@
                             <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_favorite_24" android:tint="@color/primary" />
                             <Space android:layout_width="12dp" android:layout_height="0dp" />
                             <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
-                                <TextView android:text="R500" android:textStyle="bold" android:textSize="14sp" />
-                                <TextView android:text="Covers basic veterinary treatment" android:textColor="@color/muted_foreground" android:textSize="12sp" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="R500" android:textStyle="bold" android:textSize="14sp" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Covers basic veterinary treatment" android:textColor="@color/muted_foreground" android:textSize="12sp" />
                             </LinearLayout>
                         </LinearLayout>
                         <Space android:layout_width="0dp" android:layout_height="12dp" />
@@ -357,8 +357,8 @@
                             <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_favorite_24" android:tint="@color/primary" />
                             <Space android:layout_width="12dp" android:layout_height="0dp" />
                             <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
-                                <TextView android:text="R1000" android:textStyle="bold" android:textSize="14sp" />
-                                <TextView android:text="Supports mobile clinic outreach" android:textColor="@color/muted_foreground" android:textSize="12sp" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="R1000" android:textStyle="bold" android:textSize="14sp" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Supports mobile clinic outreach" android:textColor="@color/muted_foreground" android:textSize="12sp" />
                             </LinearLayout>
                         </LinearLayout>
                         <Space android:layout_width="0dp" android:layout_height="12dp" />
@@ -366,8 +366,8 @@
                             <ImageView android:layout_width="20dp" android:layout_height="20dp" android:src="@drawable/ic_favorite_24" android:tint="@color/primary" />
                             <Space android:layout_width="12dp" android:layout_height="0dp" />
                             <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
-                                <TextView android:text="R5000" android:textStyle="bold" android:textSize="14sp" />
-                                <TextView android:text="Enables emergency surgery" android:textColor="@color/muted_foreground" android:textSize="12sp" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="R5000" android:textStyle="bold" android:textSize="14sp" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Enables emergency surgery" android:textColor="@color/muted_foreground" android:textSize="12sp" />
                             </LinearLayout>
                         </LinearLayout>
                     </LinearLayout>

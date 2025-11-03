@@ -17,7 +17,7 @@
             android:textSize="18sp"
             android:textStyle="bold" />
 
-        <Space android:layout_width="0dp" android:layout_height="8dp" />
+        <Space android:layout_width="match_parent" android:layout_height="8dp" />
 
         <TextView
             android:layout_width="match_parent"
@@ -26,7 +26,7 @@
             android:textColor="@color/muted_foreground"
             android:textSize="14sp" />
 
-        <Space android:layout_width="0dp" android:layout_height="12dp" />
+        <Space android:layout_width="match_parent" android:layout_height="12dp" />
 
         <LinearLayout
             android:id="@+id/action_partners"

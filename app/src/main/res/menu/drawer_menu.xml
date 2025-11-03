@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeFragment"
+        android:title="Home" />
+    <item
+        android:id="@+id/aboutFragment"
+        android:title="About" />
+    <item
+        android:id="@+id/servicesFragment"
+        android:title="Services" />
+    <item
+        android:id="@+id/donateFragment"
+        android:title="Donate" />
+    <item
+        android:id="@+id/volunteerFragment"
+        android:title="Volunteer" />
+    <item
+        android:id="@+id/contactFragment"
+        android:title="Contact" />
+</menu>

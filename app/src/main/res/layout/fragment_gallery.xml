@@ -56,7 +56,7 @@
 
     </LinearLayout>
 
-    <include layout="@layout/include_footer" />
+    <!-- Footer removed: not in Compose version -->
 
 </LinearLayout>
 
