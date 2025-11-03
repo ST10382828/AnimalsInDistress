@@ -89,19 +89,19 @@
             <Space android:layout_width="match_parent" android:layout_height="12dp" />
             <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" style="@style/Widget.Material3.CardView.Elevated">
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="20dp" android:gravity="center">
-                    <TextView android:text="Transparent Governance" android:textStyle="bold" android:textColor="@color/primary" android:textSize="18sp" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Transparent Governance" android:textStyle="bold" android:textColor="@color/primary" android:textSize="18sp" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
             <Space android:layout_width="match_parent" android:layout_height="12dp" />
             <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" style="@style/Widget.Material3.CardView.Elevated">
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="20dp" android:gravity="center">
-                    <TextView android:text="Accountable Service Provision" android:textStyle="bold" android:textColor="@color/primary" android:textSize="18sp" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Accountable Service Provision" android:textStyle="bold" android:textColor="@color/primary" android:textSize="18sp" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
             <Space android:layout_width="match_parent" android:layout_height="12dp" />
             <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" style="@style/Widget.Material3.CardView.Elevated">
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="20dp" android:gravity="center">
-                    <TextView android:text="Respect For The Dignity Of Others" android:textStyle="bold" android:textColor="@color/primary" android:textSize="18sp" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Respect For The Dignity Of Others" android:textStyle="bold" android:textColor="@color/primary" android:textSize="18sp" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -134,7 +134,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
-                    <TextView android:text="Organic Compost Sales" android:textStyle="bold" android:textColor="@color/primary" android:textSize="18sp" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Organic Compost Sales" android:textStyle="bold" android:textColor="@color/primary" android:textSize="18sp" />
                     <Space android:layout_width="match_parent" android:layout_height="8dp" />
                     <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Every Spring we sell our &quot;home grown&quot; organic compost to the public on a first come-first serve basis." android:textColor="@color/muted_foreground" android:textSize="14sp" />
                 </LinearLayout>
@@ -145,7 +145,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
-                    <TextView android:text="Golf Day &amp; Sporting Events" android:textStyle="bold" android:textColor="@color/primary" android:textSize="18sp" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Golf Day &amp; Sporting Events" android:textStyle="bold" android:textColor="@color/primary" android:textSize="18sp" />
                     <Space android:layout_width="match_parent" android:layout_height="8dp" />
                     <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="SAID hosts an annual Golf Day and also partakes in other sporting events where our loyal supporters can run or cycle for a cause close to their hearts." android:textColor="@color/muted_foreground" android:textSize="14sp" />
                 </LinearLayout>
@@ -156,7 +156,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
-                    <TextView android:text="Pre-loved Goods Sales" android:textStyle="bold" android:textColor="@color/primary" android:textSize="18sp" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Pre-loved Goods Sales" android:textStyle="bold" android:textColor="@color/primary" android:textSize="18sp" />
                     <Space android:layout_width="match_parent" android:layout_height="8dp" />
                     <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="We collect and resell your pre-loved goods and second-hand books to raise much needed funds for our animals." android:textColor="@color/muted_foreground" android:textSize="14sp" />
                 </LinearLayout>
@@ -167,7 +167,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
-                    <TextView android:text="Tin Collections" android:textStyle="bold" android:textColor="@color/primary" android:textSize="18sp" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Tin Collections" android:textStyle="bold" android:textColor="@color/primary" android:textSize="18sp" />
                     <Space android:layout_width="match_parent" android:layout_height="8dp" />
                     <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Thanks to our wonderful volunteers we have several weekend tin collection teams at specific shopping centres across Johannesburg. These teams gather monthly on a rotational basis to raise funds for our cause. We also have static tins placed strategically across Gauteng." android:textColor="@color/muted_foreground" android:textSize="14sp" />
                 </LinearLayout>
@@ -178,7 +178,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
-                    <TextView android:text="MySchool Partnership" android:textStyle="bold" android:textColor="@color/primary" android:textSize="18sp" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="MySchool Partnership" android:textStyle="bold" android:textColor="@color/primary" android:textSize="18sp" />
                     <Space android:layout_width="match_parent" android:layout_height="8dp" />
                     <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="The public is encouraged to register with MySchool and add us as a beneficiary. This is 100% free and costs you nothing. As you spend, we earn." android:textColor="@color/muted_foreground" android:textSize="14sp" />
                 </LinearLayout>
@@ -189,7 +189,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
-                    <TextView android:text="Product Catalogue" android:textStyle="bold" android:textColor="@color/primary" android:textSize="18sp" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Product Catalogue" android:textStyle="bold" android:textColor="@color/primary" android:textSize="18sp" />
                     <Space android:layout_width="match_parent" android:layout_height="8dp" />
                     <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="SAID has a catalogue of various new and second-hand products that we sell to the general public. The catalogue can be found on our website." android:textColor="@color/muted_foreground" android:textSize="14sp" />
                 </LinearLayout>
@@ -200,7 +200,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
-                    <TextView android:text="Property Rental" android:textStyle="bold" android:textColor="@color/primary" android:textSize="18sp" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Property Rental" android:textStyle="bold" android:textColor="@color/primary" android:textSize="18sp" />
                     <Space android:layout_width="match_parent" android:layout_height="8dp" />
                     <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="We are blessed to have a 4.2ha farm and with that we have a few older buildings that we have refurbished and currently rent out to other businesses. We aim to expand this further." android:textColor="@color/muted_foreground" android:textSize="14sp" />
                 </LinearLayout>
@@ -211,7 +211,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
-                    <TextView android:text="Veterinary Services" android:textStyle="bold" android:textColor="@color/primary" android:textSize="18sp" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Veterinary Services" android:textStyle="bold" android:textColor="@color/primary" android:textSize="18sp" />
                     <Space android:layout_width="match_parent" android:layout_height="8dp" />
                     <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="At the small animal hospital we generate funding by charging all NGOs a nominal fee for professional veterinary services. We also encourage our community members serviced by our mobile units to donate towards the treatment of their animals with the aim to promote responsible animal ownership and encourage an active interest in the alleviation of animal suffering. No treatment is ever refused if a client is unable to donate towards their pet's treatment." android:textColor="@color/muted_foreground" android:textSize="14sp" />
                 </LinearLayout>
@@ -248,7 +248,7 @@
                         android:textSize="22sp"
                         android:textColor="@color/primary" />
                     <Space android:layout_width="match_parent" android:layout_height="16dp" />
-                    <TextView android:text="SINCE 2004" android:textStyle="bold" android:textSize="18sp" android:textColor="@color/foreground" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="SINCE 2004" android:textStyle="bold" android:textSize="18sp" android:textColor="@color/foreground" />
                     <Space android:layout_width="match_parent" android:layout_height="12dp" />
                     <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Established in 2004, this project was intended to secure the health and wellbeing of equine in the Tembisa area of Ekurhuleni and Ivory Park, Johannesburg. The success of this project included the reduction of 360 working equine to sum 30 equine in 2020." android:textColor="@color/muted_foreground" />
                     <Space android:layout_width="match_parent" android:layout_height="12dp" />
@@ -258,7 +258,7 @@
                     <Space android:layout_width="match_parent" android:layout_height="12dp" />
                     <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="With the decline of working equine from the Coal yard Project, the surrender of animals birthed the need to ensure that these equine remain valuable in secure homes." android:textColor="@color/muted_foreground" />
                     <Space android:layout_width="match_parent" android:layout_height="20dp" />
-                    <TextView android:text="Diamonds from Dust Program" android:textStyle="bold" android:textSize="18sp" android:textColor="@color/foreground" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Diamonds from Dust Program" android:textStyle="bold" android:textSize="18sp" android:textColor="@color/foreground" />
                     <Space android:layout_width="match_parent" android:layout_height="12dp" />
                     <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="The Diamonds from Dust Program and the building of trust, re-programming and backing produces safe equine foster companions for adults and children and a lifetime of pamper and care. The program has also been instrumental in the selected protection of equine made vulnerable by the economic circumstance of their caring owners." android:textColor="@color/muted_foreground" />
                 </LinearLayout>
@@ -267,7 +267,7 @@
         </LinearLayout>
     </ScrollView>
 
-    <include layout="@layout/include_footer" />
+    <!-- Footer removed: not in Fragment version -->
 
 </LinearLayout>
 

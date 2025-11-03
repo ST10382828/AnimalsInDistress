@@ -3,12 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/mobile_top_bar"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="0dp"
+    android:visibility="gone"
     android:backgroundTint="@color/primary"
     android:background="@color/primary"
     app:titleTextColor="@android:color/white"
     app:navigationIconTint="@android:color/white"
-    app:subtitleTextColor="@android:color/white"
-    app:menu="@menu/menu_top_bar" />
+    app:subtitleTextColor="@android:color/white" />
 
 

@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include layout="@layout/include_mobile_top_bar" />
+    <!-- Top app bar hosted globally in activity_main -->
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,24 +26,72 @@
             android:paddingBottom="8dp" />
 
         <!-- Category chips -->
-        <com.google.android.material.chip.ChipGroup
-            android:id="@+id/chip_group"
+        <HorizontalScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:singleSelection="true"
-            app:selectionRequired="true"
-            android:paddingLeft="12dp"
-            android:paddingRight="12dp"
-            android:paddingBottom="8dp">
+            android:scrollbars="none"
+            android:paddingBottom="4dp">
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chip_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:singleSelection="true"
+                app:selectionRequired="true"
+                app:singleLine="true"
+                android:paddingLeft="12dp"
+                android:paddingRight="12dp">
 
-            <com.google.android.material.chip.Chip android:id="@+id/chip_all" style="@style/Widget.Material3.Chip.Filter" android:text="All Photos" />
-            <com.google.android.material.chip.Chip android:id="@+id/chip_memory" style="@style/Widget.Material3.Chip.Filter" android:text="Memory" />
-            <com.google.android.material.chip.Chip android:id="@+id/chip_animals" style="@style/Widget.Material3.Chip.Filter" android:text="Animals" />
-            <com.google.android.material.chip.Chip android:id="@+id/chip_volunteers" style="@style/Widget.Material3.Chip.Filter" android:text="Volunteers" />
-            <com.google.android.material.chip.Chip android:id="@+id/chip_diamonds" style="@style/Widget.Material3.Chip.Filter" android:text="Diamonds" />
-            <com.google.android.material.chip.Chip android:id="@+id/chip_horses" style="@style/Widget.Material3.Chip.Filter" android:text="Horse Care" />
-            <com.google.android.material.chip.Chip android:id="@+id/chip_events" style="@style/Widget.Material3.Chip.Filter" android:text="Events" />
-        </com.google.android.material.chip.ChipGroup>
+                <com.google.android.material.chip.Chip 
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:id="@+id/chip_all" 
+                    style="@style/Widget.Material3.Chip.Filter" 
+                    android:textSize="12sp"
+                    android:text="All" />
+                <com.google.android.material.chip.Chip 
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:id="@+id/chip_memory" 
+                    style="@style/Widget.Material3.Chip.Filter" 
+                    android:textSize="12sp"
+                    android:text="Memory" />
+                <com.google.android.material.chip.Chip 
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:id="@+id/chip_animals" 
+                    style="@style/Widget.Material3.Chip.Filter" 
+                    android:textSize="12sp"
+                    android:text="Animals" />
+                <com.google.android.material.chip.Chip 
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:id="@+id/chip_volunteers" 
+                    style="@style/Widget.Material3.Chip.Filter" 
+                    android:textSize="12sp"
+                    android:text="Volunteers" />
+                <com.google.android.material.chip.Chip 
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:id="@+id/chip_diamonds" 
+                    style="@style/Widget.Material3.Chip.Filter" 
+                    android:textSize="12sp"
+                    android:text="Diamonds" />
+                <com.google.android.material.chip.Chip 
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:id="@+id/chip_horses" 
+                    style="@style/Widget.Material3.Chip.Filter" 
+                    android:textSize="12sp"
+                    android:text="Horse Care" />
+                <com.google.android.material.chip.Chip 
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:id="@+id/chip_events" 
+                    style="@style/Widget.Material3.Chip.Filter" 
+                    android:textSize="12sp"
+                    android:text="Events" />
+            </com.google.android.material.chip.ChipGroup>
+        </HorizontalScrollView>
 
         <!-- Grid -->
         <androidx.recyclerview.widget.RecyclerView
@@ -56,7 +104,7 @@
 
     </LinearLayout>
 
-    <!-- Footer removed: not in Compose version -->
+    <!-- Footer removed: not in Fragment version -->
 
 </LinearLayout>
 

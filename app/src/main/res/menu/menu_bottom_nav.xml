@@ -13,9 +13,9 @@
         android:icon="@drawable/ic_collections_24"
         android:title="Gallery" />
     <item
-        android:id="@+id/favoritesFragment"
+        android:id="@+id/donateFragment"
         android:icon="@drawable/ic_favorite_24"
-        android:title="Favorites" />
+        android:title="Donate" />
     <item
         android:id="@+id/moreFragment"
         android:icon="@drawable/ic_more_horiz_24"

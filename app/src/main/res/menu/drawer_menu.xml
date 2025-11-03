@@ -1,21 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:id="@+id/homeFragment"
-        android:title="Home" />
-    <item
-        android:id="@+id/aboutFragment"
-        android:title="About" />
-    <item
-        android:id="@+id/servicesFragment"
-        android:title="Services" />
-    <item
-        android:id="@+id/donateFragment"
-        android:title="Donate" />
-    <item
-        android:id="@+id/volunteerFragment"
-        android:title="Volunteer" />
-    <item
-        android:id="@+id/contactFragment"
-        android:title="Contact" />
+    <!-- Quick Links Section -->
+    <group android:id="@+id/group_quick_links">
+        <item
+            android:id="@+id/volunteerFragment"
+            android:title="Volunteer" />
+        <item
+            android:id="@+id/newsListFragment"
+            android:icon="@drawable/ic_news_24"
+            android:title="News" />
+        <item
+            android:id="@+id/teamFragment"
+            android:title="Our Team" />
+        <item
+            android:id="@+id/shopFragment"
+            android:title="Shop" />
+        <item
+            android:id="@+id/contactFragment"
+            android:title="Contact Us" />
+    </group>
+
+    <!-- Programs Section -->
+    <group android:id="@+id/group_programs">
+        <item
+            android:id="@+id/servicesFragment"
+            android:title="Services" />
+        <item
+            android:id="@+id/equineOutreachFragment"
+            android:title="Equine Outreach" />
+        <item
+            android:id="@+id/partnersFragment"
+            android:title="Partners" />
+    </group>
 </menu>
+

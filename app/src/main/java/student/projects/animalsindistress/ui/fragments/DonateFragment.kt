@@ -14,53 +14,52 @@ class DonateFragment : Fragment(R.layout.fragment_donate) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         
-        // Credit card donation buttons
+        // Donation amount buttons
         view.findViewById<View>(R.id.btn_donate_100)?.setOnClickListener {
-            Toast.makeText(requireContext(), "Processing R100 donation...", Toast.LENGTH_SHORT).show()
-            // In a real app, would open payment gateway
+            openDonationLink("100")
         }
         
         view.findViewById<View>(R.id.btn_donate_500)?.setOnClickListener {
-            Toast.makeText(requireContext(), "Processing R500 donation...", Toast.LENGTH_SHORT).show()
+            openDonationLink("500")
         }
         
         view.findViewById<View>(R.id.btn_donate_1000)?.setOnClickListener {
-            Toast.makeText(requireContext(), "Processing R1000 donation...", Toast.LENGTH_SHORT).show()
+            openDonationLink("1000")
         }
         
         view.findViewById<View>(R.id.btn_donate_custom)?.setOnClickListener {
-            Toast.makeText(requireContext(), "Opening custom amount form...", Toast.LENGTH_SHORT).show()
+            openDonationLink("custom")
         }
         
-        // Monthly debit order button
+        // Monthly debit button
         view.findViewById<View>(R.id.btn_monthly_debit)?.setOnClickListener {
             findNavController().navigate(R.id.monthlyDebitFragment)
         }
         
-        // Contact information - phone numbers
+        // Contact buttons
         view.findViewById<View>(R.id.contact_phone)?.setOnClickListener {
-            val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:0114660261"))
+            val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:0113231920"))
             startActivity(intent)
         }
         
         view.findViewById<View>(R.id.contact_mobile)?.setOnClickListener {
-            val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:0836408825"))
+            val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:0823707992"))
             startActivity(intent)
         }
         
-        // Contact information - email
         view.findViewById<View>(R.id.contact_email)?.setOnClickListener {
-            val intent = Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:animals@animalsindistress.org.za"))
+            val intent = Intent(Intent.ACTION_SENDTO).apply {
+                data = Uri.parse("mailto:admin@animalsindistress.org.za")
+            }
             startActivity(intent)
         }
         
         // Tax certificate button
         view.findViewById<View>(R.id.btn_tax_certificate)?.setOnClickListener {
-            val intent = Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:animals@animalsindistress.org.za?subject=Tax Certificate Request"))
-            startActivity(intent)
+            openUrl("https://animalsindistress.org.za/downloads/18A-Certificate.pdf")
         }
         
-        // Help links at the bottom
+        // Other ways to help links
         view.findViewById<View>(R.id.help_volunteer)?.setOnClickListener {
             findNavController().navigate(R.id.volunteerFragment)
         }
@@ -70,11 +69,31 @@ class DonateFragment : Fragment(R.layout.fragment_donate) {
         }
         
         view.findViewById<View>(R.id.help_preloved)?.setOnClickListener {
-            findNavController().navigate(R.id.preLovedFragment)
+            findNavController().navigate(R.id.contactFragment)
         }
         
         view.findViewById<View>(R.id.help_myschool)?.setOnClickListener {
-            findNavController().navigate(R.id.mySchoolFragment)
+            openUrl("https://www.myschool.co.za/")
+        }
+    }
+    
+    private fun openDonationLink(amount: String) {
+        // Open PayFast donation page (matching Compose version)
+        val url = when(amount) {
+            "100" -> "https://www.payfast.co.za/eng/process?cmd=_donations&receiver=11654229&item_name=General+Donation&amount=100"
+            "500" -> "https://www.payfast.co.za/eng/process?cmd=_donations&receiver=11654229&item_name=General+Donation&amount=500"
+            "1000" -> "https://www.payfast.co.za/eng/process?cmd=_donations&receiver=11654229&item_name=General+Donation&amount=1000"
+            else -> "https://www.payfast.co.za/eng/process?cmd=_donations&receiver=11654229&item_name=General+Donation"
+        }
+        openUrl(url)
+    }
+    
+    private fun openUrl(url: String) {
+        try {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+            startActivity(intent)
+        } catch (e: Exception) {
+            Toast.makeText(requireContext(), "Unable to open link", Toast.LENGTH_SHORT).show()
         }
     }
 }

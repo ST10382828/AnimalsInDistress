@@ -361,7 +361,7 @@
         </LinearLayout>
     </ScrollView>
 
-    <include layout="@layout/include_bottom_nav" />
+    <!-- Bottom nav is in MainActivity, not in fragments -->
     <!-- Footer removed - not needed in Fragment version -->
 
 </LinearLayout>
