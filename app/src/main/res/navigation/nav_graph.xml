@@ -192,6 +192,26 @@
         android:label="not-found"
         tools:layout="@layout/fragment_not_found" />
 
+    <fragment
+        android:id="@+id/storiesFeedFragment"
+        android:name="student.projects.animalsindistress.ui.fragments.StoriesFeedFragment"
+        android:label="Success Stories"
+        tools:layout="@layout/fragment_stories_feed" />
+
+    <fragment
+        android:id="@+id/storyDetailFragment"
+        android:name="student.projects.animalsindistress.ui.fragments.StoryDetailFragment"
+        android:label="Story Detail"
+        tools:layout="@layout/fragment_story_detail">
+        <argument
+            android:name="storyId"
+            app:argType="string" />
+    </fragment>
+
+    <action
+        android:id="@+id/action_storiesFeed_to_storyDetail"
+        app:destination="@id/storyDetailFragment" />
+
 </navigation>
 
 

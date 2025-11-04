@@ -1,0 +1,44 @@
+{
+  "stories": [
+    {
+      "id": "s1",
+      "title": "Luna's Miraculous Recovery",
+      "summary": "Rescued from the streets with severe injuries. Today she's thriving in her forever home.",
+      "fullContent": "Luna was found on a cold winter night in 2023, barely clinging to life. She had been hit by a car and abandoned on the side of the road. Our emergency rescue team rushed her to the vet where she underwent multiple surgeries.\n\nThe road to recovery was long and challenging. Luna needed intensive care, physiotherapy, and lots of love. Our dedicated volunteers spent countless hours with her, helping her regain strength and trust in humans.\n\nToday, Luna is a completely different dog. She runs, plays, and brings joy to everyone she meets. Her transformation is a testament to the power of compassion and never giving up on an animal in need.",
+      "adoptedUpdate": "Adopted by the Jacobs family in 2024. She now has two human siblings who adore her and a backyard where she loves to play!",
+      "timestamp": 1704067200000,
+      "media": [
+        { "type": "IMAGE", "urlOrRes": "luna_before", "beforeAfterTag": "BEFORE" },
+        { "type": "IMAGE", "urlOrRes": "luna_after", "beforeAfterTag": "AFTER" },
+        { "type": "VIDEO", "urlOrRes": "luna_story", "thumbnail": "luna_thumb", "beforeAfterTag": "NONE" }
+      ]
+    },
+    {
+      "id": "s2",
+      "title": "Max Finds His Forever Family",
+      "summary": "From a neglected shelter dog to a beloved family member.",
+      "fullContent": "Max spent over a year in an overcrowded shelter before we brought him to Animals In Distress. He was timid, undernourished, and had given up hope of ever finding a home.\n\nOur team immediately began working on his socialization and health. With proper nutrition, medical care, and patient training, Max slowly came out of his shell. He started wagging his tail again, playing with toys, and greeting visitors with excitement.\n\nThe transformation was remarkable. Within three months, Max went from a scared, withdrawn dog to a confident, loving companion ready for adoption.",
+      "adoptedUpdate": "Happily living with the Naidoo family since March 2024. He's become the perfect companion for their two children!",
+      "timestamp": 1709251200000,
+      "media": [
+        { "type": "IMAGE", "urlOrRes": "max_before", "beforeAfterTag": "BEFORE" },
+        { "type": "IMAGE", "urlOrRes": "max_after", "beforeAfterTag": "AFTER" }
+      ]
+    },
+    {
+      "id": "s3",
+      "title": "Bella's Second Chance",
+      "summary": "Rescued from an abusive situation, now helping therapy patients.",
+      "fullContent": "Bella's story began in tragedy but ended in triumph. She was rescued from a severe abuse case where she had been kept in a small cage for most of her life. When we first met her, she was terrified of everything and everyone.\n\nOur behaviorist worked with Bella for months, using positive reinforcement and patience to help her overcome her trauma. Slowly but surely, Bella began to trust again. She learned that not all humans would hurt her.\n\nHer gentle nature and calm demeanor caught the attention of a therapy dog organization. After specialized training, Bella is now a certified therapy dog, bringing comfort to hospital patients and nursing home residents. She has turned her pain into purpose.",
+      "adoptedUpdate": "Working as a certified therapy dog at Johannesburg General Hospital since June 2024. She visits patients three times a week!",
+      "timestamp": 1717200000000,
+      "media": [
+        { "type": "IMAGE", "urlOrRes": "bella_rescue", "beforeAfterTag": "BEFORE" },
+        { "type": "IMAGE", "urlOrRes": "bella_therapy", "beforeAfterTag": "AFTER" }
+      ]
+    }
+  ]
+}
+
+
+

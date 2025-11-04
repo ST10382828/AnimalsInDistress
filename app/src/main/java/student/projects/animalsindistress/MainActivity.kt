@@ -162,6 +162,7 @@ class MainActivity : AppCompatActivity() {
         val quickLinksGroup = menu.addSubMenu(0, 0, 1, "Quick Links")
         quickLinksGroup.add(1, R.id.volunteerFragment, 0, "Volunteer").setIcon(R.drawable.ic_person_24)
         quickLinksGroup.add(1, R.id.newsListFragment, 0, "News").setIcon(R.drawable.ic_article_24)
+        quickLinksGroup.add(1, R.id.storiesFeedFragment, 0, "Success Stories").setIcon(R.drawable.ic_favorite_24)
         quickLinksGroup.add(1, R.id.teamFragment, 0, "Our Team").setIcon(R.drawable.ic_group_24)
         quickLinksGroup.add(1, R.id.shopFragment, 0, "Shop").setIcon(R.drawable.ic_shopping_cart_24)
         quickLinksGroup.add(1, R.id.contactFragment, 0, "Contact Us").setIcon(R.drawable.ic_contact_mail_24)
@@ -184,6 +185,7 @@ class MainActivity : AppCompatActivity() {
             R.id.moreFragment -> R.drawable.ic_more_horiz_24
             R.id.contactFragment -> R.drawable.ic_contact_mail_24
             R.id.newsListFragment -> R.drawable.ic_article_24
+            R.id.storiesFeedFragment -> R.drawable.ic_favorite_24
             R.id.teamFragment -> R.drawable.ic_group_24
             R.id.servicesFragment -> R.drawable.ic_pets_24
             R.id.programsFragment -> R.drawable.ic_category_24
