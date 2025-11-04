@@ -12,7 +12,6 @@ import com.google.android.material.chip.ChipGroup
 import student.projects.animalsindistress.R
 
 class GalleryFragment : Fragment(R.layout.fragment_gallery) {
-    
     private val memoryImages = listOf(
         "https://animalsindistress.org.za/wp-content/uploads/2023/06/SAID-Memory-Gallery1.png",
         "https://animalsindistress.org.za/wp-content/uploads/2023/06/SAID-Memory-Gallery2.png",
@@ -101,6 +100,32 @@ class GalleryFragment : Fragment(R.layout.fragment_gallery) {
         recyclerView.adapter = adapter
 
         val chipGroup = view.findViewById<ChipGroup>(R.id.chip_group)
+        
+        // Set colors for all chips
+        val primaryColor = resources.getColor(R.color.primary, null)
+        val whiteColor = resources.getColor(R.color.white, null)
+        val mutedColor = resources.getColor(R.color.muted_foreground, null)
+        
+        listOf(R.id.chip_all, R.id.chip_memory, R.id.chip_animals, R.id.chip_volunteers, 
+               R.id.chip_diamonds, R.id.chip_horses, R.id.chip_events).forEach { chipId ->
+            view.findViewById<Chip>(chipId)?.apply {
+                chipBackgroundColor = android.content.res.ColorStateList(
+                    arrayOf(
+                        intArrayOf(android.R.attr.state_checked),
+                        intArrayOf()
+                    ),
+                    intArrayOf(primaryColor, whiteColor)
+                )
+                setTextColor(android.content.res.ColorStateList(
+                    arrayOf(
+                        intArrayOf(android.R.attr.state_checked),
+                        intArrayOf()
+                    ),
+                    intArrayOf(whiteColor, mutedColor)
+                ))
+            }
+        }
+        
         // default select "All"
         view.findViewById<Chip>(R.id.chip_all)?.isChecked = true
         adapter.submit(categoryKeyToImages[R.id.chip_all] ?: emptyList())
@@ -140,3 +165,5 @@ class GalleryFragment : Fragment(R.layout.fragment_gallery) {
         }
     }
 }
+
+

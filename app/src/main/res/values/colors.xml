@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Animals in Distress Brand Colors -->
-    <color name="aid_blue">#003D99</color>
-    <color name="aid_dark_blue">#003D82</color>
-    <color name="aid_teal">#00CCC0</color>
-    <color name="aid_light_gray">#F5F5F5</color>
-    
-    <!-- Custom theme colors -->
     <color name="primary">#003D99</color>
+    <color name="aid_blue">#003D99</color>
+    <color name="primary_alpha">#1A003D99</color>
     <color name="primary_glow">#0052CC</color>
     <color name="primary_foreground">#FFFFFFFF</color>
     <color name="secondary">#3366CC</color>
@@ -28,13 +23,11 @@
     <color name="warning_foreground">#2D3748</color>
     <color name="destructive">#EF4444</color>
     <color name="destructive_foreground">#FFFFFFFF</color>
-    
-    <!-- Material Design default colors -->
+    <color name="white">#FFFFFF</color>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
 </resources>
