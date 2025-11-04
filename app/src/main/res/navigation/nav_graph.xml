@@ -192,6 +192,12 @@
         android:label="not-found"
         tools:layout="@layout/fragment_not_found" />
 
+    <fragment
+        android:id="@+id/eventCalendarFragment"
+        android:name="student.projects.animalsindistress.ui.fragments.event.EventCalendarFragment"
+        android:label="events-calendar"
+        tools:layout="@layout/fragment_event_calendar" />
+
 </navigation>
 
 

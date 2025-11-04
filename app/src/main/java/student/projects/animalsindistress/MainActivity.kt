@@ -161,6 +161,7 @@ class MainActivity : AppCompatActivity() {
         // Quick Links Section
         val quickLinksGroup = menu.addSubMenu(0, 0, 1, "Quick Links")
         quickLinksGroup.add(1, R.id.volunteerFragment, 0, "Volunteer").setIcon(R.drawable.ic_person_24)
+        quickLinksGroup.add(1, R.id.eventCalendarFragment, 0, "Events").setIcon(R.drawable.ic_person_24)
         quickLinksGroup.add(1, R.id.newsListFragment, 0, "News").setIcon(R.drawable.ic_article_24)
         quickLinksGroup.add(1, R.id.teamFragment, 0, "Our Team").setIcon(R.drawable.ic_group_24)
         quickLinksGroup.add(1, R.id.shopFragment, 0, "Shop").setIcon(R.drawable.ic_shopping_cart_24)
