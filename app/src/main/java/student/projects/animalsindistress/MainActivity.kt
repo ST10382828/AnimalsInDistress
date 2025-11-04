@@ -166,6 +166,20 @@ class MainActivity : AppCompatActivity() {
         updateDrawerMenu()
         updateToolbarUserEmail()
         scheduleUserReminders()
+
+        // Handle notification intent
+        handleNotificationIntent()
+    }
+
+    private fun handleNotificationIntent() {
+        val requestId = intent.getStringExtra("medical_aid_request_id")
+        if (requestId != null) {
+            // Navigate to medical aid requests fragment with the request ID
+            val bundle = Bundle().apply {
+                putString("medical_aid_request_id", requestId)
+            }
+            navController.navigate(R.id.adminMedicalAidRequestsFragment, bundle)
+        }
     }
 
     private fun seedAdminOnStartup() {
