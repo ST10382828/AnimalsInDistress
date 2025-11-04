@@ -32,6 +32,9 @@ import com.google.firebase.firestore.ListenerRegistration
 import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import android.Manifest
+import android.content.pm.PackageManager
+import androidx.core.content.ContextCompat
 import java.time.*
 import java.time.format.DateTimeFormatter
 import java.util.*
@@ -641,15 +644,52 @@ class EventCalendarFragment : Fragment() {
         val tvReminderTitle = dialogView.findViewById<TextView>(R.id.tvReminderTitle)
         val tvReminderSubtitle = dialogView.findViewById<TextView>(R.id.tvReminderSubtitle)
 
-        switchReminder.setOnCheckedChangeListener { _, isChecked ->
-            hasReminder = isChecked
-            if (isChecked) {
-                scheduleNotification(event)
-            }
-            updateReminderUI(dialogView, isChecked)
+        val currentUid = FirebaseAuth.getInstance().currentUser?.uid
+        if (currentUid != null) {
+            // Load persisted reminder state for this user/event
+            Firebase.firestore.collection("events").document(event.id)
+                .collection("reminders").document(currentUid).get()
+                .addOnSuccessListener { snap ->
+                    hasReminder = snap.exists()
+                    switchReminder.isChecked = hasReminder
+                    updateReminderUI(dialogView, hasReminder)
+                }
+        } else {
+            updateReminderUI(dialogView, hasReminder)
         }
 
-        updateReminderUI(dialogView, hasReminder)
+        switchReminder.setOnCheckedChangeListener { _, isChecked ->
+            hasReminder = isChecked
+            val uid = FirebaseAuth.getInstance().currentUser?.uid
+            if (uid == null) {
+                switchReminder.isChecked = false
+                Toast.makeText(requireContext(), "Please login to set reminders", Toast.LENGTH_SHORT).show()
+            } else {
+                val reminders = Firebase.firestore.collection("events").document(event.id).collection("reminders").document(uid)
+                if (isChecked) {
+                    reminders.set(mapOf("uid" to uid, "createdAt" to java.util.Date()))
+                    // Request notification permission on Android 13+
+                    if (Build.VERSION.SDK_INT >= 33 && ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+                        requestPermissions(arrayOf(Manifest.permission.POST_NOTIFICATIONS), 1001)
+                        Toast.makeText(requireContext(), "Please allow notifications to receive reminders", Toast.LENGTH_LONG).show()
+                    }
+                    // Prompt for exact alarm policy if blocked (Android 12+)
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                        val am = context?.getSystemService(Context.ALARM_SERVICE) as? AlarmManager
+                        if (am != null && !am.canScheduleExactAlarms()) {
+                            try {
+                                startActivity(Intent(android.provider.Settings.ACTION_REQUEST_SCHEDULE_EXACT_ALARM))
+                            } catch (_: Exception) { }
+                        }
+                    }
+                    scheduleNotification(event, uid)
+                } else {
+                    reminders.delete()
+                    cancelScheduledNotification(event, uid)
+                }
+                updateReminderUI(dialogView, isChecked)
+            }
+        }
 
         // Dialog builder
         val builder = AlertDialog.Builder(context ?: return)
@@ -803,7 +843,7 @@ class EventCalendarFragment : Fragment() {
         }
     }
 
-    private fun scheduleNotification(event: Event) {
+    private fun scheduleNotification(event: Event, uid: String) {
         val notificationTime = event.date.atTime(event.startTime).minusHours(24)
         val now = LocalDateTime.now()
 
@@ -814,7 +854,7 @@ class EventCalendarFragment : Fragment() {
             // Schedule for 24 hours before
             val delayMillis = Duration.between(now, notificationTime).toMillis()
 
-            val pendingIntent = createPendingIntent(event)
+            val pendingIntent = createPendingIntent(event, uid)
 
             try {
                 (context?.getSystemService(Context.ALARM_SERVICE) as? AlarmManager)?.let { alarmManager ->
@@ -846,6 +886,12 @@ class EventCalendarFragment : Fragment() {
         }
     }
 
+    private fun cancelScheduledNotification(event: Event, uid: String) {
+        val alarmManager = context?.getSystemService(Context.ALARM_SERVICE) as? AlarmManager ?: return
+        val pendingIntent = createPendingIntent(event, uid)
+        alarmManager.cancel(pendingIntent)
+    }
+
     private fun showNotification(event: Event) {
         val notificationManager = context?.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
@@ -869,14 +915,22 @@ class EventCalendarFragment : Fragment() {
         notificationManager.notify(event.id.hashCode(), notification)
     }
 
-    private fun createPendingIntent(event: Event): PendingIntent {
+    private fun createPendingIntent(event: Event, uid: String): PendingIntent {
         val intent = Intent(context, NotificationReceiver::class.java).apply {
             putExtra("event_title", event.title)
+            val timeFormatter = DateTimeFormatter.ofPattern("h:mm a")
+            val dateFormatter = DateTimeFormatter.ofPattern("EEE, MMM d")
+            val timeText = "at ${event.startTime.format(timeFormatter)} on ${event.date.format(dateFormatter)}"
+            putExtra("event_time_text", timeText)
             putExtra("event_description", event.description)
+            putExtra("event_id", event.id)
+            putExtra("uid", uid)
         }
+        // Make requestCode unique per (event, user)
+        val requestCode = (event.id + ":" + uid).hashCode()
         return PendingIntent.getBroadcast(
             context,
-            event.id.hashCode(),
+            requestCode,
             intent,
             PendingIntent.FLAG_IMMUTABLE
         )

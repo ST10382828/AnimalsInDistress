@@ -22,6 +22,15 @@ import com.google.firebase.auth.FirebaseAuthUserCollisionException
 import com.google.firebase.firestore.SetOptions
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.firestore.ktx.firestore
+import android.Manifest
+import android.app.AlarmManager
+import android.app.PendingIntent
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.os.Build
+import androidx.core.content.ContextCompat
+import java.time.*
+import java.time.format.DateTimeFormatter
 
 class MainActivity : AppCompatActivity() {
     private lateinit var drawerLayout: DrawerLayout
@@ -33,6 +42,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var navController: androidx.navigation.NavController
     private val recentPages = mutableListOf<Pair<Int, String>>() // Store (id, title) pairs
     private val maxRecentPages = 5
+    private var authListener: FirebaseAuth.AuthStateListener? = null
     
     // Top-level destinations that don't show back button
     private val topLevelDestinations = setOf(
@@ -155,9 +165,12 @@ class MainActivity : AppCompatActivity() {
         // Initialize drawer menu
         updateDrawerMenu()
         updateToolbarUserEmail()
+        scheduleUserReminders()
     }
 
     private fun seedAdminOnStartup() {
+        // Do not disrupt an active user session
+        if (FirebaseAuth.getInstance().currentUser != null) return
         val email = getString(R.string.dev_admin_email)
         val password = getString(R.string.dev_admin_password)
         if (email.isBlank() || password.isBlank()) return
@@ -216,6 +229,62 @@ class MainActivity : AppCompatActivity() {
             .set(data, SetOptions.merge())
             .addOnSuccessListener { onDone() }
             .addOnFailureListener { onDone() }
+    }
+
+    private fun scheduleUserReminders() {
+        val user = FirebaseAuth.getInstance().currentUser ?: return
+        if (Build.VERSION.SDK_INT >= 33 && ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+            requestPermissions(arrayOf(Manifest.permission.POST_NOTIFICATIONS), 2001)
+        }
+
+        val db = Firebase.firestore
+        db.collectionGroup("reminders")
+            .whereEqualTo("uid", user.uid)
+            .get()
+            .addOnSuccessListener { snaps ->
+                snaps.documents.forEach { reminderDoc ->
+                    val eventRef = reminderDoc.reference.parent.parent ?: return@forEach
+                    eventRef.get().addOnSuccessListener { eventSnap ->
+                        val id = eventRef.id
+                        val title = eventSnap.getString("title") ?: return@addOnSuccessListener
+                        val description = eventSnap.getString("description") ?: ""
+                        val dateStr = eventSnap.getString("date") ?: return@addOnSuccessListener
+                        val startStr = eventSnap.getString("startTime") ?: return@addOnSuccessListener
+                        try {
+                            val date = LocalDate.parse(dateStr)
+                            val startTime = LocalTime.parse(startStr, DateTimeFormatter.ofPattern("HH:mm"))
+                            scheduleExactReminder(id, title, description, date, startTime, user.uid)
+                        } catch (_: Exception) { }
+                    }
+                }
+            }
+    }
+
+    private fun scheduleExactReminder(eventId: String, title: String, description: String, date: LocalDate, startTime: LocalTime, uid: String) {
+        val triggerDateTime = date.atTime(startTime).minusHours(24)
+        val now = LocalDateTime.now()
+        val alarmManager = getSystemService(ALARM_SERVICE) as? AlarmManager ?: return
+        val intent = Intent(this, NotificationReceiver::class.java).apply {
+            putExtra("event_title", title)
+            val timeFormatter = DateTimeFormatter.ofPattern("h:mm a")
+            val dateFormatter = DateTimeFormatter.ofPattern("EEE, MMM d")
+            val timeText = "at ${startTime.format(timeFormatter)} on ${date.format(dateFormatter)}"
+            putExtra("event_time_text", timeText)
+            putExtra("event_description", description)
+            putExtra("event_id", eventId)
+            putExtra("uid", uid)
+        }
+        val requestCode = (eventId + ":" + uid).hashCode()
+        val pendingIntent = PendingIntent.getBroadcast(this, requestCode, intent, PendingIntent.FLAG_IMMUTABLE)
+        val triggerAtMillis = if (triggerDateTime.isBefore(now)) System.currentTimeMillis() + 5_000 else
+            triggerDateTime.atZone(ZoneId.systemDefault()).toInstant().toEpochMilli()
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            try {
+                alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, triggerAtMillis, pendingIntent)
+            } catch (_: SecurityException) { }
+        } else {
+            alarmManager.setExact(AlarmManager.RTC_WAKEUP, triggerAtMillis, pendingIntent)
+        }
     }
     
     private fun updateDrawerMenu() {
@@ -288,6 +357,23 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         updateToolbarUserEmail()
+        scheduleUserReminders()
+    }
+
+    override fun onStart() {
+        super.onStart()
+        if (authListener == null) {
+            authListener = FirebaseAuth.AuthStateListener {
+                updateToolbarUserEmail()
+                scheduleUserReminders()
+            }
+        }
+        FirebaseAuth.getInstance().addAuthStateListener(authListener!!)
+    }
+
+    override fun onStop() {
+        super.onStop()
+        authListener?.let { FirebaseAuth.getInstance().removeAuthStateListener(it) }
     }
 
     private fun updateToolbarUserEmail() {
