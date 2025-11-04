@@ -25,9 +25,6 @@ class MoreFragment : Fragment(R.layout.fragment_more) {
         view.findViewById<View>(R.id.menu_item_dancing_donkey).setOnClickListener {
             findNavController().navigate(R.id.dancingDonkeyFragment)
         }
-        view.findViewById<View>(R.id.menu_item_golf_day).setOnClickListener {
-            findNavController().navigate(R.id.golfDay2025Fragment)
-        }
         view.findViewById<View>(R.id.menu_item_thousand_heroes).setOnClickListener {
             findNavController().navigate(R.id.thousandHeroesFragment)
         }
