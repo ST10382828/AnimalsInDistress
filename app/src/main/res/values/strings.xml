@@ -8,4 +8,7 @@
     <!-- Development-only admin seed credentials -->
     <string name="dev_admin_email">admin@animalsindistress.org.za</string>
     <string name="dev_admin_password">ChangeMe123!</string>
+
+    <!-- Contact form destination email -->
+    <string name="contact_email">ashtonzackey4@gmail.com</string>
 </resources>

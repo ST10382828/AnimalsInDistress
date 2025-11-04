@@ -31,9 +31,6 @@
         <item
             android:id="@+id/equineOutreachFragment"
             android:title="Equine Outreach" />
-        <item
-            android:id="@+id/partnersFragment"
-            android:title="Partners" />
     </group>
 </menu>
 

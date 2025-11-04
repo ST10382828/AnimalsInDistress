@@ -25,9 +25,6 @@ class MoreFragment : Fragment(R.layout.fragment_more) {
         view.findViewById<View>(R.id.menu_item_dancing_donkey).setOnClickListener {
             findNavController().navigate(R.id.dancingDonkeyFragment)
         }
-        view.findViewById<View>(R.id.menu_item_heart_sole_store).setOnClickListener {
-            findNavController().navigate(R.id.heartSoleStoreFragment)
-        }
         view.findViewById<View>(R.id.menu_item_golf_day).setOnClickListener {
             findNavController().navigate(R.id.golfDay2025Fragment)
         }
@@ -65,19 +62,10 @@ class MoreFragment : Fragment(R.layout.fragment_more) {
         view.findViewById<View>(R.id.menu_item_team).setOnClickListener {
             findNavController().navigate(R.id.teamFragment)
         }
-        view.findViewById<View>(R.id.menu_item_partners).setOnClickListener {
-            findNavController().navigate(R.id.partnersFragment)
-        }
-        view.findViewById<View>(R.id.menu_item_annual_report).setOnClickListener {
-            findNavController().navigate(R.id.annualReportFragment)
-        }
         
         // Programs section (3 items)
         view.findViewById<View>(R.id.menu_item_services).setOnClickListener {
             findNavController().navigate(R.id.servicesFragment)
-        }
-        view.findViewById<View>(R.id.menu_item_programs).setOnClickListener {
-            findNavController().navigate(R.id.programsFragment)
         }
         view.findViewById<View>(R.id.menu_item_equine_outreach).setOnClickListener {
             findNavController().navigate(R.id.equineOutreachFragment)

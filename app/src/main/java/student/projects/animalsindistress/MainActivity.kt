@@ -321,7 +321,6 @@ class MainActivity : AppCompatActivity() {
         val programsGroup = menu.addSubMenu(0, 0, 2, "Programs")
         programsGroup.add(2, R.id.servicesFragment, 0, "Services").setIcon(R.drawable.ic_pets_24)
         programsGroup.add(2, R.id.equineOutreachFragment, 0, "Equine Outreach").setIcon(R.drawable.ic_pets_24)
-        programsGroup.add(2, R.id.partnersFragment, 0, "Partners").setIcon(R.drawable.ic_people_24)
         
         Log.d(TAG, "Drawer menu updated successfully")
     }
