@@ -15,7 +15,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="80dp">
             <!-- Hero -->
             <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Contact Us" android:textStyle="bold" android:textSize="32sp" android:textColor="@color/foreground" android:gravity="center" />
 

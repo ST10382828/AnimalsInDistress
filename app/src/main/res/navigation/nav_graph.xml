@@ -193,6 +193,26 @@
         tools:layout="@layout/fragment_not_found" />
 
     <fragment
+        android:id="@+id/storiesFeedFragment"
+        android:name="student.projects.animalsindistress.ui.fragments.StoriesFeedFragment"
+        android:label="Success Stories"
+        tools:layout="@layout/fragment_stories_feed" />
+
+    <fragment
+        android:id="@+id/storyDetailFragment"
+        android:name="student.projects.animalsindistress.ui.fragments.StoryDetailFragment"
+        android:label="Story Detail"
+        tools:layout="@layout/fragment_story_detail">
+        <argument
+            android:name="storyId"
+            app:argType="string" />
+    </fragment>
+
+    <action
+        android:id="@+id/action_storiesFeed_to_storyDetail"
+        app:destination="@id/storyDetailFragment" />
+
+    <fragment
         android:id="@+id/eventCalendarFragment"
         android:name="student.projects.animalsindistress.ui.fragments.event.EventCalendarFragment"
         android:label="events-calendar"
@@ -226,6 +246,18 @@
         android:name="student.projects.animalsindistress.ui.fragments.auth.ForgotPasswordFragment"
         android:label="forgot-password"
         tools:layout="@layout/fragment_forgot_password" />
+
+    <fragment
+        android:id="@+id/adminContactSubmissionsFragment"
+        android:name="student.projects.animalsindistress.ui.fragments.admin.AdminContactSubmissionsFragment"
+        android:label="Admin: Contact Submissions"
+        tools:layout="@layout/fragment_admin_contact_submissions" />
+
+    <fragment
+        android:id="@+id/adminStoriesEditorFragment"
+        android:name="student.projects.animalsindistress.ui.fragments.admin.AdminStoriesEditorFragment"
+        android:label="Admin: Stories Editor"
+        tools:layout="@layout/fragment_admin_stories_editor" />
 
 </navigation>
 

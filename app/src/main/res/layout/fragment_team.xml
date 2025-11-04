@@ -194,7 +194,6 @@
         </LinearLayout>
     </ScrollView>
 
-    <include layout="@layout/include_footer" />
 
 </LinearLayout>
 

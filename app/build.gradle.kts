@@ -1,9 +1,10 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-    // Compose plugin removed - now using Fragments + XML
+    alias(libs.plugins.kotlin.compose)
     id("androidx.navigation.safeargs.kotlin")
     id("com.google.gms.google-services")
+    // Hilt removed for now to resolve build issues; can reintroduce later
 }
 
 android {
@@ -43,9 +44,7 @@ android {
         jvmTarget = "11"
     }
     buildFeatures {
-        // Compose disabled - now using Fragments + XML
-        compose = false
-        viewBinding = true
+        compose = true
     }
 }
 
@@ -53,36 +52,43 @@ dependencies {
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.activity.compose)
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.compose.ui)
+    implementation(libs.androidx.compose.ui.graphics)
+    implementation(libs.androidx.compose.ui.tooling.preview)
+    implementation(libs.androidx.compose.material3)
     
-    // Compose dependencies removed - now using Fragments + XML
-    // implementation(libs.androidx.activity.compose)
-    // implementation(platform(libs.androidx.compose.bom))
-    // implementation(libs.androidx.compose.ui)
-    // implementation(libs.androidx.compose.ui.graphics)
-    // implementation(libs.androidx.compose.ui.tooling.preview)
-    // implementation(libs.androidx.compose.material3)
-    // implementation(libs.androidx.navigation.compose)
-    // implementation(libs.coil.compose)
-    // implementation(libs.androidx.compose.material.icons.extended)
-    // implementation(libs.androidx.compose.ui.text.google.fonts)
+    // Material Components for XML views
+    implementation("com.google.android.material:material:1.11.0")
     
-    // XML-based UI components
-    implementation(libs.material)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.androidx.constraintlayout)
-    implementation(libs.androidx.recyclerview)
-    implementation(libs.androidx.cardview)
-    implementation(libs.androidx.fragment.ktx)
+    // AndroidX libraries for Fragments and XML
+    implementation("androidx.fragment:fragment-ktx:1.6.2")
+    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
+    implementation("androidx.cardview:cardview:1.0.0")
+    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
+    implementation("androidx.viewpager2:viewpager2:1.0.0")
     
-    // Navigation for Fragments
-    implementation(libs.androidx.navigation.fragment.ktx)
-    implementation(libs.androidx.navigation.ui.ktx)
-    
+    // Navigation
+    implementation(libs.androidx.navigation.compose)
+    implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")
+    implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
+    // Hilt temporarily omitted
+    // Coil for images
+    implementation(libs.coil.compose)
     // Coil for ImageView in XML-based RecyclerView
     implementation("io.coil-kt:coil:2.6.0")
-    
+    // Glide for advanced image caching
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+    annotationProcessor("com.github.bumptech.glide:compiler:4.16.0")
+    // Material Icons Extended
+    implementation(libs.androidx.compose.material.icons.extended)
     // Kotlinx Serialization (optional for future data parsing)
     implementation(libs.kotlinx.serialization.json)
+    // Google Fonts in Compose
+    implementation(libs.androidx.compose.ui.text.google.fonts)
 
     // Firebase Bill of Materials to manage consistent versions
     implementation(platform("com.google.firebase:firebase-bom:33.5.1"))
@@ -95,9 +101,8 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    // Compose test dependencies removed
-    // androidTestImplementation(platform(libs.androidx.compose.bom))
-    // androidTestImplementation(libs.androidx.compose.ui.test.junit4)
-    // debugImplementation(libs.androidx.compose.ui.tooling)
-    // debugImplementation(libs.androidx.compose.ui.test.manifest)
+    androidTestImplementation(platform(libs.androidx.compose.bom))
+    androidTestImplementation(libs.androidx.compose.ui.test.junit4)
+    debugImplementation(libs.androidx.compose.ui.tooling)
+    debugImplementation(libs.androidx.compose.ui.test.manifest)
 }

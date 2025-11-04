@@ -43,7 +43,8 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
                     val user = result.user
                     if (user == null) {
                         Toast.makeText(requireContext(), "Registration succeeded", Toast.LENGTH_SHORT).show()
-                        findNavController().navigateUp()
+                        // Navigate to home after successful registration
+                        findNavController().navigate(R.id.homeFragment)
                         return@addOnSuccessListener
                     }
 
@@ -63,7 +64,8 @@ class RegisterFragment : Fragment(R.layout.fragment_register) {
                     db.collection("users").document(uid).set(data, SetOptions.merge())
                         .addOnCompleteListener {
                             Toast.makeText(requireContext(), "Account created", Toast.LENGTH_SHORT).show()
-                            findNavController().navigateUp()
+                            // Navigate to home after successful registration
+                            findNavController().navigate(R.id.homeFragment)
                         }
                 }
                 .addOnFailureListener { err ->

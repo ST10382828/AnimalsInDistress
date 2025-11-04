@@ -11,4 +11,15 @@
 
     <!-- Contact form destination email -->
     <string name="contact_email">ashtonzackey4@gmail.com</string>
+    
+    <!-- Success Stories -->
+    <string name="story_media_description">Story image or video thumbnail</string>
+    <string name="where_now">Where are they now?</string>
+    <string name="like_story">Like this story</string>
+    <string name="share_story">Share this story</string>
+    <string name="video_badge">This story includes video</string>
+    <string name="before_image">Before rescue photo</string>
+    <string name="after_image">After recovery photo</string>
+    <string name="empty_stories">No success stories available yet</string>
+    <string name="error_loading_stories">Could not load stories. Please try again.</string>
 </resources>

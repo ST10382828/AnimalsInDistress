@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -14,18 +15,47 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
-            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Partners" android:textStyle="bold" android:textSize="24sp" />
-            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Corporate &amp; Community Partners" android:textSize="18sp" android:layout_marginTop="8dp" />
-            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="We collaborate with organisations who share our commitment to animal welfare and education." />
-            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Ways to Partner" android:textSize="18sp" android:layout_marginTop="12dp" />
-            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="• Sponsorships for programmes and campaigns" />
-            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="• In-kind donations (goods, services, venues)" />
-            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="• Employee volunteering and payroll giving" />
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="80dp">
+            <TextView 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Partners" 
+                android:textStyle="bold" 
+                android:textSize="24sp" />
+            <TextView 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Corporate &amp; Community Partners" 
+                android:textSize="18sp" 
+                android:layout_marginTop="8dp" />
+            <TextView 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="We collaborate with organisations who share our commitment to animal welfare and education." />
+            <TextView 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ways to Partner" 
+                android:textSize="18sp" 
+                android:layout_marginTop="12dp" />
+            <TextView 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Sponsorships for programmes and campaigns" />
+            <TextView 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• In-kind donations (goods, services, venues)" />
+            <TextView 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="• Employee volunteering and payroll giving" />
         </LinearLayout>
     </ScrollView>
 
-    <!-- Footer removed: not in Compose -->
 
 </LinearLayout>
 

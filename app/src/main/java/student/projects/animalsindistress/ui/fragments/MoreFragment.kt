@@ -15,107 +15,160 @@ class MoreFragment : Fragment(R.layout.fragment_more) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         
-        // Support Us section (6 items)
-        view.findViewById<View>(R.id.menu_item_volunteer).setOnClickListener {
+        // Setup click listeners for all menu items
+        view.findViewById<View>(R.id.menu_item_volunteer)?.setOnClickListener {
             findNavController().navigate(R.id.volunteerFragment)
         }
-        view.findViewById<View>(R.id.menu_item_shop).setOnClickListener {
+        
+        view.findViewById<View>(R.id.menu_item_shop)?.setOnClickListener {
             findNavController().navigate(R.id.shopFragment)
         }
-        view.findViewById<View>(R.id.menu_item_dancing_donkey).setOnClickListener {
+        
+        view.findViewById<View>(R.id.menu_item_dancing_donkey)?.setOnClickListener {
             findNavController().navigate(R.id.dancingDonkeyFragment)
         }
-        view.findViewById<View>(R.id.menu_item_thousand_heroes).setOnClickListener {
+        
+        view.findViewById<View>(R.id.menu_item_golf_day)?.setOnClickListener {
+            findNavController().navigate(R.id.golfDay2025Fragment)
+        }
+        
+        view.findViewById<View>(R.id.menu_item_thousand_heroes)?.setOnClickListener {
             findNavController().navigate(R.id.thousandHeroesFragment)
         }
         
-        // Ways to Give section (6 items)
-        view.findViewById<View>(R.id.menu_item_myschool).setOnClickListener {
+        view.findViewById<View>(R.id.menu_item_myschool)?.setOnClickListener {
             findNavController().navigate(R.id.mySchoolFragment)
         }
-        view.findViewById<View>(R.id.menu_item_monthly_debit).setOnClickListener {
+        
+        view.findViewById<View>(R.id.menu_item_monthly_debit)?.setOnClickListener {
             findNavController().navigate(R.id.monthlyDebitFragment)
         }
-        view.findViewById<View>(R.id.menu_item_payroll_giving).setOnClickListener {
+        
+        view.findViewById<View>(R.id.menu_item_payroll_giving)?.setOnClickListener {
             findNavController().navigate(R.id.payrollGivingFragment)
         }
-        view.findViewById<View>(R.id.menu_item_legacies).setOnClickListener {
+        
+        view.findViewById<View>(R.id.menu_item_legacies)?.setOnClickListener {
             findNavController().navigate(R.id.legaciesFragment)
         }
-        view.findViewById<View>(R.id.menu_item_pre_loved).setOnClickListener {
+        
+        view.findViewById<View>(R.id.menu_item_pre_loved)?.setOnClickListener {
             findNavController().navigate(R.id.preLovedFragment)
         }
-        view.findViewById<View>(R.id.menu_item_tax_certificate).setOnClickListener {
+        
+        view.findViewById<View>(R.id.menu_item_tax_certificate)?.setOnClickListener {
             findNavController().navigate(R.id.taxCertificateFragment)
         }
         
-        // About Us section (5 items)
-        view.findViewById<View>(R.id.menu_item_news).setOnClickListener {
+        view.findViewById<View>(R.id.menu_item_news)?.setOnClickListener {
             findNavController().navigate(R.id.newsListFragment)
         }
-        view.findViewById<View>(R.id.menu_item_case_study).setOnClickListener {
+        
+        view.findViewById<View>(R.id.menu_item_success_stories)?.setOnClickListener {
+            findNavController().navigate(R.id.storiesFeedFragment)
+        }
+        
+        view.findViewById<View>(R.id.menu_item_case_study)?.setOnClickListener {
             findNavController().navigate(R.id.caseStudyFragment)
         }
-        view.findViewById<View>(R.id.menu_item_team).setOnClickListener {
+        
+        view.findViewById<View>(R.id.menu_item_team)?.setOnClickListener {
             findNavController().navigate(R.id.teamFragment)
         }
         
-        // Programs section (3 items)
-        view.findViewById<View>(R.id.menu_item_services).setOnClickListener {
+        view.findViewById<View>(R.id.menu_item_services)?.setOnClickListener {
             findNavController().navigate(R.id.servicesFragment)
         }
-        view.findViewById<View>(R.id.menu_item_equine_outreach).setOnClickListener {
+        
+        view.findViewById<View>(R.id.menu_item_equine_outreach)?.setOnClickListener {
             findNavController().navigate(R.id.equineOutreachFragment)
         }
         
-        // Get In Touch section (3 items)
-        view.findViewById<View>(R.id.menu_item_contact).setOnClickListener {
+        view.findViewById<View>(R.id.menu_item_contact)?.setOnClickListener {
             findNavController().navigate(R.id.contactFragment)
         }
-        view.findViewById<View>(R.id.menu_item_call).setOnClickListener {
+        
+        view.findViewById<View>(R.id.menu_item_call)?.setOnClickListener {
             val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:0114660261"))
             startActivity(intent)
         }
-        view.findViewById<View>(R.id.menu_item_email).setOnClickListener {
-            val intent = Intent(Intent.ACTION_SENDTO, Uri.parse("mailto:animals@animalsindistress.org.za"))
+        
+        view.findViewById<View>(R.id.menu_item_email)?.setOnClickListener {
+            val intent = Intent(Intent.ACTION_SENDTO).apply {
+                data = Uri.parse("mailto:animals@animalsindistress.org.za")
+            }
             startActivity(intent)
         }
         
-        // Follow Us section (2 items)
-        view.findViewById<View>(R.id.menu_item_facebook).setOnClickListener {
+        view.findViewById<View>(R.id.menu_item_facebook)?.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/tsfaid"))
             startActivity(intent)
         }
-        view.findViewById<View>(R.id.menu_item_instagram).setOnClickListener {
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/thesocietyforanimalsindistress/"))
+        
+        view.findViewById<View>(R.id.menu_item_instagram)?.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/thesocietyforanimalsindistress"))
             startActivity(intent)
         }
         
-        // FAQ (1 item)
-        view.findViewById<View>(R.id.menu_item_faq).setOnClickListener {
+        view.findViewById<View>(R.id.menu_item_faq)?.setOnClickListener {
             findNavController().navigate(R.id.faqFragment)
+        }
+
+        // Admin menu items (only visible for admin users)
+        val adminContactSubmissions = view.findViewById<View>(R.id.menu_item_admin_contact_submissions)
+        val adminStoriesEditor = view.findViewById<View>(R.id.menu_item_admin_stories_editor)
+        
+        adminContactSubmissions?.setOnClickListener {
+            findNavController().navigate(R.id.adminContactSubmissionsFragment)
+        }
+        
+        adminStoriesEditor?.setOnClickListener {
+            findNavController().navigate(R.id.adminStoriesEditorFragment)
         }
 
         // Login/Logout button at bottom
         val authButton = view.findViewById<MaterialButton>(R.id.menu_item_login)
         fun refreshAuthButton() {
-            val isLoggedIn = FirebaseAuth.getInstance().currentUser != null
+            val currentUser = FirebaseAuth.getInstance().currentUser
+            val isLoggedIn = currentUser != null
+            
             if (isLoggedIn) {
                 authButton.text = "Logout"
                 authButton.setOnClickListener {
                     FirebaseAuth.getInstance().signOut()
                     refreshAuthButton()
+                    // Hide admin options on logout
+                    adminContactSubmissions?.visibility = View.GONE
+                    adminStoriesEditor?.visibility = View.GONE
+                }
+                
+                // Check if user is admin and show admin options
+                currentUser?.let { user ->
+                    com.google.firebase.firestore.FirebaseFirestore.getInstance()
+                        .collection("users")
+                        .document(user.uid)
+                        .get()
+                        .addOnSuccessListener { doc ->
+                            val role = doc.getString("role") ?: "user"
+                            if (role == "admin") {
+                                adminContactSubmissions?.visibility = View.VISIBLE
+                                adminStoriesEditor?.visibility = View.VISIBLE
+                            } else {
+                                adminContactSubmissions?.visibility = View.GONE
+                                adminStoriesEditor?.visibility = View.GONE
+                            }
+                        }
                 }
             } else {
                 authButton.text = "Login"
                 authButton.setOnClickListener {
                     findNavController().navigate(R.id.loginFragment)
                 }
+                adminContactSubmissions?.visibility = View.GONE
+                adminStoriesEditor?.visibility = View.GONE
             }
         }
         refreshAuthButton()
     }
 }
-
-
 
