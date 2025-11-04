@@ -22,6 +22,46 @@ class MoreFragment : Fragment(R.layout.fragment_more) {
             findNavController().navigate(R.id.shopFragment)
         }
         
+        view.findViewById<View>(R.id.menu_item_dancing_donkey)?.setOnClickListener {
+            findNavController().navigate(R.id.dancingDonkeyFragment)
+        }
+        
+        view.findViewById<View>(R.id.menu_item_heart_sole_store)?.setOnClickListener {
+            findNavController().navigate(R.id.heartSoleStoreFragment)
+        }
+        
+        view.findViewById<View>(R.id.menu_item_golf_day)?.setOnClickListener {
+            findNavController().navigate(R.id.golfDay2025Fragment)
+        }
+        
+        view.findViewById<View>(R.id.menu_item_thousand_heroes)?.setOnClickListener {
+            findNavController().navigate(R.id.thousandHeroesFragment)
+        }
+        
+        view.findViewById<View>(R.id.menu_item_myschool)?.setOnClickListener {
+            findNavController().navigate(R.id.mySchoolFragment)
+        }
+        
+        view.findViewById<View>(R.id.menu_item_monthly_debit)?.setOnClickListener {
+            findNavController().navigate(R.id.monthlyDebitFragment)
+        }
+        
+        view.findViewById<View>(R.id.menu_item_payroll_giving)?.setOnClickListener {
+            findNavController().navigate(R.id.payrollGivingFragment)
+        }
+        
+        view.findViewById<View>(R.id.menu_item_legacies)?.setOnClickListener {
+            findNavController().navigate(R.id.legaciesFragment)
+        }
+        
+        view.findViewById<View>(R.id.menu_item_pre_loved)?.setOnClickListener {
+            findNavController().navigate(R.id.preLovedFragment)
+        }
+        
+        view.findViewById<View>(R.id.menu_item_tax_certificate)?.setOnClickListener {
+            findNavController().navigate(R.id.taxCertificateFragment)
+        }
+        
         view.findViewById<View>(R.id.menu_item_news)?.setOnClickListener {
             findNavController().navigate(R.id.newsListFragment)
         }
@@ -40,6 +80,10 @@ class MoreFragment : Fragment(R.layout.fragment_more) {
         
         view.findViewById<View>(R.id.menu_item_partners)?.setOnClickListener {
             findNavController().navigate(R.id.partnersFragment)
+        }
+        
+        view.findViewById<View>(R.id.menu_item_annual_report)?.setOnClickListener {
+            findNavController().navigate(R.id.annualReportFragment)
         }
         
         view.findViewById<View>(R.id.menu_item_services)?.setOnClickListener {
@@ -78,6 +122,10 @@ class MoreFragment : Fragment(R.layout.fragment_more) {
         view.findViewById<View>(R.id.menu_item_instagram)?.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/thesocietyforanimalsindistress"))
             startActivity(intent)
+        }
+        
+        view.findViewById<View>(R.id.menu_item_faq)?.setOnClickListener {
+            findNavController().navigate(R.id.faqFragment)
         }
     }
 }

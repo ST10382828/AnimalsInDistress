@@ -1,7 +1,5 @@
 package student.projects.animalsindistress.ui.fragments
 
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +12,9 @@ import student.projects.animalsindistress.R
 class ServicesFragment : Fragment(R.layout.fragment_services) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        val requestAid: Button? = view.findViewById(R.id.btn_request_medical_aid)
+        val requestMobile: Button? = view.findViewById(R.id.btn_request_mobile_visit)
 
         val showDialog: () -> Unit = {
             val dialogView = LayoutInflater.from(requireContext())
@@ -28,21 +29,12 @@ class ServicesFragment : Fragment(R.layout.fragment_services) {
             dialog.show()
         }
 
-        view.findViewById<View>(R.id.btn_call_emergency).setOnClickListener {
-            val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:0113142252"))
-            startActivity(intent)
+        view.findViewById<View>(R.id.btn_request_medical_aid).setOnClickListener {
+            showDialog()
         }
-        
-        view.findViewById<View>(R.id.btn_request_medical_aid).setOnClickListener { 
-            showDialog() 
-        }
-        
-        view.findViewById<View>(R.id.btn_request_medical_aid_bottom).setOnClickListener { 
-            showDialog() 
-        }
-        
-        view.findViewById<View>(R.id.btn_request_mobile_visit)?.setOnClickListener { 
-            showDialog() 
+
+        view.findViewById<View>(R.id.btn_request_mobile_visit)?.setOnClickListener {
+            showDialog()
         }
     }
 }

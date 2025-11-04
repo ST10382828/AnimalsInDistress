@@ -14,7 +14,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="80dp">
             <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Frequently Asked Questions" android:textStyle="bold" android:textSize="24sp" />
             <Space android:layout_width="0dp" android:layout_height="12dp" />
             <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Q: What are your operating hours?" android:textStyle="bold" />
