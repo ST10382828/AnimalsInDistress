@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "134852528865",
+    "project_id": "animalsindistress-a9899",
+    "storage_bucket": "animalsindistress-a9899.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:134852528865:android:9727f550850facba7205a0",
+        "android_client_info": {
+          "package_name": "student.projects.animalsindistress"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYG8sXOwUt_xWelOqXIvcuJUoX_f9ViyU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

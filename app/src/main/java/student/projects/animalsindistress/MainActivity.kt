@@ -15,6 +15,13 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.FirebaseApp
+import com.google.firebase.Timestamp
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthUserCollisionException
+import com.google.firebase.firestore.SetOptions
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.firestore.ktx.firestore
 
 class MainActivity : AppCompatActivity() {
     private lateinit var drawerLayout: DrawerLayout
@@ -22,6 +29,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var backButton: ImageButton
     private lateinit var toolbarLogo: ImageView
     private lateinit var toolbarTitle: TextView
+    private lateinit var toolbarUserEmail: TextView
     private lateinit var navController: androidx.navigation.NavController
     private val recentPages = mutableListOf<Pair<Int, String>>() // Store (id, title) pairs
     private val maxRecentPages = 5
@@ -41,7 +49,16 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // Initialize Firebase (safe to call multiple times)
+        try {
+            if (FirebaseApp.getApps(this).isEmpty()) {
+                FirebaseApp.initializeApp(this)
+            }
+        } catch (_: Exception) { }
         setContentView(R.layout.activity_main)
+
+        // Seed admin account on startup (idempotent)
+        seedAdminOnStartup()
 
         // Setup toolbar
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
@@ -54,6 +71,7 @@ class MainActivity : AppCompatActivity() {
         backButton = findViewById(R.id.back_button)
         toolbarLogo = findViewById(R.id.toolbar_logo)
         toolbarTitle = findViewById(R.id.toolbar_title)
+        toolbarUserEmail = findViewById(R.id.toolbar_user_email)
 
         // Menu button on RIGHT opens drawer from LEFT (START)
         val menuButton = findViewById<ImageButton>(R.id.menu_button)
@@ -91,6 +109,7 @@ class MainActivity : AppCompatActivity() {
                 toolbarTitle.visibility = View.VISIBLE
                 toolbarTitle.text = formatLabel(destinationLabel)
             }
+            updateToolbarUserEmail()
             
             Log.d(TAG, "Navigation changed to: $destinationLabel (ID: $destinationId)")
             
@@ -135,6 +154,68 @@ class MainActivity : AppCompatActivity() {
         
         // Initialize drawer menu
         updateDrawerMenu()
+        updateToolbarUserEmail()
+    }
+
+    private fun seedAdminOnStartup() {
+        val email = getString(R.string.dev_admin_email)
+        val password = getString(R.string.dev_admin_password)
+        if (email.isBlank() || password.isBlank()) return
+
+        val auth = FirebaseAuth.getInstance()
+        auth.fetchSignInMethodsForEmail(email)
+            .addOnSuccessListener { methods ->
+                if (methods.signInMethods.isNullOrEmpty()) {
+                    // Create admin auth user
+                    auth.createUserWithEmailAndPassword(email, password)
+                        .addOnSuccessListener { result ->
+                            val uid = result.user?.uid ?: return@addOnSuccessListener
+                            upsertAdminUserDoc(uid, email) {
+                                // keep user signed out after seeding
+                                auth.signOut()
+                            }
+                        }
+                        .addOnFailureListener { _ ->
+                            // If collision or other error, try sign in then ensure doc
+                            auth.signInWithEmailAndPassword(email, password)
+                                .addOnSuccessListener { res ->
+                                    val uid = res.user?.uid
+                                    if (uid != null) {
+                                        upsertAdminUserDoc(uid, email) { auth.signOut() }
+                                    } else {
+                                        auth.signOut()
+                                    }
+                                }
+                                .addOnFailureListener { _ -> }
+                        }
+                } else {
+                    // Exists: sign in to get uid, ensure doc, sign out
+                    auth.signInWithEmailAndPassword(email, password)
+                        .addOnSuccessListener { res ->
+                            val uid = res.user?.uid
+                            if (uid != null) {
+                                upsertAdminUserDoc(uid, email) { auth.signOut() }
+                            } else {
+                                auth.signOut()
+                            }
+                        }
+                        .addOnFailureListener { _ -> }
+                }
+            }
+            .addOnFailureListener { _ -> }
+    }
+
+    private fun upsertAdminUserDoc(uid: String, email: String, onDone: () -> Unit) {
+        val db = Firebase.firestore
+        val data = hashMapOf(
+            "email" to email,
+            "role" to "admin",
+            "createdAt" to Timestamp.now()
+        )
+        db.collection("users").document(uid)
+            .set(data, SetOptions.merge())
+            .addOnSuccessListener { onDone() }
+            .addOnFailureListener { onDone() }
     }
     
     private fun updateDrawerMenu() {
@@ -201,6 +282,22 @@ class MainActivity : AppCompatActivity() {
         // Convert labels like "home" to "Home"
         return label.split("-", "_").joinToString(" ") { 
             it.replaceFirstChar { char -> char.uppercase() } 
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        updateToolbarUserEmail()
+    }
+
+    private fun updateToolbarUserEmail() {
+        val email = FirebaseAuth.getInstance().currentUser?.email
+        if (email.isNullOrBlank()) {
+            toolbarUserEmail.visibility = View.GONE
+            toolbarUserEmail.text = ""
+        } else {
+            toolbarUserEmail.visibility = View.VISIBLE
+            toolbarUserEmail.text = email
         }
     }
 }

@@ -320,7 +320,19 @@
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
-            <Space android:layout_width="match_parent" android:layout_height="16dp" />
+            <!-- Login CTA at bottom -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/menu_item_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Login"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_foreground"
+                android:textStyle="bold"
+                app:backgroundTint="@color/primary"
+                app:cornerRadius="8dp" />
+
+            <Space android:layout_width="match_parent" android:layout_height="96dp" />
 
         </LinearLayout>
     </ScrollView>

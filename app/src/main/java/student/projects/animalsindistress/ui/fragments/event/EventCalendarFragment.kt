@@ -26,14 +26,18 @@ import student.projects.animalsindistress.MainActivity
 import student.projects.animalsindistress.NotificationReceiver
 import student.projects.animalsindistress.data.Event
 import student.projects.animalsindistress.data.EventCategory
-import student.projects.animalsindistress.data.MockEventRepository
 import student.projects.animalsindistress.ui.fragments.event.EventAdapter
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.ListenerRegistration
+import com.google.firebase.firestore.FieldValue
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import java.time.*
 import java.time.format.DateTimeFormatter
 import java.util.*
 
 class EventCalendarViewModel : ViewModel() {
-    private val _events = MutableLiveData<List<Event>>(MockEventRepository.getEvents())
+    private val _events = MutableLiveData<List<Event>>(listOf())
     val events: LiveData<List<Event>> = _events
 
     fun addEvent(event: Event) {
@@ -70,6 +74,8 @@ class EventCalendarFragment : Fragment() {
 
     private var currentDate = LocalDate.now()
     private lateinit var eventAdapter: EventAdapter
+    private var isAdmin: Boolean = false
+    private var eventsListener: ListenerRegistration? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -124,6 +130,70 @@ class EventCalendarFragment : Fragment() {
 
         // Initial calendar update
         updateCalendar()
+        // Determine role
+        val uid = FirebaseAuth.getInstance().currentUser?.uid
+        if (uid != null) {
+            Firebase.firestore.collection("users").document(uid).get()
+                .addOnSuccessListener { snap ->
+                    isAdmin = (snap.getString("role") == "admin")
+                }
+        }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        // Listen for events from Firestore
+        eventsListener = Firebase.firestore.collection("events")
+            .addSnapshotListener { snapshots, _ ->
+                val list = snapshots?.documents?.mapNotNull { doc ->
+                    try {
+                        val id = doc.getString("id") ?: doc.id
+                        val title = doc.getString("title") ?: return@mapNotNull null
+                        val description = doc.getString("description") ?: ""
+                        val dateStr = doc.getString("date") ?: return@mapNotNull null
+                        val startStr = doc.getString("startTime") ?: return@mapNotNull null
+                        val endStr = doc.getString("endTime") ?: return@mapNotNull null
+                        val location = doc.getString("location") ?: ""
+                        val categoryName = doc.getString("category") ?: EventCategory.GENERAL.name
+                        val rsvpRequired = doc.getBoolean("rsvpRequired") ?: false
+                        val rsvpCount = (doc.getLong("rsvpCount") ?: 0L).toInt()
+                        val maxAttendees = doc.getLong("maxAttendees")?.toInt()
+
+                        val date = LocalDate.parse(dateStr)
+                        val startTime = LocalTime.parse(startStr, DateTimeFormatter.ofPattern("HH:mm"))
+                        val endTime = LocalTime.parse(endStr, DateTimeFormatter.ofPattern("HH:mm"))
+                        val category = EventCategory.valueOf(categoryName)
+
+                        Event(
+                            id = id,
+                            title = title,
+                            description = description,
+                            date = date,
+                            startTime = startTime,
+                            endTime = endTime,
+                            location = location,
+                            category = category,
+                            rsvpRequired = rsvpRequired,
+                            rsvpCount = rsvpCount,
+                            maxAttendees = maxAttendees
+                        )
+                    } catch (_: Exception) { null }
+                }?.sortedWith(compareBy<Event> { it.date }.thenBy { it.startTime }) ?: emptyList()
+
+                // Update ViewModel's internal LiveData
+                try {
+                    val field = EventCalendarViewModel::class.java.getDeclaredField("_events")
+                    field.isAccessible = true
+                    @Suppress("UNCHECKED_CAST")
+                    (field.get(viewModel) as MutableLiveData<List<Event>>).value = list
+                } catch (_: Exception) { }
+            }
+    }
+
+    override fun onStop() {
+        super.onStop()
+        eventsListener?.remove()
+        eventsListener = null
     }
 
     private fun setupDayNames() {
@@ -266,10 +336,10 @@ class EventCalendarFragment : Fragment() {
         val dayEvents = events.filter { it.date == day }
 
         if (dayEvents.isEmpty()) {
-            // Add new event
-            showAddEventDialog(day)
+            // Add new event (admin only)
+            if (isAdmin) showAddEventDialog(day)
         } else if (dayEvents.size == 1) {
-            // Single event: show actions (view/edit/delete/add to calendar)
+            // Single event: show actions (role-based)
             showEventActions(dayEvents.first())
         } else {
             // Multiple events: pick then show actions
@@ -344,7 +414,25 @@ class EventCalendarFragment : Fragment() {
                             maxAttendees = maxAttendees
                         )
 
-                        viewModel.addEvent(newEvent)
+                        if (isAdmin) {
+                            val doc = Firebase.firestore.collection("events").document()
+                            val id = doc.id
+                            val timeFmt = DateTimeFormatter.ofPattern("HH:mm")
+                            val data = hashMapOf(
+                                "id" to id,
+                                "title" to newEvent.title,
+                                "description" to newEvent.description,
+                                "date" to selectedDate.toString(),
+                                "startTime" to startTime.format(timeFmt),
+                                "endTime" to endTime.format(timeFmt),
+                                "location" to newEvent.location,
+                                "category" to category.name,
+                                "rsvpRequired" to switchRSVP.isChecked,
+                                "rsvpCount" to 0,
+                                "maxAttendees" to maxAttendees
+                            )
+                            doc.set(data)
+                        }
                         Toast.makeText(context, "Event added successfully", Toast.LENGTH_SHORT).show()
                     } catch (e: Exception) {
                         Toast.makeText(context, "Invalid time format. Use: h:mm a", Toast.LENGTH_LONG).show()
@@ -390,15 +478,22 @@ class EventCalendarFragment : Fragment() {
     }
 
     private fun showEventActions(event: Event) {
-        val actions = arrayOf("View details", "Edit", "Delete", "Add to Calendar")
+        val actions = if (isAdmin) arrayOf("View details", "Edit", "Delete", "Add to Calendar") else arrayOf("View details", "Add to Calendar")
         AlertDialog.Builder(context ?: return)
             .setTitle(event.title)
             .setItems(actions) { _, which ->
-                when (which) {
-                    0 -> showEventDetailsDialog(event)
-                    1 -> showEditEventDialog(event)
-                    2 -> confirmDeleteEvent(event)
-                    3 -> addEventToCalendar(event)
+                if (isAdmin) {
+                    when (which) {
+                        0 -> showEventDetailsDialog(event)
+                        1 -> showEditEventDialog(event)
+                        2 -> confirmDeleteEvent(event)
+                        3 -> addEventToCalendar(event)
+                    }
+                } else {
+                    when (which) {
+                        0 -> showEventDetailsDialog(event)
+                        1 -> addEventToCalendar(event)
+                    }
                 }
             }
             .setNegativeButton("Close", null)
@@ -448,18 +543,25 @@ class EventCalendarFragment : Fragment() {
                     val maxAttendees = if (switchRSVP.isChecked) {
                         etMaxAttendees.text?.toString()?.trim()?.takeIf { it.isNotEmpty() }?.toIntOrNull()
                     } else null
-                    val updated = event.copy(
-                        title = etTitle.text.toString(),
-                        description = etDescription.text.toString(),
-                        location = etLocation.text.toString(),
-                        category = EventCategory.values()[spCategory.selectedItemPosition],
-                        startTime = LocalTime.parse(etStartTime.text.toString(), DateTimeFormatter.ofPattern("h:mm a")),
-                        endTime = LocalTime.parse(etEndTime.text.toString(), DateTimeFormatter.ofPattern("h:mm a")),
-                        rsvpRequired = switchRSVP.isChecked,
-                        maxAttendees = maxAttendees
-                    )
-                    viewModel.updateEvent(updated)
-                    Toast.makeText(context, "Event updated", Toast.LENGTH_SHORT).show()
+                    if (isAdmin) {
+                        val category = EventCategory.values()[spCategory.selectedItemPosition]
+                        val startTime = LocalTime.parse(etStartTime.text.toString(), DateTimeFormatter.ofPattern("h:mm a"))
+                        val endTime = LocalTime.parse(etEndTime.text.toString(), DateTimeFormatter.ofPattern("h:mm a"))
+                        val timeFmt = DateTimeFormatter.ofPattern("HH:mm")
+                        val updates = mapOf(
+                            "title" to etTitle.text.toString(),
+                            "description" to etDescription.text.toString(),
+                            "location" to etLocation.text.toString(),
+                            "category" to category.name,
+                            "startTime" to startTime.format(timeFmt),
+                            "endTime" to endTime.format(timeFmt),
+                            "rsvpRequired" to switchRSVP.isChecked,
+                            "maxAttendees" to maxAttendees
+                        )
+                        Firebase.firestore.collection("events").document(event.id).update(updates)
+                            .addOnSuccessListener { Toast.makeText(context, "Event updated", Toast.LENGTH_SHORT).show() }
+                            .addOnFailureListener { Toast.makeText(context, "Update failed", Toast.LENGTH_SHORT).show() }
+                    }
                 } catch (_: Exception) {
                     Toast.makeText(context, "Invalid time format", Toast.LENGTH_SHORT).show()
                 }
@@ -469,11 +571,12 @@ class EventCalendarFragment : Fragment() {
     }
 
     private fun confirmDeleteEvent(event: Event) {
+        if (!isAdmin) return
         AlertDialog.Builder(context ?: return)
             .setTitle("Delete Event")
             .setMessage("Are you sure you want to delete '${event.title}'?")
             .setPositiveButton("Delete") { _, _ ->
-                viewModel.deleteEvent(event)
+                Firebase.firestore.collection("events").document(event.id).delete()
                 Toast.makeText(context, "Event deleted", Toast.LENGTH_SHORT).show()
             }
             .setNegativeButton("Cancel", null)
@@ -551,14 +654,7 @@ class EventCalendarFragment : Fragment() {
         // Dialog builder
         val builder = AlertDialog.Builder(context ?: return)
             .setView(dialogView)
-
-        if (event.rsvpRequired && !isRSVPed && !(event.maxAttendees != null && rsvpCount >= event.maxAttendees)) {
-            builder.setPositiveButton("RSVP") { _, _ ->
-                val updatedEvent = event.copy(rsvpCount = event.rsvpCount + 1)
-                viewModel.updateEvent(updatedEvent)
-                showRSVPConfirmation(updatedEvent, hasReminder)
-            }
-        }
+            .setPositiveButton("RSVP", null)
 
         builder.setNeutralButton("Add to Calendar") { _, _ ->
             addEventToCalendar(event)
@@ -566,7 +662,90 @@ class EventCalendarFragment : Fragment() {
 
         builder.setNegativeButton("Close", null)
 
-        builder.show()
+        val alert = builder.create()
+        alert.show()
+
+        // Configure RSVP/Un-RSVP after dialog shows so we can modify the button
+        val uid = FirebaseAuth.getInstance().currentUser?.uid
+        val email = FirebaseAuth.getInstance().currentUser?.email
+        val positive = alert.getButton(AlertDialog.BUTTON_POSITIVE)
+
+        if (event.rsvpRequired) {
+            if (uid == null) {
+                // Not logged in: RSVP prompts login
+                positive.text = "RSVP"
+                positive.setOnClickListener {
+                    Toast.makeText(requireContext(), "Please login to RSVP", Toast.LENGTH_SHORT).show()
+                }
+            } else {
+                val db = Firebase.firestore
+                val eventRef = db.collection("events").document(event.id)
+                val rsvpRef = eventRef.collection("rsvps").document(uid)
+                rsvpRef.get().addOnSuccessListener { snap ->
+                    val userAlreadyRSVPed = snap.exists()
+                    val isFull = event.maxAttendees != null && event.rsvpCount >= event.maxAttendees
+
+                    if (userAlreadyRSVPed) {
+                        positive.text = "Un-RSVP"
+                        positive.setOnClickListener {
+                            db.runTransaction { tx ->
+                                val existing = tx.get(rsvpRef)
+                                if (!existing.exists()) {
+                                    throw IllegalStateException("not_rsvped")
+                                }
+                                tx.delete(rsvpRef)
+                                tx.update(eventRef, "rsvpCount", FieldValue.increment(-1))
+                                null
+                            }.addOnSuccessListener {
+                                Toast.makeText(requireContext(), "You have been removed from the RSVP", Toast.LENGTH_SHORT).show()
+                                alert.dismiss()
+                            }.addOnFailureListener {
+                                Toast.makeText(requireContext(), "Could not un-RSVP", Toast.LENGTH_SHORT).show()
+                            }
+                        }
+                    } else {
+                        if (isFull) {
+                            positive.visibility = View.GONE
+                        } else {
+                            positive.text = "RSVP"
+                            positive.setOnClickListener {
+                                db.runTransaction { tx ->
+                                    val existing = tx.get(rsvpRef)
+                                    if (existing.exists()) {
+                                        throw IllegalStateException("already_rsvped")
+                                    }
+                                    val eventSnap = tx.get(eventRef)
+                                    val max = eventSnap.getLong("maxAttendees")?.toInt()
+                                    val count = (eventSnap.getLong("rsvpCount") ?: 0L).toInt()
+                                    if (max != null && count >= max) {
+                                        throw IllegalStateException("event_full")
+                                    }
+                                    tx.set(rsvpRef, mapOf(
+                                        "uid" to uid,
+                                        "email" to (email ?: ""),
+                                        "createdAt" to java.util.Date()
+                                    ))
+                                    tx.update(eventRef, "rsvpCount", FieldValue.increment(1))
+                                    null
+                                }.addOnSuccessListener {
+                                    showRSVPConfirmation(event.copy(rsvpCount = event.rsvpCount + 1), hasReminder)
+                                    alert.dismiss()
+                                }.addOnFailureListener { err ->
+                                    when (err.message) {
+                                        "already_rsvped" -> Toast.makeText(requireContext(), "You have already RSVPed", Toast.LENGTH_SHORT).show()
+                                        "event_full" -> Toast.makeText(requireContext(), "Event is full", Toast.LENGTH_SHORT).show()
+                                        else -> Toast.makeText(requireContext(), "Could not RSVP", Toast.LENGTH_SHORT).show()
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        } else {
+            // If not required, hide positive button
+            positive.visibility = View.GONE
+        }
     }
 
     private fun updateReminderUI(dialogView: View, enabled: Boolean) {

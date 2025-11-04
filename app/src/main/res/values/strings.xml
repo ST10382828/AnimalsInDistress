@@ -4,4 +4,8 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    
+    <!-- Development-only admin seed credentials -->
+    <string name="dev_admin_email">admin@animalsindistress.org.za</string>
+    <string name="dev_admin_password">ChangeMe123!</string>
 </resources>

@@ -7,6 +7,8 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import student.projects.animalsindistress.R
+import com.google.android.material.button.MaterialButton
+import com.google.firebase.auth.FirebaseAuth
 
 class MoreFragment : Fragment(R.layout.fragment_more) {
     
@@ -108,6 +110,25 @@ class MoreFragment : Fragment(R.layout.fragment_more) {
         view.findViewById<View>(R.id.menu_item_faq).setOnClickListener {
             findNavController().navigate(R.id.faqFragment)
         }
+
+        // Login/Logout button at bottom
+        val authButton = view.findViewById<MaterialButton>(R.id.menu_item_login)
+        fun refreshAuthButton() {
+            val isLoggedIn = FirebaseAuth.getInstance().currentUser != null
+            if (isLoggedIn) {
+                authButton.text = "Logout"
+                authButton.setOnClickListener {
+                    FirebaseAuth.getInstance().signOut()
+                    refreshAuthButton()
+                }
+            } else {
+                authButton.text = "Login"
+                authButton.setOnClickListener {
+                    findNavController().navigate(R.id.loginFragment)
+                }
+            }
+        }
+        refreshAuthButton()
     }
 }
 
