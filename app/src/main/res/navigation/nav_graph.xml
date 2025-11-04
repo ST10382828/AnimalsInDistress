@@ -247,6 +247,18 @@
         android:label="forgot-password"
         tools:layout="@layout/fragment_forgot_password" />
 
+    <fragment
+        android:id="@+id/adminContactSubmissionsFragment"
+        android:name="student.projects.animalsindistress.ui.fragments.admin.AdminContactSubmissionsFragment"
+        android:label="Admin: Contact Submissions"
+        tools:layout="@layout/fragment_admin_contact_submissions" />
+
+    <fragment
+        android:id="@+id/adminStoriesEditorFragment"
+        android:name="student.projects.animalsindistress.ui.fragments.admin.AdminStoriesEditorFragment"
+        android:label="Admin: Stories Editor"
+        tools:layout="@layout/fragment_admin_stories_editor" />
+
 </navigation>
 
 

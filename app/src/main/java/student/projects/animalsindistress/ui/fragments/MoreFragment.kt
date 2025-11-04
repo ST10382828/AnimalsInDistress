@@ -114,21 +114,58 @@ class MoreFragment : Fragment(R.layout.fragment_more) {
             findNavController().navigate(R.id.faqFragment)
         }
 
+        // Admin menu items (only visible for admin users)
+        val adminContactSubmissions = view.findViewById<View>(R.id.menu_item_admin_contact_submissions)
+        val adminStoriesEditor = view.findViewById<View>(R.id.menu_item_admin_stories_editor)
+        
+        adminContactSubmissions?.setOnClickListener {
+            findNavController().navigate(R.id.adminContactSubmissionsFragment)
+        }
+        
+        adminStoriesEditor?.setOnClickListener {
+            findNavController().navigate(R.id.adminStoriesEditorFragment)
+        }
+
         // Login/Logout button at bottom
         val authButton = view.findViewById<MaterialButton>(R.id.menu_item_login)
         fun refreshAuthButton() {
-            val isLoggedIn = FirebaseAuth.getInstance().currentUser != null
+            val currentUser = FirebaseAuth.getInstance().currentUser
+            val isLoggedIn = currentUser != null
+            
             if (isLoggedIn) {
                 authButton.text = "Logout"
                 authButton.setOnClickListener {
                     FirebaseAuth.getInstance().signOut()
                     refreshAuthButton()
+                    // Hide admin options on logout
+                    adminContactSubmissions?.visibility = View.GONE
+                    adminStoriesEditor?.visibility = View.GONE
+                }
+                
+                // Check if user is admin and show admin options
+                currentUser?.let { user ->
+                    com.google.firebase.firestore.FirebaseFirestore.getInstance()
+                        .collection("users")
+                        .document(user.uid)
+                        .get()
+                        .addOnSuccessListener { doc ->
+                            val role = doc.getString("role") ?: "user"
+                            if (role == "admin") {
+                                adminContactSubmissions?.visibility = View.VISIBLE
+                                adminStoriesEditor?.visibility = View.VISIBLE
+                            } else {
+                                adminContactSubmissions?.visibility = View.GONE
+                                adminStoriesEditor?.visibility = View.GONE
+                            }
+                        }
                 }
             } else {
                 authButton.text = "Login"
                 authButton.setOnClickListener {
                     findNavController().navigate(R.id.loginFragment)
                 }
+                adminContactSubmissions?.visibility = View.GONE
+                adminStoriesEditor?.visibility = View.GONE
             }
         }
         refreshAuthButton()
