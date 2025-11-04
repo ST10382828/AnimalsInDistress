@@ -115,8 +115,13 @@ class MoreFragment : Fragment(R.layout.fragment_more) {
         }
 
         // Admin menu items (only visible for admin users)
+        val adminSectionHeader = view.findViewById<View>(R.id.admin_section_header)
         val adminContactSubmissions = view.findViewById<View>(R.id.menu_item_admin_contact_submissions)
         val adminStoriesEditor = view.findViewById<View>(R.id.menu_item_admin_stories_editor)
+        
+        // Get parent CardViews for visibility control
+        val adminContactCard = adminContactSubmissions?.parent as? View
+        val adminStoriesCard = adminStoriesEditor?.parent as? View
         
         adminContactSubmissions?.setOnClickListener {
             findNavController().navigate(R.id.adminContactSubmissionsFragment)
@@ -138,8 +143,9 @@ class MoreFragment : Fragment(R.layout.fragment_more) {
                     FirebaseAuth.getInstance().signOut()
                     refreshAuthButton()
                     // Hide admin options on logout
-                    adminContactSubmissions?.visibility = View.GONE
-                    adminStoriesEditor?.visibility = View.GONE
+                    adminSectionHeader?.visibility = View.GONE
+                    adminContactCard?.visibility = View.GONE
+                    adminStoriesCard?.visibility = View.GONE
                 }
                 
                 // Check if user is admin and show admin options
@@ -151,11 +157,13 @@ class MoreFragment : Fragment(R.layout.fragment_more) {
                         .addOnSuccessListener { doc ->
                             val role = doc.getString("role") ?: "user"
                             if (role == "admin") {
-                                adminContactSubmissions?.visibility = View.VISIBLE
-                                adminStoriesEditor?.visibility = View.VISIBLE
+                                adminSectionHeader?.visibility = View.VISIBLE
+                                adminContactCard?.visibility = View.VISIBLE
+                                adminStoriesCard?.visibility = View.VISIBLE
                             } else {
-                                adminContactSubmissions?.visibility = View.GONE
-                                adminStoriesEditor?.visibility = View.GONE
+                                adminSectionHeader?.visibility = View.GONE
+                                adminContactCard?.visibility = View.GONE
+                                adminStoriesCard?.visibility = View.GONE
                             }
                         }
                 }
@@ -164,8 +172,9 @@ class MoreFragment : Fragment(R.layout.fragment_more) {
                 authButton.setOnClickListener {
                     findNavController().navigate(R.id.loginFragment)
                 }
-                adminContactSubmissions?.visibility = View.GONE
-                adminStoriesEditor?.visibility = View.GONE
+                adminSectionHeader?.visibility = View.GONE
+                adminContactCard?.visibility = View.GONE
+                adminStoriesCard?.visibility = View.GONE
             }
         }
         refreshAuthButton()

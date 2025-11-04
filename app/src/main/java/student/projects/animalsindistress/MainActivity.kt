@@ -293,16 +293,27 @@ class MainActivity : AppCompatActivity() {
         val menu = navigationView.menu
         menu.clear()
         
+        // Define admin-only destination IDs
+        val adminDestinations = setOf(
+            R.id.adminContactSubmissionsFragment,
+            R.id.adminStoriesEditorFragment
+        )
+        
+        // Filter out admin pages from recent pages (they'll be filtered based on user role later)
+        val filteredRecentPages = recentPages.toList()
+        
         // Recent Pages Section (if any)
-        if (recentPages.isNotEmpty()) {
-            Log.d(TAG, "Adding recent pages section with ${recentPages.size} items")
+        if (filteredRecentPages.isNotEmpty()) {
+            Log.d(TAG, "Adding recent pages section with ${filteredRecentPages.size} items")
             val recentGroup = menu.addSubMenu(0, 0, 0, "Recent Pages")
-            recentPages.forEach { (id, label) ->
-                val formattedLabel = formatLabel(label)
-                Log.d(TAG, "Adding recent page: $formattedLabel (ID: $id)")
-                val menuItem = recentGroup.add(0, id, 0, formattedLabel)
-                // Add icon based on destination
-                menuItem.icon = getIconForDestination(id)
+            filteredRecentPages.forEach { (id, label) ->
+                // Skip admin pages for now - we'll check user role below
+                if (!adminDestinations.contains(id)) {
+                    val formattedLabel = formatLabel(label)
+                    Log.d(TAG, "Adding recent page: $formattedLabel (ID: $id)")
+                    val menuItem = recentGroup.add(0, id, 0, formattedLabel)
+                    menuItem.icon = getIconForDestination(id)
+                }
             }
         } else {
             Log.d(TAG, "No recent pages to display")

@@ -20,7 +20,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import student.projects.animalsindistress.R
-import student.projects.animalsindistress.data.LocalStoryRepository
+import student.projects.animalsindistress.data.FirestoreStoryRepository
 import student.projects.animalsindistress.data.StoryRepository
 import student.projects.animalsindistress.data.models.Story
 import androidx.navigation.fragment.findNavController
@@ -48,7 +48,7 @@ class StoriesFeedFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        repository = LocalStoryRepository(requireContext())
+        repository = FirestoreStoryRepository(requireContext())
         
         viewPager = view.findViewById(R.id.storiesViewPager)
         swipeRefresh = view.findViewById(R.id.swipeRefresh)
@@ -115,7 +115,7 @@ class StoriesFeedFragment : Fragment() {
     
     private fun refreshStories() {
         lifecycleScope.launch {
-            (repository as? LocalStoryRepository)?.clearCache()
+            (repository as? FirestoreStoryRepository)?.clearCache()
             val items: List<Story> = withContext(Dispatchers.IO) {
                 repository.getStories(page = 0, pageSize = 10)
             }

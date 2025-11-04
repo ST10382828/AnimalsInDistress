@@ -12,8 +12,8 @@ enum class BeforeAfterTag {
 }
 
 data class MediaItem(
-    val type: MediaType,
-    val urlOrPath: String,
+    val type: MediaType = MediaType.IMAGE,
+    val urlOrPath: String = "",
     val thumbnailPath: String? = null,
     val beforeAfterTag: BeforeAfterTag = BeforeAfterTag.NONE
 )

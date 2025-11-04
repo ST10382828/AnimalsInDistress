@@ -17,19 +17,22 @@ class ContactFragment : Fragment(R.layout.fragment_contact) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val etName = view.findViewById<EditText>(R.id.etName)
+        val etFirstName = view.findViewById<EditText>(R.id.etFirstName)
+        val etLastName = view.findViewById<EditText>(R.id.etLastName)
         val etEmail = view.findViewById<EditText>(R.id.etEmail)
         val etPhone = view.findViewById<EditText>(R.id.etPhone)
         val etMessage = view.findViewById<EditText>(R.id.etMessage)
         val btnSubmit = view.findViewById<Button>(R.id.btn_submit_contact)
 
         btnSubmit?.setOnClickListener {
-            val name = etName?.text?.toString()?.trim() ?: ""
+            val firstName = etFirstName?.text?.toString()?.trim() ?: ""
+            val lastName = etLastName?.text?.toString()?.trim() ?: ""
+            val name = "$firstName $lastName".trim()
             val email = etEmail?.text?.toString()?.trim() ?: ""
             val phone = etPhone?.text?.toString()?.trim() ?: ""
             val message = etMessage?.text?.toString()?.trim() ?: ""
 
-            if (name.isEmpty() || email.isEmpty() || message.isEmpty()) {
+            if (firstName.isEmpty() || lastName.isEmpty() || email.isEmpty() || message.isEmpty()) {
                 Toast.makeText(requireContext(), "Please fill in all required fields", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
@@ -50,7 +53,8 @@ class ContactFragment : Fragment(R.layout.fragment_contact) {
                 .addOnSuccessListener {
                     Toast.makeText(requireContext(), "Message sent successfully!", Toast.LENGTH_SHORT).show()
                     // Clear form
-                    etName?.setText("")
+                    etFirstName?.setText("")
+                    etLastName?.setText("")
                     etEmail?.setText("")
                     etPhone?.setText("")
                     etMessage?.setText("")
