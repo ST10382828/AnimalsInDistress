@@ -54,13 +54,13 @@
                 android:layout_height="wrap_content"
                 android:gravity="end|center_vertical"
                 android:orientation="horizontal"
-                android:paddingTop="12dp">
+                android:paddingTop="8dp">
 
                 <TextView
                     android:id="@+id/whereNowChip"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@android:drawable/btn_default_small"
+                    android:background="@color/primary"
                     android:paddingLeft="16dp"
                     android:paddingRight="16dp"
                     android:paddingTop="8dp"
@@ -68,6 +68,7 @@
                     android:text="@string/where_now"
                     android:textColor="#FFFFFF"
                     android:textSize="13sp"
+                    android:textStyle="bold"
                     android:visibility="gone" />
 
                 <View
@@ -80,7 +81,6 @@
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:contentDescription="@string/like_story"
-                    android:tint="#FFFFFF"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:src="@android:drawable/btn_star_big_off" />
 

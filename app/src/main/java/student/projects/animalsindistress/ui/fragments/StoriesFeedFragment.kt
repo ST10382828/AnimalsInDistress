@@ -248,6 +248,10 @@ private class StoryItemViewHolder(
         // Animate like button
         val likedIcon = if (story.liked) android.R.drawable.btn_star_big_on else android.R.drawable.btn_star_big_off
         likeButton.setImageResource(likedIcon)
+        // Set tint color based on liked state
+        val likeColor = if (story.liked) 0xFFFFD700.toInt() else 0xFFFFFFFF.toInt()  // Gold when liked, white when not
+        likeButton.setColorFilter(likeColor, android.graphics.PorterDuff.Mode.SRC_IN)
+        
         likeButton.setOnClickListener { 
             // Add quick scale animation
             it.animate()

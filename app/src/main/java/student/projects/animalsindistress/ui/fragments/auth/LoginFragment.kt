@@ -47,7 +47,8 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
                         if (remember) putString("remember_email", email) else remove("remember_email")
                     }.apply()
                     Toast.makeText(requireContext(), "Signed in", Toast.LENGTH_SHORT).show()
-                    findNavController().navigateUp()
+                    // Navigate to home after successful login
+                    findNavController().navigate(R.id.homeFragment)
                 }
                 .addOnFailureListener { err ->
                     Toast.makeText(requireContext(), err.localizedMessage ?: "Login failed", Toast.LENGTH_LONG).show()
