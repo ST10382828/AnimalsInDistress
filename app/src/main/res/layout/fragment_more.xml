@@ -55,16 +55,6 @@
                     </LinearLayout>
                     <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/border" />
                     <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/border" />
-                    <LinearLayout android:id="@+id/menu_item_golf_day" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp" android:orientation="horizontal" android:gravity="center_vertical" android:background="@drawable/ripple_primary" android:clickable="true" android:focusable="true">
-                        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_category_24" app:tint="@color/primary" android:contentDescription="Golf Day Icon" />
-                        <Space android:layout_width="16dp" android:layout_height="0dp" />
-                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
-                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Golf Day 2025" android:textStyle="bold" android:textColor="@color/foreground" />
-                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Annual fundraiser" android:textColor="@color/muted_foreground" android:textSize="13sp" />
-                        </LinearLayout>
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" android:textColor="@color/muted_foreground" android:textSize="20sp" />
-                    </LinearLayout>
-                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/border" />
                     <LinearLayout android:id="@+id/menu_item_thousand_heroes" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp" android:orientation="horizontal" android:gravity="center_vertical" android:background="@drawable/ripple_primary" android:clickable="true" android:focusable="true">
                         <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_favorite_24" app:tint="@color/primary" android:contentDescription="1000 Heroes Icon" />
                         <Space android:layout_width="16dp" android:layout_height="0dp" />
@@ -302,6 +292,8 @@
                 android:layout_width="match_parent" 
                 android:layout_height="wrap_content" 
                 app:cardCornerRadius="12dp"
+                android:clickable="true"
+                android:focusable="true"
                 android:visibility="gone">
                 <LinearLayout android:id="@+id/menu_item_admin_contact_submissions" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp" android:orientation="horizontal" android:gravity="center_vertical" android:background="@drawable/ripple_primary" android:clickable="true" android:focusable="true">
                     <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_email_24" app:tint="@color/primary" android:contentDescription="Admin Contact Icon" />
@@ -319,6 +311,8 @@
                 android:layout_height="wrap_content" 
                 app:cardCornerRadius="12dp" 
                 android:layout_marginTop="8dp"
+                android:clickable="true"
+                android:focusable="true"
                 android:visibility="gone">
                 <LinearLayout android:id="@+id/menu_item_admin_stories_editor" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp" android:orientation="horizontal" android:gravity="center_vertical" android:background="@drawable/ripple_primary" android:clickable="true" android:focusable="true">
                     <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_article_24" app:tint="@color/primary" android:contentDescription="Admin Stories Icon" />
@@ -326,6 +320,26 @@
                     <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
                         <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Success Stories Editor" android:textStyle="bold" android:textColor="@color/foreground" />
                         <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Create and edit stories" android:textColor="@color/muted_foreground" android:textSize="13sp" />
+                    </LinearLayout>
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" android:textColor="@color/muted_foreground" android:textSize="20sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView 
+                android:id="@+id/menu_item_admin_medical_aid_requests"
+                android:layout_width="match_parent" 
+                android:layout_height="wrap_content" 
+                app:cardCornerRadius="12dp" 
+                android:layout_marginTop="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:visibility="gone">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp" android:orientation="horizontal" android:gravity="center_vertical" android:background="@drawable/ripple_primary" android:clickable="true" android:focusable="true">
+                    <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_pets_24" app:tint="@color/primary" android:contentDescription="Admin Medical Aid Icon" />
+                    <Space android:layout_width="16dp" android:layout_height="0dp" />
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Medical Aid Requests" android:textStyle="bold" android:textColor="@color/foreground" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="View medical aid requests" android:textColor="@color/muted_foreground" android:textSize="13sp" />
                     </LinearLayout>
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" android:textColor="@color/muted_foreground" android:textSize="20sp" />
                 </LinearLayout>

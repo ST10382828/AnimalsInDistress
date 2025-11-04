@@ -6,6 +6,8 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import android.content.Intent
+import android.net.Uri
 import com.google.firebase.Timestamp
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -16,6 +18,22 @@ class ContactFragment : Fragment(R.layout.fragment_contact) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        // Social media buttons
+        view.findViewById<View>(R.id.btn_facebook)?.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/tsfaid"))
+            startActivity(intent)
+        }
+
+        view.findViewById<View>(R.id.btn_twitter)?.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://x.com/SaidFundraiser"))
+            startActivity(intent)
+        }
+
+        view.findViewById<View>(R.id.btn_instagram)?.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/thesocietyforanimalsindistress/"))
+            startActivity(intent)
+        }
 
         val etFirstName = view.findViewById<EditText>(R.id.etFirstName)
         val etLastName = view.findViewById<EditText>(R.id.etLastName)

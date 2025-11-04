@@ -97,7 +97,7 @@
                 android:paddingLeft="16dp"
                 android:paddingRight="16dp"
                 android:paddingTop="16dp">
-                <TextView android:text="Our Locations" android:textStyle="bold" android:textSize="20sp" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Our Locations" android:textStyle="bold" android:textSize="20sp" />
                 <Space android:layout_width="0dp" android:layout_height="12dp" />
 
                 <!-- Main Hospital Card -->
@@ -110,14 +110,14 @@
                         <com.google.android.material.card.MaterialCardView android:layout_width="48dp" android:layout_height="48dp" app:cardBackgroundColor="#1A003D99" android:radius="8dp" />
                         <Space android:layout_width="12dp" android:layout_height="0dp" />
                         <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
-                            <TextView android:text="SAID Midrand Hospital" android:textStyle="bold" />
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="SAID Midrand Hospital" android:textStyle="bold" />
                             <Space android:layout_width="0dp" android:layout_height="4dp" />
-                            <TextView android:text="1A Kyalami View Road, Midrand, 1685" android:textColor="@color/muted_foreground" android:textSize="13sp" />
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1A Kyalami View Road, Midrand, 1685" android:textColor="@color/muted_foreground" android:textSize="13sp" />
                             <Space android:layout_width="0dp" android:layout_height="8dp" />
                             <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical">
-                                <TextView android:text="Mon-Fri: 8:00 AM - 5:00 PM" android:textSize="12sp" />
-                                <TextView android:text="Sat: 8:00 AM - 1:00 PM" android:textSize="12sp" />
-                                <TextView android:text="Sun: Emergency only" android:textSize="12sp" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Mon-Fri: 8:00 AM - 5:00 PM" android:textSize="12sp" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Sat: 8:00 AM - 1:00 PM" android:textSize="12sp" />
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Sun: Emergency only" android:textSize="12sp" />
                             </LinearLayout>
                             <Space android:layout_width="0dp" android:layout_height="8dp" />
                             <com.google.android.material.button.MaterialButton
@@ -139,11 +139,11 @@
                         <com.google.android.material.card.MaterialCardView android:layout_width="48dp" android:layout_height="48dp" app:cardBackgroundColor="#331A5CCC" android:radius="8dp" />
                         <Space android:layout_width="12dp" android:layout_height="0dp" />
                         <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
-                            <TextView android:text="Mobile Veterinary Units" android:textStyle="bold" />
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Mobile Veterinary Units" android:textStyle="bold" />
                             <Space android:layout_width="0dp" android:layout_height="4dp" />
-                            <TextView android:text="Serving communities across Gauteng province" android:textColor="@color/muted_foreground" android:textSize="13sp" />
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Serving communities across Gauteng province" android:textColor="@color/muted_foreground" android:textSize="13sp" />
                             <Space android:layout_width="0dp" android:layout_height="8dp" />
-                            <TextView android:text="Our mobile units visit communities on scheduled days. Contact us to check when we'll be in your area." android:textColor="@color/muted_foreground" android:textSize="13sp" />
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Our mobile units visit communities on scheduled days. Contact us to check when we'll be in your area." android:textColor="@color/muted_foreground" android:textSize="13sp" />
                             <Space android:layout_width="0dp" android:layout_height="8dp" />
                             <com.google.android.material.button.MaterialButton
                                 android:layout_width="wrap_content"
@@ -165,7 +165,7 @@
                 android:paddingLeft="16dp"
                 android:paddingRight="16dp"
                 android:paddingTop="16dp">
-                <TextView android:text="Services We Provide" android:textStyle="bold" android:textSize="20sp" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Services We Provide" android:textStyle="bold" android:textSize="20sp" />
                 <Space android:layout_width="0dp" android:layout_height="12dp" />
 
                 <!-- service cards -->
@@ -174,9 +174,9 @@
                         <com.google.android.material.card.MaterialCardView android:layout_width="40dp" android:layout_height="40dp" app:cardBackgroundColor="#1A10B981" android:radius="20dp" />
                         <Space android:layout_width="12dp" android:layout_height="0dp" />
                         <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical">
-                            <TextView android:text="General Veterinary Care" android:textStyle="bold" android:textSize="15sp" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="General Veterinary Care" android:textStyle="bold" android:textSize="15sp" />
                             <Space android:layout_width="0dp" android:layout_height="4dp" />
-                            <TextView android:text="Comprehensive health checks, treatments, and preventive care for all animals." android:textColor="@color/muted_foreground" android:textSize="13sp" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Comprehensive health checks, treatments, and preventive care for all animals." android:textColor="@color/muted_foreground" android:textSize="13sp" />
                         </LinearLayout>
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
@@ -186,9 +186,9 @@
                         <com.google.android.material.card.MaterialCardView android:layout_width="40dp" android:layout_height="40dp" app:cardBackgroundColor="#1A003D99" android:radius="20dp" />
                         <Space android:layout_width="12dp" android:layout_height="0dp" />
                         <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical">
-                            <TextView android:text="Vaccination Programs" android:textStyle="bold" android:textSize="15sp" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Vaccination Programs" android:textStyle="bold" android:textSize="15sp" />
                             <Space android:layout_width="0dp" android:layout_height="4dp" />
-                            <TextView android:text="Essential vaccinations to keep your animals healthy and prevent disease outbreaks." android:textColor="@color/muted_foreground" android:textSize="13sp" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Essential vaccinations to keep your animals healthy and prevent disease outbreaks." android:textColor="@color/muted_foreground" android:textSize="13sp" />
                         </LinearLayout>
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
@@ -198,9 +198,9 @@
                         <com.google.android.material.card.MaterialCardView android:layout_width="40dp" android:layout_height="40dp" app:cardBackgroundColor="#1A1A5CCC" android:radius="20dp" />
                         <Space android:layout_width="12dp" android:layout_height="0dp" />
                         <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical">
-                            <TextView android:text="Surgical Procedures" android:textStyle="bold" android:textSize="15sp" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Surgical Procedures" android:textStyle="bold" android:textSize="15sp" />
                             <Space android:layout_width="0dp" android:layout_height="4dp" />
-                            <TextView android:text="Both routine and emergency surgical interventions with modern equipment." android:textColor="@color/muted_foreground" android:textSize="13sp" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Both routine and emergency surgical interventions with modern equipment." android:textColor="@color/muted_foreground" android:textSize="13sp" />
                         </LinearLayout>
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
@@ -210,24 +210,15 @@
                         <com.google.android.material.card.MaterialCardView android:layout_width="40dp" android:layout_height="40dp" app:cardBackgroundColor="#1A3366CC" android:radius="20dp" />
                         <Space android:layout_width="12dp" android:layout_height="0dp" />
                         <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical">
-                            <TextView android:text="Community Outreach" android:textStyle="bold" android:textSize="15sp" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Community Outreach" android:textStyle="bold" android:textSize="15sp" />
                             <Space android:layout_width="0dp" android:layout_height="4dp" />
-                            <TextView android:text="Regular visits to underserved communities providing on-site veterinary care." android:textColor="@color/muted_foreground" android:textSize="13sp" />
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Regular visits to underserved communities providing on-site veterinary care." android:textColor="@color/muted_foreground" android:textSize="13sp" />
                         </LinearLayout>
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
             </LinearLayout>
 
-            <!-- CTA Request Medical Aid -->
-            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingLeft="16dp" android:paddingRight="16dp" android:paddingTop="16dp" android:paddingBottom="16dp">
-                <com.google.android.material.button.MaterialButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Request Medical Aid"
-                    app:backgroundTint="@color/primary"
-                    android:textStyle="bold" />
-            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>

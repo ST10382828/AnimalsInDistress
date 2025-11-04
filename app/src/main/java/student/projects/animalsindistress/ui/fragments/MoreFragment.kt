@@ -28,10 +28,6 @@ class MoreFragment : Fragment(R.layout.fragment_more) {
             findNavController().navigate(R.id.dancingDonkeyFragment)
         }
         
-        view.findViewById<View>(R.id.menu_item_golf_day)?.setOnClickListener {
-            findNavController().navigate(R.id.golfDay2025Fragment)
-        }
-        
         view.findViewById<View>(R.id.menu_item_thousand_heroes)?.setOnClickListener {
             findNavController().navigate(R.id.thousandHeroesFragment)
         }
@@ -115,20 +111,66 @@ class MoreFragment : Fragment(R.layout.fragment_more) {
         }
 
         // Admin menu items (only visible for admin users)
-        val adminSectionHeader = view.findViewById<View>(R.id.admin_section_header)
-        val adminContactSubmissions = view.findViewById<View>(R.id.menu_item_admin_contact_submissions)
-        val adminStoriesEditor = view.findViewById<View>(R.id.menu_item_admin_stories_editor)
+        val adminContactSubmissionsCard = view.findViewById<com.google.android.material.card.MaterialCardView>(R.id.menu_item_admin_contact_submissions)
+        val adminStoriesEditorCard = view.findViewById<com.google.android.material.card.MaterialCardView>(R.id.menu_item_admin_stories_editor)
+        val adminMedicalAidRequestsCard = view.findViewById<com.google.android.material.card.MaterialCardView>(R.id.menu_item_admin_medical_aid_requests)
         
-        // Get parent CardViews for visibility control
-        val adminContactCard = adminContactSubmissions?.parent as? View
-        val adminStoriesCard = adminStoriesEditor?.parent as? View
-        
-        adminContactSubmissions?.setOnClickListener {
-            findNavController().navigate(R.id.adminContactSubmissionsFragment)
+        adminContactSubmissionsCard?.setOnClickListener {
+            try {
+                findNavController().navigate(R.id.adminContactSubmissionsFragment)
+            } catch (e: Exception) {
+                android.util.Log.e("MoreFragment", "Navigation error", e)
+            }
         }
         
-        adminStoriesEditor?.setOnClickListener {
-            findNavController().navigate(R.id.adminStoriesEditorFragment)
+        adminStoriesEditorCard?.setOnClickListener {
+            try {
+                findNavController().navigate(R.id.adminStoriesEditorFragment)
+            } catch (e: Exception) {
+                android.util.Log.e("MoreFragment", "Navigation error", e)
+            }
+        }
+        
+        adminMedicalAidRequestsCard?.setOnClickListener {
+            try {
+                findNavController().navigate(R.id.adminMedicalAidRequestsFragment)
+            } catch (e: Exception) {
+                android.util.Log.e("MoreFragment", "Navigation error", e)
+            }
+        }
+        
+        // Also make the inner LinearLayouts clickable
+        adminContactSubmissionsCard?.let { card ->
+            val innerLayout = card.getChildAt(0) as? android.view.ViewGroup
+            innerLayout?.setOnClickListener {
+                try {
+                    findNavController().navigate(R.id.adminContactSubmissionsFragment)
+                } catch (e: Exception) {
+                    android.util.Log.e("MoreFragment", "Navigation error", e)
+                }
+            }
+        }
+        
+        adminStoriesEditorCard?.let { card ->
+            val innerLayout = card.getChildAt(0) as? android.view.ViewGroup
+            innerLayout?.setOnClickListener {
+                try {
+                    findNavController().navigate(R.id.adminStoriesEditorFragment)
+                } catch (e: Exception) {
+                    android.util.Log.e("MoreFragment", "Navigation error", e)
+                }
+            }
+        }
+        
+        adminMedicalAidRequestsCard?.let { card ->
+            val innerLayout = card.getChildAt(0) as? android.view.ViewGroup
+            innerLayout?.setOnClickListener {
+                try {
+                    findNavController().navigate(R.id.adminMedicalAidRequestsFragment)
+                } catch (e: Exception) {
+                    android.util.Log.e("MoreFragment", "Navigation error", e)
+                }
+            }
         }
 
         // Login/Logout button at bottom
@@ -143,9 +185,9 @@ class MoreFragment : Fragment(R.layout.fragment_more) {
                     FirebaseAuth.getInstance().signOut()
                     refreshAuthButton()
                     // Hide admin options on logout
-                    adminSectionHeader?.visibility = View.GONE
-                    adminContactCard?.visibility = View.GONE
-                    adminStoriesCard?.visibility = View.GONE
+                    adminContactSubmissionsCard?.visibility = View.GONE
+                    adminStoriesEditorCard?.visibility = View.GONE
+                    adminMedicalAidRequestsCard?.visibility = View.GONE
                 }
                 
                 // Check if user is admin and show admin options
@@ -157,13 +199,13 @@ class MoreFragment : Fragment(R.layout.fragment_more) {
                         .addOnSuccessListener { doc ->
                             val role = doc.getString("role") ?: "user"
                             if (role == "admin") {
-                                adminSectionHeader?.visibility = View.VISIBLE
-                                adminContactCard?.visibility = View.VISIBLE
-                                adminStoriesCard?.visibility = View.VISIBLE
+                                adminContactSubmissionsCard?.visibility = View.VISIBLE
+                                adminStoriesEditorCard?.visibility = View.VISIBLE
+                                adminMedicalAidRequestsCard?.visibility = View.VISIBLE
                             } else {
-                                adminSectionHeader?.visibility = View.GONE
-                                adminContactCard?.visibility = View.GONE
-                                adminStoriesCard?.visibility = View.GONE
+                                adminContactSubmissionsCard?.visibility = View.GONE
+                                adminStoriesEditorCard?.visibility = View.GONE
+                                adminMedicalAidRequestsCard?.visibility = View.GONE
                             }
                         }
                 }
@@ -172,9 +214,9 @@ class MoreFragment : Fragment(R.layout.fragment_more) {
                 authButton.setOnClickListener {
                     findNavController().navigate(R.id.loginFragment)
                 }
-                adminSectionHeader?.visibility = View.GONE
-                adminContactCard?.visibility = View.GONE
-                adminStoriesCard?.visibility = View.GONE
+                adminContactSubmissionsCard?.visibility = View.GONE
+                adminStoriesEditorCard?.visibility = View.GONE
+                adminMedicalAidRequestsCard?.visibility = View.GONE
             }
         }
         refreshAuthButton()
