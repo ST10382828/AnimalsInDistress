@@ -1,6 +1,8 @@
 package student.projects.animalsindistress.ui.fragments
 
+import android.graphics.BitmapFactory
 import android.os.Bundle
+import android.util.Base64
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,7 +17,7 @@ import kotlinx.coroutines.withContext
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import student.projects.animalsindistress.R
-import student.projects.animalsindistress.data.LocalStoryRepository
+import student.projects.animalsindistress.data.FirestoreStoryRepository
 import student.projects.animalsindistress.data.models.MediaItem
 import student.projects.animalsindistress.data.models.MediaType
 import student.projects.animalsindistress.data.models.Story
@@ -39,7 +41,7 @@ class StoryDetailFragment : Fragment() {
         mediaList.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
 
         if (storyId != null) {
-            val repo = LocalStoryRepository(requireContext())
+            val repo = FirestoreStoryRepository(requireContext())
             viewLifecycleOwner.lifecycleScope.launch {
                 val story = withContext(Dispatchers.IO) { repo.getStoryById(storyId) }
                 story?.let {
@@ -79,21 +81,46 @@ private class DetailMediaVH(itemView: View) : RecyclerView.ViewHolder(itemView) 
     
     fun bind(item: MediaItem) {
         val path = if (item.type == MediaType.IMAGE) item.urlOrPath else item.thumbnailPath ?: item.urlOrPath
-        // Load from drawable resources by name (remove extension if present)
-        val resourceName = path.substringBeforeLast('.') // Remove .jpg/.png extension
-        val drawableId = itemView.context.resources.getIdentifier(
-            resourceName,
-            "drawable",
-            itemView.context.packageName
-        )
-        if (drawableId != 0) {
-            image.load(drawableId) {
-                crossfade(300)
-                placeholder(R.drawable.placeholder_animal)
-                error(R.drawable.placeholder_animal)
+        
+        // Load from URL (Firebase), Base64, or drawable resource
+        when {
+            path.startsWith("data:image") -> {
+                // Decode Base64 image stored in Firestore
+                try {
+                    val base64String = path.substringAfter("base64,")
+                    val imageBytes = Base64.decode(base64String, Base64.DEFAULT)
+                    val bitmap = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
+                    image.setImageBitmap(bitmap)
+                } catch (e: Exception) {
+                    image.setImageResource(R.drawable.placeholder_animal)
+                }
             }
-        } else {
-            image.setImageResource(R.drawable.placeholder_animal)
+            path.startsWith("http://") || path.startsWith("https://") -> {
+                // Load from URL (Firebase Storage or external)
+                image.load(path) {
+                    crossfade(300)
+                    placeholder(R.drawable.placeholder_animal)
+                    error(R.drawable.placeholder_animal)
+                }
+            }
+            else -> {
+                // Load from drawable resources by name (remove extension if present)
+                val resourceName = path.substringBeforeLast('.') // Remove .jpg/.png extension
+                val drawableId = itemView.context.resources.getIdentifier(
+                    resourceName,
+                    "drawable",
+                    itemView.context.packageName
+                )
+                if (drawableId != 0) {
+                    image.load(drawableId) {
+                        crossfade(300)
+                        placeholder(R.drawable.placeholder_animal)
+                        error(R.drawable.placeholder_animal)
+                    }
+                } else {
+                    image.setImageResource(R.drawable.placeholder_animal)
+                }
+            }
         }
         
         // Set label based on beforeAfterTag

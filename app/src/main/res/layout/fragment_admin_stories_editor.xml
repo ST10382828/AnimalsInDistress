@@ -108,6 +108,37 @@
                 android:minLines="2" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Or select images from device:"
+            android:textSize="14sp"
+            android:textColor="@color/foreground"
+            android:layout_marginTop="16dp"
+            android:paddingBottom="8dp" />
+
+        <Button
+            android:id="@+id/btnSelectImages"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="📷 Select Images from Device"
+            android:textSize="16sp"
+            style="@style/Widget.Material3.Button.OutlinedButton" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:id="@+id/selectedImagesContainer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal" />
+
+        </HorizontalScrollView>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

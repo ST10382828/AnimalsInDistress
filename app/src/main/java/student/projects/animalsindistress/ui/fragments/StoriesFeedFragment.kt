@@ -1,6 +1,8 @@
 package student.projects.animalsindistress.ui.fragments
 
+import android.graphics.BitmapFactory
 import android.os.Bundle
+import android.util.Base64
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -223,22 +225,47 @@ private class StoryItemViewHolder(
             firstMedia.type == MediaType.IMAGE -> firstMedia.urlOrPath
             else -> firstMedia.thumbnailPath ?: firstMedia.urlOrPath
         }
-        // Load from drawable resources by name (remove extension if present)
+        
+        // Load from URL (Firebase), Base64, or drawable resource
         if (imagePath != null) {
-            val resourceName = imagePath.substringBeforeLast('.') // Remove .jpg/.png extension
-            val drawableId = itemView.context.resources.getIdentifier(
-                resourceName,
-                "drawable",
-                itemView.context.packageName
-            )
-            if (drawableId != 0) {
-                mediaImage.load(drawableId) {
-                    crossfade(300)
-                    placeholder(R.drawable.placeholder_animal)
-                    error(R.drawable.placeholder_animal)
+            when {
+                imagePath.startsWith("data:image") -> {
+                    // Decode Base64 image stored in Firestore
+                    try {
+                        val base64String = imagePath.substringAfter("base64,")
+                        val imageBytes = Base64.decode(base64String, Base64.DEFAULT)
+                        val bitmap = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
+                        mediaImage.setImageBitmap(bitmap)
+                    } catch (e: Exception) {
+                        mediaImage.setImageResource(R.drawable.placeholder_animal)
+                    }
                 }
-            } else {
-                mediaImage.setImageResource(R.drawable.placeholder_animal)
+                imagePath.startsWith("http://") || imagePath.startsWith("https://") -> {
+                    // Load from URL (Firebase Storage or external)
+                    mediaImage.load(imagePath) {
+                        crossfade(300)
+                        placeholder(R.drawable.placeholder_animal)
+                        error(R.drawable.placeholder_animal)
+                    }
+                }
+                else -> {
+                    // Load from drawable resources by name (remove extension if present)
+                    val resourceName = imagePath.substringBeforeLast('.') // Remove .jpg/.png extension
+                    val drawableId = itemView.context.resources.getIdentifier(
+                        resourceName,
+                        "drawable",
+                        itemView.context.packageName
+                    )
+                    if (drawableId != 0) {
+                        mediaImage.load(drawableId) {
+                            crossfade(300)
+                            placeholder(R.drawable.placeholder_animal)
+                            error(R.drawable.placeholder_animal)
+                        }
+                    } else {
+                        mediaImage.setImageResource(R.drawable.placeholder_animal)
+                    }
+                }
             }
         } else {
             mediaImage.setImageResource(R.drawable.placeholder_animal)
