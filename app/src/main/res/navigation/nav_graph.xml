@@ -212,6 +212,41 @@
         android:id="@+id/action_storiesFeed_to_storyDetail"
         app:destination="@id/storyDetailFragment" />
 
+    <fragment
+        android:id="@+id/eventCalendarFragment"
+        android:name="student.projects.animalsindistress.ui.fragments.event.EventCalendarFragment"
+        android:label="events-calendar"
+        tools:layout="@layout/fragment_event_calendar" />
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="student.projects.animalsindistress.ui.fragments.auth.LoginFragment"
+        android:label="login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_forgotPasswordFragment"
+            app:destination="@id/forgotPasswordFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="student.projects.animalsindistress.ui.fragments.auth.RegisterFragment"
+        android:label="register"
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/forgotPasswordFragment"
+        android:name="student.projects.animalsindistress.ui.fragments.auth.ForgotPasswordFragment"
+        android:label="forgot-password"
+        tools:layout="@layout/fragment_forgot_password" />
+
 </navigation>
 
 

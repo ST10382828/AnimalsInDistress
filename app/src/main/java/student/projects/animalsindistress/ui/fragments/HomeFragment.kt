@@ -38,7 +38,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         }
         
         view.findViewById<View>(R.id.action_events)?.setOnClickListener {
-            findNavController().navigate(R.id.newsListFragment)
+            findNavController().navigate(R.id.eventCalendarFragment)
         }
         
         // Latest News contact button

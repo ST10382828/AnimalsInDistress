@@ -19,8 +19,10 @@
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
+                android:layout_height="wrap_content"
+                android:minHeight="?attr/actionBarSize"
                 android:background="@color/primary"
+                android:paddingTop="24dp"
                 app:popupTheme="@style/ThemeOverlay.Material3.Light">
 
                 <!-- Back button on LEFT (initially hidden) -->
@@ -44,28 +46,50 @@
                     android:scaleType="fitStart"
                     android:layout_gravity="start" />
 
-                <!-- Title Text (shown on detail pages, hidden on main pages) -->
-                <TextView
-                    android:id="@+id/toolbar_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="start"
-                    android:textColor="@android:color/white"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:visibility="gone"
-                    android:layout_marginStart="8dp" />
 
-                <!-- Menu button on RIGHT (opens drawer from LEFT) -->
-                <ImageButton
-                    android:id="@+id/menu_button"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:src="@drawable/ic_menu_24"
-                    android:background="?attr/selectableItemBackgroundBorderless"
-                    android:contentDescription="Menu"
-                    android:layout_gravity="end"
-                    app:tint="@android:color/white" />
+				<!-- Title Text (shown on detail pages, hidden on main pages) -->
+				<TextView
+					android:id="@+id/toolbar_title"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="start"
+					android:textColor="@android:color/white"
+					android:textSize="18sp"
+					android:textStyle="bold"
+					android:visibility="gone"
+					android:layout_marginStart="8dp" />
+
+				<!-- Right side container: email on top, menu below -->
+				<LinearLayout
+					android:id="@+id/toolbar_right_container"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_gravity="end"
+					android:orientation="vertical"
+					android:gravity="end">
+
+					<TextView
+						android:id="@+id/toolbar_user_email"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:textColor="@android:color/white"
+						android:textSize="12sp"
+						android:ellipsize="end"
+						android:maxLines="1"
+						android:visibility="gone"
+						android:layout_marginEnd="8dp"
+						android:layout_marginTop="4dp" />
+
+					<ImageButton
+						android:id="@+id/menu_button"
+						android:layout_width="48dp"
+						android:layout_height="48dp"
+						android:src="@drawable/ic_menu_24"
+						android:background="?attr/selectableItemBackgroundBorderless"
+						android:contentDescription="Menu"
+						app:tint="@android:color/white" />
+
+				</LinearLayout>
 
             </androidx.appcompat.widget.Toolbar>
 
@@ -78,7 +102,9 @@
             android:name="androidx.navigation.fragment.NavHostFragment"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
             app:defaultNavHost="true"
-            app:navGraph="@navigation/nav_graph" />
+            app:navGraph="@navigation/nav_graph"
+            android:clipToPadding="false"
+            android:paddingBottom="100dp" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottom_nav"

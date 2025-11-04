@@ -1,5 +1,16 @@
 <resources>
     <string name="app_name">AnimalsInDistress</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    
+    <!-- Development-only admin seed credentials -->
+    <string name="dev_admin_email">admin@animalsindistress.org.za</string>
+    <string name="dev_admin_password">ChangeMe123!</string>
+
+    <!-- Contact form destination email -->
+    <string name="contact_email">ashtonzackey4@gmail.com</string>
     
     <!-- Success Stories -->
     <string name="story_media_description">Story image or video thumbnail</string>

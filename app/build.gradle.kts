@@ -3,6 +3,7 @@ plugins {
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     id("androidx.navigation.safeargs.kotlin")
+    id("com.google.gms.google-services")
     // Hilt removed for now to resolve build issues; can reintroduce later
 }
 
@@ -88,6 +89,15 @@ dependencies {
     implementation(libs.kotlinx.serialization.json)
     // Google Fonts in Compose
     implementation(libs.androidx.compose.ui.text.google.fonts)
+
+    // Firebase Bill of Materials to manage consistent versions
+    implementation(platform("com.google.firebase:firebase-bom:33.5.1"))
+    // Firebase services
+    implementation("com.google.firebase:firebase-analytics-ktx")
+    implementation("com.google.firebase:firebase-auth-ktx")
+    implementation("com.google.firebase:firebase-firestore-ktx")
+    implementation("com.google.firebase:firebase-storage-ktx")
+    
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
