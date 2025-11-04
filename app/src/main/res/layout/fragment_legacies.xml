@@ -19,9 +19,9 @@
 
             <!-- Hero -->
             <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal">
-                <TextView android:text="Legacies &amp; Bequests" android:textStyle="bold" android:textSize="32sp" android:textColor="@color/foreground" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Legacies &amp; Bequests" android:textStyle="bold" android:textSize="32sp" android:textColor="@color/foreground" />
                 <Space android:layout_width="0dp" android:layout_height="12dp" />
-                <TextView android:text="Leave a lasting legacy for animals in need" android:textColor="@color/muted_foreground" android:gravity="center" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Leave a lasting legacy for animals in need" android:textColor="@color/muted_foreground" android:gravity="center" />
             </LinearLayout>
 
             <Space android:layout_width="0dp" android:layout_height="16dp" />
@@ -29,9 +29,9 @@
             <!-- Sections -->
             <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" >
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
-                    <TextView android:text="Leave a Legacy" android:textStyle="bold" android:textSize="20sp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Leave a Legacy" android:textStyle="bold" android:textSize="20sp" />
                     <Space android:layout_width="0dp" android:layout_height="12dp" />
-                    <TextView android:text="By including SAID in your will, you can ensure that your love for animals continues to make a difference long into the future. Your bequest will help us continue providing vital veterinary care and education." android:textColor="@color/muted_foreground" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="By including SAID in your will, you can ensure that your love for animals continues to make a difference long into the future. Your bequest will help us continue providing vital veterinary care and education." android:textColor="@color/muted_foreground" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -39,9 +39,9 @@
 
             <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" >
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
-                    <TextView android:text="Types of Bequests" android:textStyle="bold" android:textSize="20sp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Types of Bequests" android:textStyle="bold" android:textSize="20sp" />
                     <Space android:layout_width="0dp" android:layout_height="12dp" />
-                    <TextView android:text="• Specific sum of money
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="• Specific sum of money
 • Percentage of your estate
 • Specific property or assets
 • Residual estate after other bequests" android:textColor="@color/muted_foreground" />
@@ -52,9 +52,9 @@
 
             <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" >
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
-                    <TextView android:text="More Information" android:textStyle="bold" android:textSize="20sp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="More Information" android:textStyle="bold" android:textSize="20sp" />
                     <Space android:layout_width="0dp" android:layout_height="12dp" />
-                    <TextView android:text="For confidential information about leaving a legacy to SAID, please contact us. We can provide sample wording for your will and answer any questions." android:textColor="@color/muted_foreground" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="For confidential information about leaving a legacy to SAID, please contact us. We can provide sample wording for your will and answer any questions." android:textColor="@color/muted_foreground" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 

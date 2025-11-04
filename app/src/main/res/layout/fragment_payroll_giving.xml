@@ -19,9 +19,9 @@
 
             <!-- Hero -->
             <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal">
-                <TextView android:text="Payroll Giving" android:textStyle="bold" android:textSize="32sp" android:textColor="@color/foreground" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Payroll Giving" android:textStyle="bold" android:textSize="32sp" android:textColor="@color/foreground" />
                 <Space android:layout_width="0dp" android:layout_height="12dp" />
-                <TextView android:text="Donate directly from your salary" android:textColor="@color/muted_foreground" android:gravity="center" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Donate directly from your salary" android:textColor="@color/muted_foreground" android:gravity="center" />
             </LinearLayout>
 
             <Space android:layout_width="0dp" android:layout_height="16dp" />
@@ -29,9 +29,9 @@
             <!-- Sections -->
             <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" >
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
-                    <TextView android:text="What is Payroll Giving?" android:textStyle="bold" android:textSize="20sp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="What is Payroll Giving?" android:textStyle="bold" android:textSize="20sp" />
                     <Space android:layout_width="0dp" android:layout_height="12dp" />
-                    <TextView android:text="Payroll giving allows you to donate to SAID directly from your salary before tax. This means you get tax relief immediately and can support animals in need effortlessly." android:textColor="@color/muted_foreground" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Payroll giving allows you to donate to SAID directly from your salary before tax. This means you get tax relief immediately and can support animals in need effortlessly." android:textColor="@color/muted_foreground" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -39,9 +39,9 @@
 
             <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" >
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
-                    <TextView android:text="Advantages" android:textStyle="bold" android:textSize="20sp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Advantages" android:textStyle="bold" android:textSize="20sp" />
                     <Space android:layout_width="0dp" android:layout_height="12dp" />
-                    <TextView android:text="• Automatic monthly donations
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="• Automatic monthly donations
 • Immediate tax relief
 • No admin hassle
 • Easy to set up and cancel" android:textColor="@color/muted_foreground" />
@@ -52,9 +52,9 @@
 
             <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" >
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
-                    <TextView android:text="How to Start" android:textStyle="bold" android:textSize="20sp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="How to Start" android:textStyle="bold" android:textSize="20sp" />
                     <Space android:layout_width="0dp" android:layout_height="12dp" />
-                    <TextView android:text="Speak to your company's HR or payroll department about setting up a payroll giving scheme for SAID. We can provide all necessary documentation." android:textColor="@color/muted_foreground" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Speak to your company's HR or payroll department about setting up a payroll giving scheme for SAID. We can provide all necessary documentation." android:textColor="@color/muted_foreground" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 

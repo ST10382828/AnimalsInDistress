@@ -23,7 +23,19 @@
                 android:background="@color/primary"
                 app:popupTheme="@style/ThemeOverlay.Material3.Light">
 
-                <!-- Logo on LEFT -->
+                <!-- Back button on LEFT (initially hidden) -->
+                <ImageButton
+                    android:id="@+id/back_button"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:src="@drawable/ic_arrow_back_24"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="Back"
+                    android:layout_gravity="start"
+                    android:visibility="gone"
+                    app:tint="@android:color/white" />
+
+                <!-- Logo in CENTER or LEFT (when back button is hidden) -->
                 <ImageView
                     android:id="@+id/toolbar_logo"
                     android:layout_width="120dp"
@@ -31,6 +43,18 @@
                     android:src="@drawable/said_logo"
                     android:scaleType="fitStart"
                     android:layout_gravity="start" />
+
+                <!-- Title Text (shown on detail pages, hidden on main pages) -->
+                <TextView
+                    android:id="@+id/toolbar_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    android:layout_marginStart="8dp" />
 
                 <!-- Menu button on RIGHT (opens drawer from LEFT) -->
                 <ImageButton

@@ -24,33 +24,63 @@
             <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" app:cardCornerRadius="12dp">
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
                     <LinearLayout android:id="@+id/menu_item_volunteer" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp" android:orientation="horizontal" android:gravity="center_vertical">
-                        <TextView android:text="Volunteer" android:textStyle="bold" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" />
+                        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_person_24" app:tint="@color/primary" android:contentDescription="Volunteer Icon" />
+                        <Space android:layout_width="16dp" android:layout_height="0dp" />
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:text="Volunteer" android:textStyle="bold" android:textColor="@color/foreground" />
+                            <TextView android:text="Join our team" android:textColor="@color/muted_foreground" android:textSize="13sp" />
+                        </LinearLayout>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" android:textColor="@color/muted_foreground" android:textSize="20sp" />
                     </LinearLayout>
                     <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/border" />
                     <LinearLayout android:id="@+id/menu_item_shop" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp" android:orientation="horizontal" android:gravity="center_vertical">
-                        <TextView android:text="Shop" android:textStyle="bold" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" />
+                        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_shopping_cart_24" app:tint="@color/primary" android:contentDescription="Shop Icon" />
+                        <Space android:layout_width="16dp" android:layout_height="0dp" />
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:text="Shop" android:textStyle="bold" android:textColor="@color/foreground" />
+                            <TextView android:text="Browse our store" android:textColor="@color/muted_foreground" android:textSize="13sp" />
+                        </LinearLayout>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" android:textColor="@color/muted_foreground" android:textSize="20sp" />
                     </LinearLayout>
                     <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/border" />
                     <LinearLayout android:id="@+id/menu_item_dancing_donkey" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp" android:orientation="horizontal" android:gravity="center_vertical">
-                        <TextView android:text="The Dancing Donkey" android:textStyle="bold" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" />
+                        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_celebration_24" app:tint="@color/primary" android:contentDescription="Dancing Donkey Icon" />
+                        <Space android:layout_width="16dp" android:layout_height="0dp" />
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:text="The Dancing Donkey" android:textStyle="bold" android:textColor="@color/foreground" />
+                            <TextView android:text="Farm party venue" android:textColor="@color/muted_foreground" android:textSize="13sp" />
+                        </LinearLayout>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" android:textColor="@color/muted_foreground" android:textSize="20sp" />
                     </LinearLayout>
                     <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/border" />
                     <LinearLayout android:id="@+id/menu_item_heart_sole_store" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp" android:orientation="horizontal" android:gravity="center_vertical">
-                        <TextView android:text="Heart &amp; Sole Store" android:textStyle="bold" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" />
+                        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_shopping_cart_24" app:tint="@color/primary" android:contentDescription="Heart Sole Store Icon" />
+                        <Space android:layout_width="16dp" android:layout_height="0dp" />
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:text="Heart &amp; Sole Store" android:textStyle="bold" android:textColor="@color/foreground" />
+                            <TextView android:text="Step into purpose" android:textColor="@color/muted_foreground" android:textSize="13sp" />
+                        </LinearLayout>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" android:textColor="@color/muted_foreground" android:textSize="20sp" />
                     </LinearLayout>
                     <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/border" />
                     <LinearLayout android:id="@+id/menu_item_golf_day" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp" android:orientation="horizontal" android:gravity="center_vertical">
-                        <TextView android:text="Golf Day 2025" android:textStyle="bold" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" />
+                        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_category_24" app:tint="@color/primary" android:contentDescription="Golf Day Icon" />
+                        <Space android:layout_width="16dp" android:layout_height="0dp" />
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:text="Golf Day 2025" android:textStyle="bold" android:textColor="@color/foreground" />
+                            <TextView android:text="Annual fundraiser" android:textColor="@color/muted_foreground" android:textSize="13sp" />
+                        </LinearLayout>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" android:textColor="@color/muted_foreground" android:textSize="20sp" />
                     </LinearLayout>
                     <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/border" />
                     <LinearLayout android:id="@+id/menu_item_thousand_heroes" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp" android:orientation="horizontal" android:gravity="center_vertical">
-                        <TextView android:text="1000 Heroes" android:textStyle="bold" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" />
+                        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_favorite_24" app:tint="@color/primary" android:contentDescription="1000 Heroes Icon" />
+                        <Space android:layout_width="16dp" android:layout_height="0dp" />
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:text="1000 Heroes" android:textStyle="bold" android:textColor="@color/foreground" />
+                            <TextView android:text="Monthly giving program" android:textColor="@color/muted_foreground" android:textSize="13sp" />
+                        </LinearLayout>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" android:textColor="@color/muted_foreground" android:textSize="20sp" />
                     </LinearLayout>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -60,33 +90,63 @@
             <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" app:cardCornerRadius="12dp">
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
                     <LinearLayout android:id="@+id/menu_item_myschool" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp" android:orientation="horizontal" android:gravity="center_vertical">
-                        <TextView android:text="MySchool" android:textStyle="bold" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" />
+                        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_school_24" app:tint="@color/primary" android:contentDescription="MySchool Icon" />
+                        <Space android:layout_width="16dp" android:layout_height="0dp" />
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:text="MySchool" android:textStyle="bold" android:textColor="@color/foreground" />
+                            <TextView android:text="Shop and support" android:textColor="@color/muted_foreground" android:textSize="13sp" />
+                        </LinearLayout>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" android:textColor="@color/muted_foreground" android:textSize="20sp" />
                     </LinearLayout>
                     <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/border" />
                     <LinearLayout android:id="@+id/menu_item_monthly_debit" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp" android:orientation="horizontal" android:gravity="center_vertical">
-                        <TextView android:text="Monthly Debit Order" android:textStyle="bold" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" />
+                        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_calendar_24" app:tint="@color/primary" android:contentDescription="Monthly Debit Icon" />
+                        <Space android:layout_width="16dp" android:layout_height="0dp" />
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:text="Monthly Debit Order" android:textStyle="bold" android:textColor="@color/foreground" />
+                            <TextView android:text="Regular support" android:textColor="@color/muted_foreground" android:textSize="13sp" />
+                        </LinearLayout>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" android:textColor="@color/muted_foreground" android:textSize="20sp" />
                     </LinearLayout>
                     <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/border" />
                     <LinearLayout android:id="@+id/menu_item_payroll_giving" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp" android:orientation="horizontal" android:gravity="center_vertical">
-                        <TextView android:text="Payroll Giving" android:textStyle="bold" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" />
+                        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_credit_card_24" app:tint="@color/primary" android:contentDescription="Payroll Giving Icon" />
+                        <Space android:layout_width="16dp" android:layout_height="0dp" />
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:text="Payroll Giving" android:textStyle="bold" android:textColor="@color/foreground" />
+                            <TextView android:text="Give through work" android:textColor="@color/muted_foreground" android:textSize="13sp" />
+                        </LinearLayout>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" android:textColor="@color/muted_foreground" android:textSize="20sp" />
                     </LinearLayout>
                     <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/border" />
                     <LinearLayout android:id="@+id/menu_item_legacies" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp" android:orientation="horizontal" android:gravity="center_vertical">
-                        <TextView android:text="Legacies &amp; Bequests" android:textStyle="bold" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" />
+                        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_history_24" app:tint="@color/primary" android:contentDescription="Legacies Icon" />
+                        <Space android:layout_width="16dp" android:layout_height="0dp" />
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:text="Legacies &amp; Bequests" android:textStyle="bold" android:textColor="@color/foreground" />
+                            <TextView android:text="Leave a legacy" android:textColor="@color/muted_foreground" android:textSize="13sp" />
+                        </LinearLayout>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" android:textColor="@color/muted_foreground" android:textSize="20sp" />
                     </LinearLayout>
                     <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/border" />
                     <LinearLayout android:id="@+id/menu_item_pre_loved" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp" android:orientation="horizontal" android:gravity="center_vertical">
-                        <TextView android:text="Pre-Loved Donations" android:textStyle="bold" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" />
+                        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_recycling_24" app:tint="@color/primary" android:contentDescription="Pre-Loved Icon" />
+                        <Space android:layout_width="16dp" android:layout_height="0dp" />
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:text="Pre-Loved Donations" android:textStyle="bold" android:textColor="@color/foreground" />
+                            <TextView android:text="Donate items" android:textColor="@color/muted_foreground" android:textSize="13sp" />
+                        </LinearLayout>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" android:textColor="@color/muted_foreground" android:textSize="20sp" />
                     </LinearLayout>
                     <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/border" />
                     <LinearLayout android:id="@+id/menu_item_tax_certificate" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp" android:orientation="horizontal" android:gravity="center_vertical">
-                        <TextView android:text="Tax Certificate" android:textStyle="bold" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" />
+                        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_description_24" app:tint="@color/primary" android:contentDescription="Tax Certificate Icon" />
+                        <Space android:layout_width="16dp" android:layout_height="0dp" />
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:text="Tax Certificate" android:textStyle="bold" android:textColor="@color/foreground" />
+                            <TextView android:text="Download certificates" android:textColor="@color/muted_foreground" android:textSize="13sp" />
+                        </LinearLayout>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" android:textColor="@color/muted_foreground" android:textSize="20sp" />
                     </LinearLayout>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -96,28 +156,53 @@
             <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" app:cardCornerRadius="12dp">
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
                     <LinearLayout android:id="@+id/menu_item_news" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp" android:orientation="horizontal" android:gravity="center_vertical">
-                        <TextView android:text="News" android:textStyle="bold" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" />
+                        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_article_24" app:tint="@color/primary" android:contentDescription="News Icon" />
+                        <Space android:layout_width="16dp" android:layout_height="0dp" />
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:text="News" android:textStyle="bold" android:textColor="@color/foreground" />
+                            <TextView android:text="Latest updates" android:textColor="@color/muted_foreground" android:textSize="13sp" />
+                        </LinearLayout>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" android:textColor="@color/muted_foreground" android:textSize="20sp" />
                     </LinearLayout>
                     <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/border" />
                     <LinearLayout android:id="@+id/menu_item_case_study" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp" android:orientation="horizontal" android:gravity="center_vertical">
-                        <TextView android:text="Case Study" android:textStyle="bold" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" />
+                        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_auto_stories_24" app:tint="@color/primary" android:contentDescription="Case Study Icon" />
+                        <Space android:layout_width="16dp" android:layout_height="0dp" />
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:text="Case Study" android:textStyle="bold" android:textColor="@color/foreground" />
+                            <TextView android:text="Success stories" android:textColor="@color/muted_foreground" android:textSize="13sp" />
+                        </LinearLayout>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" android:textColor="@color/muted_foreground" android:textSize="20sp" />
                     </LinearLayout>
                     <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/border" />
                     <LinearLayout android:id="@+id/menu_item_team" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp" android:orientation="horizontal" android:gravity="center_vertical">
-                        <TextView android:text="Our Team" android:textStyle="bold" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" />
+                        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_group_24" app:tint="@color/primary" android:contentDescription="Team Icon" />
+                        <Space android:layout_width="16dp" android:layout_height="0dp" />
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:text="Our Team" android:textStyle="bold" android:textColor="@color/foreground" />
+                            <TextView android:text="Meet the experts" android:textColor="@color/muted_foreground" android:textSize="13sp" />
+                        </LinearLayout>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" android:textColor="@color/muted_foreground" android:textSize="20sp" />
                     </LinearLayout>
                     <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/border" />
                     <LinearLayout android:id="@+id/menu_item_partners" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp" android:orientation="horizontal" android:gravity="center_vertical">
-                        <TextView android:text="Partners" android:textStyle="bold" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" />
+                        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_people_24" app:tint="@color/primary" android:contentDescription="Partners Icon" />
+                        <Space android:layout_width="16dp" android:layout_height="0dp" />
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:text="Partners" android:textStyle="bold" android:textColor="@color/foreground" />
+                            <TextView android:text="Our supporters" android:textColor="@color/muted_foreground" android:textSize="13sp" />
+                        </LinearLayout>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" android:textColor="@color/muted_foreground" android:textSize="20sp" />
                     </LinearLayout>
                     <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/border" />
                     <LinearLayout android:id="@+id/menu_item_annual_report" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp" android:orientation="horizontal" android:gravity="center_vertical">
-                        <TextView android:text="Annual Report" android:textStyle="bold" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" />
+                        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_description_24" app:tint="@color/primary" android:contentDescription="Annual Report Icon" />
+                        <Space android:layout_width="16dp" android:layout_height="0dp" />
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:text="Annual Report" android:textStyle="bold" android:textColor="@color/foreground" />
+                            <TextView android:text="View our report" android:textColor="@color/muted_foreground" android:textSize="13sp" />
+                        </LinearLayout>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" android:textColor="@color/muted_foreground" android:textSize="20sp" />
                     </LinearLayout>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -127,18 +212,33 @@
             <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" app:cardCornerRadius="12dp">
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
                     <LinearLayout android:id="@+id/menu_item_services" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp" android:orientation="horizontal" android:gravity="center_vertical">
-                        <TextView android:text="Services" android:textStyle="bold" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" />
+                        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_pets_24" app:tint="@color/primary" android:contentDescription="Services Icon" />
+                        <Space android:layout_width="16dp" android:layout_height="0dp" />
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:text="Services" android:textStyle="bold" android:textColor="@color/foreground" />
+                            <TextView android:text="What we offer" android:textColor="@color/muted_foreground" android:textSize="13sp" />
+                        </LinearLayout>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" android:textColor="@color/muted_foreground" android:textSize="20sp" />
                     </LinearLayout>
                     <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/border" />
                     <LinearLayout android:id="@+id/menu_item_programs" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp" android:orientation="horizontal" android:gravity="center_vertical">
-                        <TextView android:text="Programs" android:textStyle="bold" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" />
+                        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_category_24" app:tint="@color/primary" android:contentDescription="Programs Icon" />
+                        <Space android:layout_width="16dp" android:layout_height="0dp" />
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:text="Programs" android:textStyle="bold" android:textColor="@color/foreground" />
+                            <TextView android:text="Our initiatives" android:textColor="@color/muted_foreground" android:textSize="13sp" />
+                        </LinearLayout>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" android:textColor="@color/muted_foreground" android:textSize="20sp" />
                     </LinearLayout>
                     <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/border" />
                     <LinearLayout android:id="@+id/menu_item_equine_outreach" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp" android:orientation="horizontal" android:gravity="center_vertical">
-                        <TextView android:text="Equine Outreach" android:textStyle="bold" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" />
+                        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_pets_24" app:tint="@color/primary" android:contentDescription="Equine Outreach Icon" />
+                        <Space android:layout_width="16dp" android:layout_height="0dp" />
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:text="Equine Outreach" android:textStyle="bold" android:textColor="@color/foreground" />
+                            <TextView android:text="Horse welfare program" android:textColor="@color/muted_foreground" android:textSize="13sp" />
+                        </LinearLayout>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" android:textColor="@color/muted_foreground" android:textSize="20sp" />
                     </LinearLayout>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -148,18 +248,33 @@
             <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" app:cardCornerRadius="12dp">
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
                     <LinearLayout android:id="@+id/menu_item_contact" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp" android:orientation="horizontal" android:gravity="center_vertical">
-                        <TextView android:text="Contact Us" android:textStyle="bold" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" />
+                        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_contact_mail_24" app:tint="@color/primary" android:contentDescription="Contact Icon" />
+                        <Space android:layout_width="16dp" android:layout_height="0dp" />
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:text="Contact Us" android:textStyle="bold" android:textColor="@color/foreground" />
+                            <TextView android:text="Get in touch" android:textColor="@color/muted_foreground" android:textSize="13sp" />
+                        </LinearLayout>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" android:textColor="@color/muted_foreground" android:textSize="20sp" />
                     </LinearLayout>
                     <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/border" />
                     <LinearLayout android:id="@+id/menu_item_call" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp" android:orientation="horizontal" android:gravity="center_vertical">
-                        <TextView android:text="Call Us — 011 466 0261" android:textStyle="bold" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" />
+                        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_phone_24" app:tint="@color/primary" android:contentDescription="Call Icon" />
+                        <Space android:layout_width="16dp" android:layout_height="0dp" />
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:text="Call Us — 011 466 0261" android:textStyle="bold" android:textColor="@color/foreground" />
+                            <TextView android:text="Speak to us" android:textColor="@color/muted_foreground" android:textSize="13sp" />
+                        </LinearLayout>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" android:textColor="@color/muted_foreground" android:textSize="20sp" />
                     </LinearLayout>
                     <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/border" />
                     <LinearLayout android:id="@+id/menu_item_email" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp" android:orientation="horizontal" android:gravity="center_vertical">
-                        <TextView android:text="Email Us — animals@animalsindistress.org.za" android:textStyle="bold" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" />
+                        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_email_24" app:tint="@color/primary" android:contentDescription="Email Icon" />
+                        <Space android:layout_width="16dp" android:layout_height="0dp" />
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:text="Email Us — animals@animalsindistress.org.za" android:textStyle="bold" android:textColor="@color/foreground" />
+                            <TextView android:text="Send a message" android:textColor="@color/muted_foreground" android:textSize="13sp" />
+                        </LinearLayout>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" android:textColor="@color/muted_foreground" android:textSize="20sp" />
                     </LinearLayout>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -169,13 +284,23 @@
             <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" app:cardCornerRadius="12dp">
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
                     <LinearLayout android:id="@+id/menu_item_facebook" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp" android:orientation="horizontal" android:gravity="center_vertical">
-                        <TextView android:text="Facebook — @tsfaid" android:textStyle="bold" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" />
+                        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_facebook_24" app:tint="@color/primary" android:contentDescription="Facebook Icon" />
+                        <Space android:layout_width="16dp" android:layout_height="0dp" />
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:text="Facebook — @tsfaid" android:textStyle="bold" android:textColor="@color/foreground" />
+                            <TextView android:text="Follow us on Facebook" android:textColor="@color/muted_foreground" android:textSize="13sp" />
+                        </LinearLayout>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" android:textColor="@color/muted_foreground" android:textSize="20sp" />
                     </LinearLayout>
                     <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/border" />
                     <LinearLayout android:id="@+id/menu_item_instagram" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp" android:orientation="horizontal" android:gravity="center_vertical">
-                        <TextView android:text="Instagram — @thesocietyforanimalsindistress" android:textStyle="bold" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" />
+                        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_instagram_24" app:tint="@color/primary" android:contentDescription="Instagram Icon" />
+                        <Space android:layout_width="16dp" android:layout_height="0dp" />
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:text="Instagram — @thesocietyforanimalsindistress" android:textStyle="bold" android:textColor="@color/foreground" />
+                            <TextView android:text="Follow us on Instagram" android:textColor="@color/muted_foreground" android:textSize="13sp" />
+                        </LinearLayout>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" android:textColor="@color/muted_foreground" android:textSize="20sp" />
                     </LinearLayout>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -184,8 +309,13 @@
             <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" app:cardCornerRadius="12dp" android:layout_marginTop="8dp">
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
                     <LinearLayout android:id="@+id/menu_item_faq" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp" android:orientation="horizontal" android:gravity="center_vertical">
-                        <TextView android:text="FAQ — Frequently asked questions" android:textStyle="bold" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" />
+                        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_help_24" app:tint="@color/primary" android:contentDescription="FAQ Icon" />
+                        <Space android:layout_width="16dp" android:layout_height="0dp" />
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:text="FAQ — Frequently asked questions" android:textStyle="bold" android:textColor="@color/foreground" />
+                            <TextView android:text="Get answers" android:textColor="@color/muted_foreground" android:textSize="13sp" />
+                        </LinearLayout>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" android:textColor="@color/muted_foreground" android:textSize="20sp" />
                     </LinearLayout>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>

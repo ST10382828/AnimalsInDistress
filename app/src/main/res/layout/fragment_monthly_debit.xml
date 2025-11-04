@@ -19,9 +19,9 @@
 
             <!-- Hero -->
             <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal">
-                <TextView android:text="Monthly Debit Order" android:textStyle="bold" android:textSize="32sp" android:textColor="@color/foreground" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Monthly Debit Order" android:textStyle="bold" android:textSize="32sp" android:textColor="@color/foreground" />
                 <Space android:layout_width="0dp" android:layout_height="12dp" />
-                <TextView android:text="Set up a monthly debit order for ongoing support" android:textColor="@color/muted_foreground" android:gravity="center" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Set up a monthly debit order for ongoing support" android:textColor="@color/muted_foreground" android:gravity="center" />
             </LinearLayout>
 
             <Space android:layout_width="0dp" android:layout_height="16dp" />
@@ -29,9 +29,9 @@
             <!-- Sections -->
             <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" >
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
-                    <TextView android:text="Why Monthly Giving?" android:textStyle="bold" android:textSize="20sp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Why Monthly Giving?" android:textStyle="bold" android:textSize="20sp" />
                     <Space android:layout_width="0dp" android:layout_height="12dp" />
-                    <TextView android:text="Monthly debit orders provide us with predictable, consistent income that helps us plan better care for animals and ensures we can maintain our services year-round." android:textColor="@color/muted_foreground" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Monthly debit orders provide us with predictable, consistent income that helps us plan better care for animals and ensures we can maintain our services year-round." android:textColor="@color/muted_foreground" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -39,9 +39,9 @@
 
             <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" >
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
-                    <TextView android:text="Benefits" android:textStyle="bold" android:textSize="20sp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Benefits" android:textStyle="bold" android:textSize="20sp" />
                     <Space android:layout_width="0dp" android:layout_height="12dp" />
-                    <TextView android:text="• Tax-deductible (Section 18A certificate provided)
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="• Tax-deductible (Section 18A certificate provided)
 • Helps us plan ahead
 • Makes a sustained impact
 • Can be adjusted or cancelled anytime" android:textColor="@color/muted_foreground" />
@@ -52,9 +52,9 @@
 
             <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" >
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
-                    <TextView android:text="Set Up Your Debit Order" android:textStyle="bold" android:textSize="20sp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Set Up Your Debit Order" android:textStyle="bold" android:textSize="20sp" />
                     <Space android:layout_width="0dp" android:layout_height="12dp" />
-                    <TextView android:text="Contact us to set up a monthly debit order. Choose any amount that works for your budget - every contribution helps." android:textColor="@color/muted_foreground" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Contact us to set up a monthly debit order. Choose any amount that works for your budget - every contribution helps." android:textColor="@color/muted_foreground" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 

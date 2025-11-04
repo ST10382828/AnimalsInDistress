@@ -10,7 +10,9 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingBottom="80dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -41,10 +43,52 @@
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
                     <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Volunteer Opportunities" android:textStyle="bold" android:textSize="20sp" />
                     <Space android:layout_width="0dp" android:layout_height="12dp" />
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="• Animal Care — Help feed, walk, and socialize our animals" />
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="• Event Support — Assist with fundraising events and awareness campaigns" android:layout_marginTop="12dp" />
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="• Administrative — Help with paperwork, data entry, and office tasks" android:layout_marginTop="12dp" />
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="• Transportation — Help transport animals to and from appointments" android:layout_marginTop="12dp" />
+                    
+                    <!-- Animal Care -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="top">
+                        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_check_circle_24" app:tint="#10B981" android:layout_marginTop="2dp" android:contentDescription="Check" />
+                        <Space android:layout_width="12dp" android:layout_height="0dp" />
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Animal Care" android:textStyle="bold" android:textSize="14sp" />
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Help feed, walk, and socialize our animals" android:textColor="@color/muted_foreground" android:textSize="13sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    
+                    <!-- Event Support -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="top">
+                        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_check_circle_24" app:tint="#10B981" android:layout_marginTop="2dp" android:contentDescription="Check" />
+                        <Space android:layout_width="12dp" android:layout_height="0dp" />
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Event Support" android:textStyle="bold" android:textSize="14sp" />
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Assist with fundraising events and awareness campaigns" android:textColor="@color/muted_foreground" android:textSize="13sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    
+                    <!-- Administrative -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="top">
+                        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_check_circle_24" app:tint="#10B981" android:layout_marginTop="2dp" android:contentDescription="Check" />
+                        <Space android:layout_width="12dp" android:layout_height="0dp" />
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Administrative" android:textStyle="bold" android:textSize="14sp" />
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Help with paperwork, data entry, and office tasks" android:textColor="@color/muted_foreground" android:textSize="13sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    
+                    <!-- Transportation -->
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="top">
+                        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_check_circle_24" app:tint="#10B981" android:layout_marginTop="2dp" android:contentDescription="Check" />
+                        <Space android:layout_width="12dp" android:layout_height="0dp" />
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Transportation" android:textStyle="bold" android:textSize="14sp" />
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Help transport animals to and from appointments" android:textColor="@color/muted_foreground" android:textSize="13sp" />
+                        </LinearLayout>
+                    </LinearLayout>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -57,14 +101,19 @@
                     <Space android:layout_width="0dp" android:layout_height="12dp" />
                     <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="To become a volunteer, please contact us via phone or email. We'll provide you with more information about available opportunities and the next steps." android:textColor="@color/muted_foreground" />
                     <Space android:layout_width="0dp" android:layout_height="16dp" />
-                    <com.google.android.material.button.MaterialButton android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Contact Us" app:backgroundTint="@color/primary" />
+                    <com.google.android.material.button.MaterialButton 
+                        android:id="@+id/btn_contact_volunteer" 
+                        android:layout_width="match_parent" 
+                        android:layout_height="wrap_content" 
+                        android:text="Contact Us"
+                        app:icon="@drawable/ic_email_24"
+                        app:iconGravity="start"
+                        app:backgroundTint="@color/primary" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>
     </ScrollView>
-
-    <include layout="@layout/include_footer" />
 
 </LinearLayout>
 

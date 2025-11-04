@@ -19,9 +19,9 @@
 
             <!-- Hero -->
             <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal">
-                <TextView android:text="1000 Heroes" android:textStyle="bold" android:textSize="32sp" android:textColor="@color/foreground" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1000 Heroes" android:textStyle="bold" android:textSize="32sp" android:textColor="@color/foreground" />
                 <Space android:layout_width="0dp" android:layout_height="12dp" />
-                <TextView android:text="Join our 1000 Heroes initiative and become a monthly supporter" android:textColor="@color/muted_foreground" android:gravity="center" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Join our 1000 Heroes initiative and become a monthly supporter" android:textColor="@color/muted_foreground" android:gravity="center" />
             </LinearLayout>
 
             <Space android:layout_width="0dp" android:layout_height="16dp" />
@@ -29,9 +29,9 @@
             <!-- Sections -->
             <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" >
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
-                    <TextView android:text="What is 1000 Heroes?" android:textStyle="bold" android:textSize="20sp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="What is 1000 Heroes?" android:textStyle="bold" android:textSize="20sp" />
                     <Space android:layout_width="0dp" android:layout_height="12dp" />
-                    <TextView android:text="1000 Heroes is our monthly giving program where supporters commit to a regular monthly donation. These consistent contributions help us plan better and provide ongoing care for animals in need." android:textColor="@color/muted_foreground" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1000 Heroes is our monthly giving program where supporters commit to a regular monthly donation. These consistent contributions help us plan better and provide ongoing care for animals in need." android:textColor="@color/muted_foreground" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -39,9 +39,9 @@
 
             <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" >
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
-                    <TextView android:text="Your Impact" android:textStyle="bold" android:textSize="20sp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Your Impact" android:textStyle="bold" android:textSize="20sp" />
                     <Space android:layout_width="0dp" android:layout_height="12dp" />
-                    <TextView android:text="• Regular veterinary care
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="• Regular veterinary care
 • Mobile clinic operations
 • Emergency treatments
 • Community education programs" android:textColor="@color/muted_foreground" />
@@ -52,9 +52,9 @@
 
             <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" >
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
-                    <TextView android:text="Join Today" android:textStyle="bold" android:textSize="20sp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Join Today" android:textStyle="bold" android:textSize="20sp" />
                     <Space android:layout_width="0dp" android:layout_height="12dp" />
-                    <TextView android:text="Sign up for a monthly donation of any amount and become one of our 1000 Heroes. Every contribution makes a difference." android:textColor="@color/muted_foreground" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Sign up for a monthly donation of any amount and become one of our 1000 Heroes. Every contribution makes a difference." android:textColor="@color/muted_foreground" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 

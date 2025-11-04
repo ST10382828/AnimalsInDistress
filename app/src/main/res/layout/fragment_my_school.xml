@@ -19,9 +19,9 @@
 
             <!-- Hero -->
             <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal">
-                <TextView android:text="MySchool MyVillage MyPlanet" android:textStyle="bold" android:textSize="32sp" android:textColor="@color/foreground" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="MySchool MyVillage MyPlanet" android:textStyle="bold" android:textSize="32sp" android:textColor="@color/foreground" />
                 <Space android:layout_width="0dp" android:layout_height="12dp" />
-                <TextView android:text="Support SAID every time you shop" android:textColor="@color/muted_foreground" android:gravity="center" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Support SAID every time you shop" android:textColor="@color/muted_foreground" android:gravity="center" />
             </LinearLayout>
 
             <Space android:layout_width="0dp" android:layout_height="16dp" />
@@ -29,9 +29,9 @@
             <!-- Sections -->
             <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" >
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
-                    <TextView android:text="How It Works" android:textStyle="bold" android:textSize="20sp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="How It Works" android:textStyle="bold" android:textSize="20sp" />
                     <Space android:layout_width="0dp" android:layout_height="12dp" />
-                    <TextView android:text="MySchool MyVillage MyPlanet is a fundraising programme that allows you to donate to SAID simply by using your MySchool card when shopping at partner retailers." android:textColor="@color/muted_foreground" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="MySchool MyVillage MyPlanet is a fundraising programme that allows you to donate to SAID simply by using your MySchool card when shopping at partner retailers." android:textColor="@color/muted_foreground" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -39,9 +39,9 @@
 
             <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" >
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
-                    <TextView android:text="Getting Started" android:textStyle="bold" android:textSize="20sp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Getting Started" android:textStyle="bold" android:textSize="20sp" />
                     <Space android:layout_width="0dp" android:layout_height="12dp" />
-                    <TextView android:text="1. Register for a MySchool card
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1. Register for a MySchool card
 2. Choose SAID as your beneficiary
 3. Use your card when shopping
 4. A percentage of your purchase goes to SAID" android:textColor="@color/muted_foreground" />
@@ -52,9 +52,9 @@
 
             <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" >
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
-                    <TextView android:text="Partner Retailers" android:textStyle="bold" android:textSize="20sp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Partner Retailers" android:textStyle="bold" android:textSize="20sp" />
                     <Space android:layout_width="0dp" android:layout_height="12dp" />
-                    <TextView android:text="Partner retailers include Woolworths, Engen, Waltons, and many more. Every swipe helps us help animals." android:textColor="@color/muted_foreground" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Partner retailers include Woolworths, Engen, Waltons, and many more. Every swipe helps us help animals." android:textColor="@color/muted_foreground" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 

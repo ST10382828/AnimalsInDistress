@@ -15,13 +15,13 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="16dp">
-            <TextView android:text="Partners" android:textStyle="bold" android:textSize="24sp" />
-            <TextView android:text="Corporate &amp; Community Partners" android:textSize="18sp" android:layout_marginTop="8dp" />
-            <TextView android:text="We collaborate with organisations who share our commitment to animal welfare and education." />
-            <TextView android:text="Ways to Partner" android:textSize="18sp" android:layout_marginTop="12dp" />
-            <TextView android:text="• Sponsorships for programmes and campaigns" />
-            <TextView android:text="• In-kind donations (goods, services, venues)" />
-            <TextView android:text="• Employee volunteering and payroll giving" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Partners" android:textStyle="bold" android:textSize="24sp" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Corporate &amp; Community Partners" android:textSize="18sp" android:layout_marginTop="8dp" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="We collaborate with organisations who share our commitment to animal welfare and education." />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Ways to Partner" android:textSize="18sp" android:layout_marginTop="12dp" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="• Sponsorships for programmes and campaigns" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="• In-kind donations (goods, services, venues)" />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="• Employee volunteering and payroll giving" />
         </LinearLayout>
     </ScrollView>
 
