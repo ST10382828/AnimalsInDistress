@@ -111,9 +111,14 @@ class MoreFragment : Fragment(R.layout.fragment_more) {
         }
 
         // Admin menu items (only visible for admin users)
-        val adminContactSubmissionsCard = view.findViewById<com.google.android.material.card.MaterialCardView>(R.id.menu_item_admin_contact_submissions)
-        val adminStoriesEditorCard = view.findViewById<com.google.android.material.card.MaterialCardView>(R.id.menu_item_admin_stories_editor)
+        val adminSectionHeader = view.findViewById<View>(R.id.admin_section_header)
+        val adminContactSubmissionsLayout = view.findViewById<View>(R.id.menu_item_admin_contact_submissions)
+        val adminStoriesEditorLayout = view.findViewById<View>(R.id.menu_item_admin_stories_editor)
         val adminMedicalAidRequestsCard = view.findViewById<com.google.android.material.card.MaterialCardView>(R.id.menu_item_admin_medical_aid_requests)
+        
+        // Get parent MaterialCardViews for the first two
+        val adminContactSubmissionsCard = adminContactSubmissionsLayout?.parent as? com.google.android.material.card.MaterialCardView
+        val adminStoriesEditorCard = adminStoriesEditorLayout?.parent as? com.google.android.material.card.MaterialCardView
         
         adminContactSubmissionsCard?.setOnClickListener {
             try {
@@ -185,6 +190,7 @@ class MoreFragment : Fragment(R.layout.fragment_more) {
                     FirebaseAuth.getInstance().signOut()
                     refreshAuthButton()
                     // Hide admin options on logout
+                    adminSectionHeader?.visibility = View.GONE
                     adminContactSubmissionsCard?.visibility = View.GONE
                     adminStoriesEditorCard?.visibility = View.GONE
                     adminMedicalAidRequestsCard?.visibility = View.GONE
@@ -199,10 +205,12 @@ class MoreFragment : Fragment(R.layout.fragment_more) {
                         .addOnSuccessListener { doc ->
                             val role = doc.getString("role") ?: "user"
                             if (role == "admin") {
+                                adminSectionHeader?.visibility = View.VISIBLE
                                 adminContactSubmissionsCard?.visibility = View.VISIBLE
                                 adminStoriesEditorCard?.visibility = View.VISIBLE
                                 adminMedicalAidRequestsCard?.visibility = View.VISIBLE
                             } else {
+                                adminSectionHeader?.visibility = View.GONE
                                 adminContactSubmissionsCard?.visibility = View.GONE
                                 adminStoriesEditorCard?.visibility = View.GONE
                                 adminMedicalAidRequestsCard?.visibility = View.GONE
@@ -214,6 +222,7 @@ class MoreFragment : Fragment(R.layout.fragment_more) {
                 authButton.setOnClickListener {
                     findNavController().navigate(R.id.loginFragment)
                 }
+                adminSectionHeader?.visibility = View.GONE
                 adminContactSubmissionsCard?.visibility = View.GONE
                 adminStoriesEditorCard?.visibility = View.GONE
                 adminMedicalAidRequestsCard?.visibility = View.GONE
