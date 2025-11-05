@@ -44,6 +44,14 @@
                     android:textColor="@color/muted_foreground"
                     android:textSize="16sp"
                     android:gravity="center" />
+                <Space android:layout_width="0dp" android:layout_height="12dp" />
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_view_impact"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📊 View Your Impact Dashboard"
+                    app:icon="@drawable/ic_favorite_24" />
             </LinearLayout>
 
             <Space android:layout_width="0dp" android:layout_height="16dp" />

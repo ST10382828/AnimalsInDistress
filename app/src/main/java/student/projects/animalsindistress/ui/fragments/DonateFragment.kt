@@ -6,29 +6,42 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.firebase.auth.FirebaseAuth
+import kotlinx.coroutines.launch
 import student.projects.animalsindistress.R
+import student.projects.animalsindistress.data.DonationImpactRepository
 
 class DonateFragment : Fragment(R.layout.fragment_donate) {
+    
+    private val repository = DonationImpactRepository()
+    private val auth = FirebaseAuth.getInstance()
     
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         
-        // Donation amount buttons
+        // Link to Impact Dashboard
+        view.findViewById<View>(R.id.btn_view_impact)?.setOnClickListener {
+            findNavController().navigate(R.id.donationImpactFragment)
+        }
+        
+        // Donation amount buttons - navigate to in-app donation form
         view.findViewById<View>(R.id.btn_donate_100)?.setOnClickListener {
-            openDonationLink("100")
+            findNavController().navigate(R.id.makeDonationFragment)
         }
         
         view.findViewById<View>(R.id.btn_donate_500)?.setOnClickListener {
-            openDonationLink("500")
+            findNavController().navigate(R.id.makeDonationFragment)
         }
         
         view.findViewById<View>(R.id.btn_donate_1000)?.setOnClickListener {
-            openDonationLink("1000")
+            findNavController().navigate(R.id.makeDonationFragment)
         }
         
         view.findViewById<View>(R.id.btn_donate_custom)?.setOnClickListener {
-            openDonationLink("custom")
+            findNavController().navigate(R.id.makeDonationFragment)
         }
         
         // Monthly debit button
@@ -78,7 +91,40 @@ class DonateFragment : Fragment(R.layout.fragment_donate) {
     }
     
     private fun openDonationLink(amount: String) {
-        // Open PayFast donation page (matching Compose version)
+        // Show impact preview before redirecting to payment
+        val amountValue = when(amount) {
+            "100" -> 100.0
+            "500" -> 500.0
+            "1000" -> 1000.0
+            else -> 0.0
+        }
+        
+        if (amountValue > 0) {
+            val impact = student.projects.animalsindistress.data.Donation.calculateImpact(amountValue)
+            
+            val message = buildString {
+                append("Your R${amountValue.toInt()} donation will:\n\n")
+                if (impact.dogsFeeding > 0) append("🐕 Feed ${impact.dogsFeeding} dogs\n")
+                if (impact.surgeriesEnabled > 0) append("🏥 Enable ${impact.surgeriesEnabled} surgery(ies)\n")
+                if (impact.clinicsSupported > 0) append("🚑 Support ${impact.clinicsSupported} mobile clinic(s)\n")
+                append("\nProceed to secure payment?")
+            }
+            
+            MaterialAlertDialogBuilder(requireContext())
+                .setTitle("Your Impact")
+                .setMessage(message)
+                .setPositiveButton("Continue to Payment") { _, _ ->
+                    proceedToPayment(amount, amountValue)
+                }
+                .setNegativeButton("Cancel", null)
+                .show()
+        } else {
+            proceedToPayment(amount, 0.0)
+        }
+    }
+    
+    private fun proceedToPayment(amount: String, amountValue: Double) {
+        // Open PayFast donation page
         val url = when(amount) {
             "100" -> "https://www.payfast.co.za/eng/process?cmd=_donations&receiver=11654229&item_name=General+Donation&amount=100"
             "500" -> "https://www.payfast.co.za/eng/process?cmd=_donations&receiver=11654229&item_name=General+Donation&amount=500"
@@ -86,6 +132,22 @@ class DonateFragment : Fragment(R.layout.fragment_donate) {
             else -> "https://www.payfast.co.za/eng/process?cmd=_donations&receiver=11654229&item_name=General+Donation"
         }
         openUrl(url)
+        
+        // Track donation attempt (in production, actual recording would happen via webhook after successful payment)
+        if (amountValue > 0) {
+            trackDonationAttempt(amountValue)
+        }
+    }
+    
+    private fun trackDonationAttempt(amount: Double) {
+        // This is a simulation. In production, you'd only record after successful payment
+        // via a PayFast webhook or return URL confirmation
+        val user = auth.currentUser
+        if (user != null) {
+            Toast.makeText(requireContext(), 
+                "Donation tracking enabled. Visit Impact Dashboard after payment to see your impact!", 
+                Toast.LENGTH_LONG).show()
+        }
     }
     
     private fun openUrl(url: String) {

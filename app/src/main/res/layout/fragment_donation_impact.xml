@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_mobile_top_bar" />
+
+    <!-- Loading Progress -->
+    <ProgressBar
+        android:id="@+id/progress_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:visibility="visible" />
+
+    <!-- Login Prompt (shown when user is not logged in) -->
+    <LinearLayout
+        android:id="@+id/layout_login_prompt"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="24dp"
+        android:visibility="gone">
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="📊"
+            android:textSize="64sp"
+            android:layout_marginBottom="16dp" />
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Track Your Impact"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login to see how your donations are making a difference"
+            android:textColor="@color/muted_foreground"
+            android:textAlignment="center"
+            android:layout_marginBottom="24dp" />
+        
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_go_to_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Login / Register"
+            app:backgroundTint="@color/primary" />
+    </LinearLayout>
+
+    <!-- Main Content (shown when logged in) -->
+    <ScrollView
+        android:id="@+id/scroll_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:visibility="gone">
+        
+        <LinearLayout
+            android:id="@+id/layout_logged_in"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:paddingBottom="80dp">
+
+            <!-- Hero Section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Your Impact Dashboard"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="@color/foreground"
+                android:gravity="center"
+                android:layout_marginBottom="8dp" />
+            
+            <TextView
+                android:id="@+id/text_member_since"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Member since Jan 2025"
+                android:textColor="@color/muted_foreground"
+                android:gravity="center"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Shareable Impact Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_shareable_impact"
+                style="@style/Widget.Material3.CardView.Elevated"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="@color/primary">
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+                    
+                    <TextView
+                        android:id="@+id/text_donor_level"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🥇 Gold Champion"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:textColor="#FFFFFF"
+                        android:layout_marginBottom="16dp" />
+                    
+                    <TextView
+                        android:id="@+id/text_total_amount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="R0.00"
+                        android:textSize="40sp"
+                        android:textStyle="bold"
+                        android:textColor="#FFFFFF"
+                        android:layout_marginBottom="4dp" />
+                    
+                    <TextView
+                        android:id="@+id/text_donation_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0 donations"
+                        android:textSize="14sp"
+                        android:textColor="#FFFFFF"
+                        android:alpha="0.9"
+                        android:layout_marginBottom="16dp" />
+                    
+                    <TextView
+                        android:id="@+id/text_impact_message"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Your donations are making a real difference!"
+                        android:textSize="16sp"
+                        android:textColor="#FFFFFF"
+                        android:alpha="0.95" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Action Buttons -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginBottom="16dp">
+                
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_share_impact"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Share Impact"
+                    android:layout_marginEnd="8dp" />
+                
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_download_certificate"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="18A Certificate" />
+            </LinearLayout>
+
+            <!-- Progress to Next Level -->
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.Material3.CardView.Elevated"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp">
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+                    
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Progress to Next Level"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="12dp" />
+                    
+                    <com.google.android.material.progressindicator.LinearProgressIndicator
+                        android:id="@+id/progress_next_level"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:progress="0"
+                        app:indicatorColor="@color/primary"
+                        android:layout_marginBottom="8dp" />
+                    
+                    <TextView
+                        android:id="@+id/text_next_level_info"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="R1,000 more to reach Bronze Hero"
+                        android:textColor="@color/muted_foreground"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Impact Metrics Grid -->
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.Material3.CardView.Elevated"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp">
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+                    
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Your Impact"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="16dp" />
+                    
+                    <!-- First Row -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2"
+                        android:layout_marginBottom="16dp">
+                        
+                        <!-- Dogs Fed -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:background="#1A10B981"
+                            android:padding="16dp"
+                            android:layout_marginEnd="8dp">
+                            
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="🐕"
+                                android:textSize="32sp"
+                                android:layout_marginBottom="8dp" />
+                            
+                            <TextView
+                                android:id="@+id/text_dogs_fed"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textSize="28sp"
+                                android:textStyle="bold"
+                                android:layout_marginBottom="4dp" />
+                            
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Dogs Fed"
+                                android:textSize="12sp"
+                                android:textColor="@color/muted_foreground" />
+                        </LinearLayout>
+                        
+                        <!-- Surgeries -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:background="#1A3B82F6"
+                            android:padding="16dp">
+                            
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="🏥"
+                                android:textSize="32sp"
+                                android:layout_marginBottom="8dp" />
+                            
+                            <TextView
+                                android:id="@+id/text_surgeries"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textSize="28sp"
+                                android:textStyle="bold"
+                                android:layout_marginBottom="4dp" />
+                            
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Surgeries"
+                                android:textSize="12sp"
+                                android:textColor="@color/muted_foreground" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    
+                    <!-- Second Row -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+                        
+                        <!-- Clinics Supported -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:background="#1AEF4444"
+                            android:padding="16dp"
+                            android:layout_marginEnd="8dp">
+                            
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="🚑"
+                                android:textSize="32sp"
+                                android:layout_marginBottom="8dp" />
+                            
+                            <TextView
+                                android:id="@+id/text_clinics"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textSize="28sp"
+                                android:textStyle="bold"
+                                android:layout_marginBottom="4dp" />
+                            
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Clinics"
+                                android:textSize="12sp"
+                                android:textColor="@color/muted_foreground" />
+                        </LinearLayout>
+                        
+                        <!-- Animals Helped -->
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:gravity="center"
+                            android:background="#1AF59E0B"
+                            android:padding="16dp">
+                            
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="❤️"
+                                android:textSize="32sp"
+                                android:layout_marginBottom="8dp" />
+                            
+                            <TextView
+                                android:id="@+id/text_animals_helped"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="0"
+                                android:textSize="28sp"
+                                android:textStyle="bold"
+                                android:layout_marginBottom="4dp" />
+                            
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Animals Helped"
+                                android:textSize="12sp"
+                                android:textColor="@color/muted_foreground" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Campaign Goals -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_campaign_goals"
+                style="@style/Widget.Material3.CardView.Elevated"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:visibility="gone">
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+                    
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🎯 Active Campaigns"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="16dp" />
+                    
+                    <LinearLayout
+                        android:id="@+id/container_campaign_goals"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Donation History -->
+            <com.google.android.material.card.MaterialCardView
+                style="@style/Widget.Material3.CardView.Elevated"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp">
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+                    
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="16dp">
+                        
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Recent Donations"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+                        
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_refresh"
+                            style="@style/Widget.Material3.Button.TextButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Refresh"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                    
+                    <TextView
+                        android:id="@+id/text_no_donations"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="No donations yet. Make your first donation to start tracking your impact!"
+                        android:textColor="@color/muted_foreground"
+                        android:textAlignment="center"
+                        android:padding="24dp"
+                        android:visibility="gone" />
+                    
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_donation_history"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Call to Action -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_make_donation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Make Another Donation"
+                android:textSize="16sp"
+                app:backgroundTint="@color/primary"
+                app:icon="@drawable/ic_favorite_24"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -64,6 +64,10 @@ class MoreFragment : Fragment(R.layout.fragment_more) {
             findNavController().navigate(R.id.storiesFeedFragment)
         }
         
+        view.findViewById<View>(R.id.menu_item_donation_impact)?.setOnClickListener {
+            findNavController().navigate(R.id.donationImpactFragment)
+        }
+        
         view.findViewById<View>(R.id.menu_item_case_study)?.setOnClickListener {
             findNavController().navigate(R.id.caseStudyFragment)
         }

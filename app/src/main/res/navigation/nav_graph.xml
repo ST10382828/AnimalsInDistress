@@ -271,6 +271,18 @@
         android:label="Admin: Medical Aid Requests"
         tools:layout="@layout/fragment_admin_medical_aid_requests" />
 
+    <fragment
+        android:id="@+id/donationImpactFragment"
+        android:name="student.projects.animalsindistress.ui.fragments.DonationImpactFragment"
+        android:label="Donation Impact"
+        tools:layout="@layout/fragment_donation_impact" />
+
+    <fragment
+        android:id="@+id/makeDonationFragment"
+        android:name="student.projects.animalsindistress.ui.fragments.MakeDonationFragment"
+        android:label="Make Donation"
+        tools:layout="@layout/fragment_make_donation" />
+
 </navigation>
 
 
