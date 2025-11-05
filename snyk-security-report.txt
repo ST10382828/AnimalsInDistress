@@ -1,0 +1,108 @@
+
+Testing C:\Users\lab_services_student\AndroidStudioProjects\AnimalsInDistress...
+
+Organization:      st10382828
+Package manager:   gradle
+Target file:       build.gradle.kts
+Project name:      AnimalsInDistress
+Open source:       no
+Project path:      C:\Users\lab_services_student\AndroidStudioProjects\AnimalsInDistress
+Licenses:          enabled
+
+Γ£ö Tested C:\Users\lab_services_student\AndroidStudioProjects\AnimalsInDistress for known issues, no vulnerable paths found.
+
+Next steps:
+- Run `snyk monitor` to be notified about new related vulnerabilities.
+- Run `snyk test` as part of your CI/test.
+
+-------------------------------------------------------
+
+Testing C:\Users\lab_services_student\AndroidStudioProjects\AnimalsInDistress...
+
+Tested 319 dependencies for known issues, found 17 issues, 145 vulnerable paths.
+
+
+Issues to fix by upgrading:
+
+  Upgrade org.jetbrains.kotlin:kotlin-build-tools-impl@2.0.21 to org.jetbrains.kotlin:kotlin-build-tools-impl@2.1.0 to fix
+  Γ£ù Information Exposure [Low Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGJETBRAINSKOTLIN-2393744] in org.jetbrains.kotlin:kotlin-stdlib@2.0.21
+    introduced by org.jetbrains.kotlin:kotlin-stdlib@2.0.21 and 69 other path(s)
+
+  Upgrade org.jetbrains.kotlin:kotlin-compiler-embeddable@2.0.21 to org.jetbrains.kotlin:kotlin-compiler-embeddable@2.1.0 to fix
+  Γ£ù Information Exposure [Low Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGJETBRAINSKOTLIN-2393744] in org.jetbrains.kotlin:kotlin-stdlib@2.0.21
+    introduced by org.jetbrains.kotlin:kotlin-stdlib@2.0.21 and 69 other path(s)
+
+  Upgrade org.jetbrains.kotlin:kotlin-klib-commonizer-embeddable@2.0.21 to org.jetbrains.kotlin:kotlin-klib-commonizer-embeddable@2.1.0 to fix
+  Γ£ù Information Exposure [Low Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGJETBRAINSKOTLIN-2393744] in org.jetbrains.kotlin:kotlin-stdlib@2.0.21
+    introduced by org.jetbrains.kotlin:kotlin-stdlib@2.0.21 and 69 other path(s)
+
+  Upgrade org.jetbrains.kotlin:kotlin-stdlib@2.0.21 to org.jetbrains.kotlin:kotlin-stdlib@2.1.0 to fix
+  Γ£ù Information Exposure [Low Severity][https://security.snyk.io/vuln/SNYK-JAVA-ORGJETBRAINSKOTLIN-2393744] in org.jetbrains.kotlin:kotlin-stdlib@2.0.21
+    introduced by org.jetbrains.kotlin:kotlin-stdlib@2.0.21 and 69 other path(s)
+
+
+Issues with no direct upgrade or patch:
+  Γ£ù Creation of Temporary File in Directory with Insecure Permissions [Low Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMGOOGLEGUAVA-5710356] in com.google.guava:guava@31.1-android
+    introduced by com.google.firebase:firebase-analytics-ktx@22.1.2 > com.google.firebase:firebase-analytics@22.1.2 > com.google.android.gms:play-services-measurement-api@22.1.2 > com.google.guava:guava@31.1-android and 1 other path(s)
+  This issue was fixed in versions: 32.0.0-android, 32.0.0-jre
+  Γ£ù Denial of Service (DoS) [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMGOOGLEPROTOBUF-3040281] in com.google.protobuf:protobuf-javalite@3.14.0
+    introduced by com.google.firebase:firebase-firestore-ktx@25.1.1 > com.google.firebase:firebase-firestore@25.1.1 > com.google.firebase:protolite-well-known-types@18.0.0 > com.google.protobuf:protobuf-javalite@3.14.0
+  This issue was fixed in versions: 3.16.3, 3.19.6, 3.20.3, 3.21.7
+  Γ£ù Denial of Service (DoS) [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMGOOGLEPROTOBUF-3167771] in com.google.protobuf:protobuf-javalite@3.14.0
+    introduced by com.google.firebase:firebase-firestore-ktx@25.1.1 > com.google.firebase:firebase-firestore@25.1.1 > com.google.firebase:protolite-well-known-types@18.0.0 > com.google.protobuf:protobuf-javalite@3.14.0
+  This issue was fixed in versions: 3.16.3, 3.19.6, 3.20.3, 3.21.7
+  Γ£ù Stack-based Buffer Overflow [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMGOOGLEPROTOBUF-9398723] in com.google.protobuf:protobuf-javalite@3.14.0
+    introduced by com.google.firebase:firebase-firestore-ktx@25.1.1 > com.google.firebase:firebase-firestore@25.1.1 > com.google.firebase:protolite-well-known-types@18.0.0 > com.google.protobuf:protobuf-javalite@3.14.0
+  This issue was fixed in versions: 3.25.5, 4.27.5, 4.28.2
+  Γ£ù Stack-based Buffer Overflow [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMGOOGLEPROTOBUF-8055227] in com.google.protobuf:protobuf-java@3.24.4
+    introduced by com.google.testing.platform:android-driver-instrumentation@0.0.9-alpha03 > com.google.protobuf:protobuf-java@3.24.4 and 5 other path(s)
+  This issue was fixed in versions: 3.25.5, 4.27.5, 4.28.2
+  Γ£ù Stack-based Buffer Overflow [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-COMGOOGLEPROTOBUF-8055228] in com.google.protobuf:protobuf-java-util@3.22.3
+    introduced by com.google.testing.platform:android-driver-instrumentation@0.0.9-alpha03 > com.google.protobuf:protobuf-java-util@3.24.4 and 2 other path(s)
+  This issue was fixed in versions: 3.25.5, 4.27.5, 4.28.2
+  Γ£ù Allocation of Resources Without Limits or Throttling [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-IONETTY-11799531] in io.netty:netty-codec-http2@4.1.93.Final
+    introduced by com.android.tools.utp:android-test-plugin-result-listener-gradle@31.13.0 > io.grpc:grpc-netty@1.69.1 > io.netty:netty-codec-http2@4.1.110.Final and 1 other path(s)
+  This issue was fixed in versions: 4.1.124.Final, 4.2.4.Final
+  Γ£ù Improper Handling of Highly Compressed Data (Data Amplification) [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-IONETTY-12485151] in io.netty:netty-codec-http2@4.1.93.Final
+    introduced by com.android.tools.utp:android-test-plugin-result-listener-gradle@31.13.0 > io.grpc:grpc-netty@1.69.1 > io.netty:netty-codec-http2@4.1.110.Final and 1 other path(s)
+  This issue was fixed in versions: 4.1.125.Final
+  Γ£ù Denial of Service (DoS) [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-IONETTY-5953332] in io.netty:netty-codec-http2@4.1.93.Final
+    introduced by com.google.testing.platform:core@0.0.9-alpha03 > io.grpc:grpc-netty@1.57.2 > io.netty:netty-codec-http2@4.1.93.Final
+  This issue was fixed in versions: 4.1.100.Final
+  Γ£ù HTTP Request Smuggling [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-IONETTY-12485149] in io.netty:netty-codec-http@4.1.93.Final
+    introduced by com.android.tools.utp:android-test-plugin-result-listener-gradle@31.13.0 > io.grpc:grpc-netty@1.69.1 > io.netty:netty-codec-http2@4.1.110.Final > io.netty:netty-codec-http@4.1.110.Final and 3 other path(s)
+  This issue was fixed in versions: 4.1.125.Final, 4.2.5.Final
+  Γ£ù Improper Handling of Highly Compressed Data (Data Amplification) [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-IONETTY-12485150] in io.netty:netty-codec-http@4.1.93.Final
+    introduced by com.android.tools.utp:android-test-plugin-result-listener-gradle@31.13.0 > io.grpc:grpc-netty@1.69.1 > io.netty:netty-codec-http2@4.1.110.Final > io.netty:netty-codec-http@4.1.110.Final and 3 other path(s)
+  This issue was fixed in versions: 4.1.125.Final
+  Γ£ù Allocation of Resources Without Limits or Throttling [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-IONETTY-6483812] in io.netty:netty-codec-http@4.1.93.Final
+    introduced by com.google.testing.platform:core@0.0.9-alpha03 > io.grpc:grpc-netty@1.57.2 > io.netty:netty-codec-http2@4.1.93.Final > io.netty:netty-codec-http@4.1.93.Final and 1 other path(s)
+  This issue was fixed in versions: 4.1.108.Final
+  Γ£ù Denial of Service (DoS) [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-IONETTY-5725787] in io.netty:netty-handler@4.1.93.Final
+    introduced by com.google.testing.platform:core@0.0.9-alpha03 > io.grpc:grpc-netty@1.57.2 > io.netty:netty-codec-http2@4.1.93.Final > io.netty:netty-handler@4.1.93.Final and 1 other path(s)
+  This issue was fixed in versions: 4.1.94.Final
+  Γ£ù Improper Validation of Specified Quantity in Input [High Severity][https://security.snyk.io/vuln/SNYK-JAVA-IONETTY-8707739] in io.netty:netty-handler@4.1.110.Final
+    introduced by com.google.testing.platform:core@0.0.9-alpha03 > io.grpc:grpc-netty@1.57.2 > io.netty:netty-codec-http2@4.1.93.Final > io.netty:netty-handler@4.1.93.Final and 3 other path(s)
+  This issue was fixed in versions: 4.1.118.Final, 4.2.0.RC3
+  Γ£ù Denial of Service (DoS) [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-IONETTY-8367012] in io.netty:netty-common@4.1.93.Final
+    introduced by com.android.tools.utp:android-test-plugin-result-listener-gradle@31.13.0 > io.grpc:grpc-netty@1.69.1 > io.netty:netty-codec-http2@4.1.110.Final > io.netty:netty-common@4.1.110.Final and 19 other path(s)
+  This issue was fixed in versions: 4.1.115.Final
+  Γ£ù Improper Validation of Specified Quantity in Input [Medium Severity][https://security.snyk.io/vuln/SNYK-JAVA-IONETTY-8707740] in io.netty:netty-common@4.1.93.Final
+    introduced by com.android.tools.utp:android-test-plugin-result-listener-gradle@31.13.0 > io.grpc:grpc-netty@1.69.1 > io.netty:netty-codec-http2@4.1.110.Final > io.netty:netty-common@4.1.110.Final and 19 other path(s)
+  This issue was fixed in versions: 4.1.118, 4.2.0.RC3
+
+
+
+Organization:      st10382828
+Package manager:   gradle
+Target file:       build.gradle.kts
+Project name:      AnimalsInDistress/app
+Open source:       no
+Project path:      C:\Users\lab_services_student\AndroidStudioProjects\AnimalsInDistress
+Licenses:          enabled
+
+
+Tested 2 projects, 1 contained vulnerable paths.
+
+
+

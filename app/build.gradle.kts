@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.kotlin.compose)
     id("androidx.navigation.safeargs.kotlin")
     id("com.google.gms.google-services")
+    id("org.sonarqube") version "7.0.1.6134"
     // Hilt removed for now to resolve build issues; can reintroduce later
 }
 
@@ -45,6 +46,24 @@ android {
     }
     buildFeatures {
         compose = true
+    }
+}
+
+// SonarQube Configuration
+sonarqube {
+    properties {
+        property("sonar.projectKey", "ST10382828_AnimalsInDistress")
+        property("sonar.organization", "st10382828")
+        property("sonar.projectName", "Animals In Distress")
+        property("sonar.projectVersion", "1.0")
+        property("sonar.sources", "src/main/java")
+        property("sonar.tests", "src/test,src/androidTest")
+        property("sonar.language", "kotlin")
+        property("sonar.sourceEncoding", "UTF-8")
+        // Exclude build files and generated code
+        property("sonar.exclusions", "**/build/**,**/generated/**,**/*.xml,**/*.json")
+        // Kotlin specific
+        property("sonar.kotlin.linter.reportPaths", "build/reports/detekt/detekt.xml")
     }
 }
 
