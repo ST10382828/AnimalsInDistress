@@ -114,11 +114,13 @@ class MoreFragment : Fragment(R.layout.fragment_more) {
         val adminSectionHeader = view.findViewById<View>(R.id.admin_section_header)
         val adminContactSubmissionsLayout = view.findViewById<View>(R.id.menu_item_admin_contact_submissions)
         val adminStoriesEditorLayout = view.findViewById<View>(R.id.menu_item_admin_stories_editor)
+        val adminGalleryEditorLayout = view.findViewById<View>(R.id.menu_item_admin_gallery_editor)
         val adminMedicalAidRequestsCard = view.findViewById<com.google.android.material.card.MaterialCardView>(R.id.menu_item_admin_medical_aid_requests)
         
-        // Get parent MaterialCardViews for the first two
+        // Get parent MaterialCardViews for the first three
         val adminContactSubmissionsCard = adminContactSubmissionsLayout?.parent as? com.google.android.material.card.MaterialCardView
         val adminStoriesEditorCard = adminStoriesEditorLayout?.parent as? com.google.android.material.card.MaterialCardView
+        val adminGalleryEditorCard = adminGalleryEditorLayout?.parent as? com.google.android.material.card.MaterialCardView
         
         adminContactSubmissionsCard?.setOnClickListener {
             try {
@@ -131,6 +133,14 @@ class MoreFragment : Fragment(R.layout.fragment_more) {
         adminStoriesEditorCard?.setOnClickListener {
             try {
                 findNavController().navigate(R.id.adminStoriesEditorFragment)
+            } catch (e: Exception) {
+                android.util.Log.e("MoreFragment", "Navigation error", e)
+            }
+        }
+        
+        adminGalleryEditorCard?.setOnClickListener {
+            try {
+                findNavController().navigate(R.id.adminGalleryEditorFragment)
             } catch (e: Exception) {
                 android.util.Log.e("MoreFragment", "Navigation error", e)
             }
@@ -167,6 +177,17 @@ class MoreFragment : Fragment(R.layout.fragment_more) {
             }
         }
         
+        adminGalleryEditorCard?.let { card ->
+            val innerLayout = card.getChildAt(0) as? android.view.ViewGroup
+            innerLayout?.setOnClickListener {
+                try {
+                    findNavController().navigate(R.id.adminGalleryEditorFragment)
+                } catch (e: Exception) {
+                    android.util.Log.e("MoreFragment", "Navigation error", e)
+                }
+            }
+        }
+        
         adminMedicalAidRequestsCard?.let { card ->
             val innerLayout = card.getChildAt(0) as? android.view.ViewGroup
             innerLayout?.setOnClickListener {
@@ -193,6 +214,7 @@ class MoreFragment : Fragment(R.layout.fragment_more) {
                     adminSectionHeader?.visibility = View.GONE
                     adminContactSubmissionsCard?.visibility = View.GONE
                     adminStoriesEditorCard?.visibility = View.GONE
+                    adminGalleryEditorCard?.visibility = View.GONE
                     adminMedicalAidRequestsCard?.visibility = View.GONE
                 }
                 
@@ -208,11 +230,13 @@ class MoreFragment : Fragment(R.layout.fragment_more) {
                                 adminSectionHeader?.visibility = View.VISIBLE
                                 adminContactSubmissionsCard?.visibility = View.VISIBLE
                                 adminStoriesEditorCard?.visibility = View.VISIBLE
+                                adminGalleryEditorCard?.visibility = View.VISIBLE
                                 adminMedicalAidRequestsCard?.visibility = View.VISIBLE
                             } else {
                                 adminSectionHeader?.visibility = View.GONE
                                 adminContactSubmissionsCard?.visibility = View.GONE
                                 adminStoriesEditorCard?.visibility = View.GONE
+                                adminGalleryEditorCard?.visibility = View.GONE
                                 adminMedicalAidRequestsCard?.visibility = View.GONE
                             }
                         }
@@ -225,6 +249,7 @@ class MoreFragment : Fragment(R.layout.fragment_more) {
                 adminSectionHeader?.visibility = View.GONE
                 adminContactSubmissionsCard?.visibility = View.GONE
                 adminStoriesEditorCard?.visibility = View.GONE
+                adminGalleryEditorCard?.visibility = View.GONE
                 adminMedicalAidRequestsCard?.visibility = View.GONE
             }
         }

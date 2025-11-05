@@ -260,6 +260,12 @@
         tools:layout="@layout/fragment_admin_stories_editor" />
 
     <fragment
+        android:id="@+id/adminGalleryEditorFragment"
+        android:name="student.projects.animalsindistress.ui.fragments.admin.AdminGalleryEditorFragment"
+        android:label="Admin: Gallery Manager"
+        tools:layout="@layout/fragment_admin_gallery_editor" />
+
+    <fragment
         android:id="@+id/adminMedicalAidRequestsFragment"
         android:name="student.projects.animalsindistress.ui.fragments.admin.AdminMedicalAidRequestsFragment"
         android:label="Admin: Medical Aid Requests"
