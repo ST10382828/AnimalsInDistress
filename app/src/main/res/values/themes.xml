@@ -20,4 +20,9 @@
     <style name="App.NavigationBarActiveIndicator.Shape" parent="ShapeAppearance.Material3.Corner.Full">
         <item name="cornerSize">50%</item>
     </style>
+
+    <style name="ShapeAppearance.App.Circle" parent="ShapeAppearance.Material3.Corner.Full">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
 </resources>

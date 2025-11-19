@@ -134,19 +134,23 @@
                             android:weightSum="2">
                             <com.google.android.material.button.MaterialButton
                                 android:id="@+id/btn_donate_100"
+                                style="@style/Widget.Material3.Button.OutlinedButton"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="Donate R100"
-                                app:backgroundTint="@color/primary" />
+                                android:textColor="@color/primary"
+                                app:strokeColor="@color/primary" />
                             <Space android:layout_width="8dp" android:layout_height="0dp" />
                             <com.google.android.material.button.MaterialButton
                                 android:id="@+id/btn_donate_500"
+                                style="@style/Widget.Material3.Button.OutlinedButton"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="Donate R500"
-                                app:backgroundTint="@color/primary" />
+                                android:textColor="@color/primary"
+                                app:strokeColor="@color/primary" />
                         </LinearLayout>
                         <Space android:layout_width="0dp" android:layout_height="8dp" />
                         <LinearLayout
@@ -156,14 +160,17 @@
                             android:weightSum="2">
                             <com.google.android.material.button.MaterialButton
                                 android:id="@+id/btn_donate_1000"
+                                style="@style/Widget.Material3.Button.OutlinedButton"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:text="Donate R1000"
-                                app:backgroundTint="@color/primary" />
+                                android:textColor="@color/primary"
+                                app:strokeColor="@color/primary" />
                             <Space android:layout_width="8dp" android:layout_height="0dp" />
                             <com.google.android.material.button.MaterialButton
                                 android:id="@+id/btn_donate_custom"
+                                style="@style/Widget.Material3.Button"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"

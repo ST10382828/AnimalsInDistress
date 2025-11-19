@@ -38,13 +38,23 @@
                     app:tint="@android:color/white" />
 
                 <!-- Logo in CENTER or LEFT (when back button is hidden) -->
-                <ImageView
-                    android:id="@+id/toolbar_logo"
-                    android:layout_width="120dp"
+                <androidx.cardview.widget.CardView
+                    android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:src="@drawable/said_logo"
-                    android:scaleType="fitStart"
-                    android:layout_gravity="start" />
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="0dp"
+                    app:cardBackgroundColor="@android:color/transparent"
+                    android:layout_gravity="start">
+
+                    <ImageView
+                        android:id="@+id/toolbar_logo"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/animals_logo"
+                        android:scaleType="centerCrop"
+                        android:scaleX="1.2"
+                        android:scaleY="1.2" />
+                </androidx.cardview.widget.CardView>
 
 
 				<!-- Title Text (shown on detail pages, hidden on main pages) -->

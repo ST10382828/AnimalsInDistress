@@ -32,8 +32,10 @@ class StoryDetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val heroImage: ImageView = view.findViewById(R.id.detailHeroImage)
         val titleText: TextView = view.findViewById(R.id.detailTitle)
         val fullContentText: TextView = view.findViewById(R.id.detailFullContent)
+        val adoptedContainer: View = view.findViewById(R.id.adoptedContainer)
         val adoptedText: TextView = view.findViewById(R.id.adoptedUpdate)
         val mediaList: RecyclerView = view.findViewById(R.id.detailMediaList)
 
@@ -48,11 +50,51 @@ class StoryDetailFragment : Fragment() {
                     titleText.text = it.title
                     fullContentText.text = it.fullContent
                     
+                    // Load Hero Image
+                    val firstMedia = it.media.firstOrNull()
+                    val imagePath = when {
+                        firstMedia == null -> null
+                        firstMedia.type == MediaType.IMAGE -> firstMedia.urlOrPath
+                        else -> firstMedia.thumbnailPath ?: firstMedia.urlOrPath
+                    }
+                    
+                    if (imagePath != null) {
+                        when {
+                            imagePath.startsWith("data:image") -> {
+                                try {
+                                    val base64String = imagePath.substringAfter("base64,")
+                                    val imageBytes = Base64.decode(base64String, Base64.DEFAULT)
+                                    val bitmap = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
+                                    heroImage.setImageBitmap(bitmap)
+                                } catch (e: Exception) {
+                                    heroImage.setImageResource(R.drawable.placeholder_animal)
+                                }
+                            }
+                            imagePath.startsWith("http") -> {
+                                heroImage.load(imagePath) {
+                                    crossfade(300)
+                                    placeholder(R.drawable.placeholder_animal)
+                                    error(R.drawable.placeholder_animal)
+                                }
+                            }
+                            else -> {
+                                val resourceName = imagePath.substringBeforeLast('.')
+                                val drawableId = requireContext().resources.getIdentifier(
+                                    resourceName, "drawable", requireContext().packageName
+                                )
+                                if (drawableId != 0) heroImage.setImageResource(drawableId)
+                                else heroImage.setImageResource(R.drawable.placeholder_animal)
+                            }
+                        }
+                    } else {
+                        heroImage.setImageResource(R.drawable.placeholder_animal)
+                    }
+
                     if (!it.adoptedUpdate.isNullOrBlank()) {
                         adoptedText.text = "✨ Where are they now?\n${it.adoptedUpdate}"
-                        adoptedText.visibility = View.VISIBLE
+                        adoptedContainer.visibility = View.VISIBLE
                     } else {
-                        adoptedText.visibility = View.GONE
+                        adoptedContainer.visibility = View.GONE
                     }
                     
                     mediaList.adapter = DetailMediaAdapter(it.media)

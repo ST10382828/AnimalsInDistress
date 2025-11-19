@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary">#003D99</color>
-    <color name="aid_blue">#003D99</color>
-    <color name="primary_alpha">#1A003D99</color>
-    <color name="primary_glow">#0052CC</color>
+    <color name="primary">#2563EB</color> <!-- More vibrant blue -->
+    <color name="aid_blue">#2563EB</color>
+    <color name="primary_alpha">#1A2563EB</color>
+    <color name="primary_glow">#3B82F6</color>
     <color name="primary_foreground">#FFFFFFFF</color>
-    <color name="secondary">#3366CC</color>
+    <color name="secondary">#3B82F6</color>
     <color name="secondary_foreground">#FFFFFFFF</color>
-    <color name="accent">#1A5CCC</color>
+    <color name="accent">#60A5FA</color>
     <color name="accent_foreground">#FFFFFFFF</color>
-    <color name="background">#FFFFFFFF</color>
-    <color name="foreground">#2D3748</color>
-    <color name="muted">#F2F4F7</color>
-    <color name="muted_foreground">#6B7280</color>
+    <color name="background">#F8FAFC</color> <!-- Slightly cooler background -->
+    <color name="foreground">#1E293B</color> <!-- Darker slate for text -->
+    <color name="muted">#F1F5F9</color>
+    <color name="muted_foreground">#64748B</color>
     <color name="card">#FFFFFFFF</color>
-    <color name="card_foreground">#2D3748</color>
-    <color name="border">#E5E7EB</color>
-    <color name="input">#E5E7EB</color>
+    <color name="card_foreground">#1E293B</color>
+    <color name="border">#E2E8F0</color>
+    <color name="input">#E2E8F0</color>
     <color name="success">#10B981</color>
     <color name="success_foreground">#FFFFFFFF</color>
     <color name="warning">#F59E0B</color>
@@ -34,5 +34,5 @@
     <!-- Switch colors -->
     <color name="switch_thumb_color">#FFFFFFFF</color>
     <color name="switch_track_color">#E0E0E0</color>
-    <color name="switch_track_color_checked">#003D99</color>
+    <color name="switch_track_color_checked">#2563EB</color>
 </resources>

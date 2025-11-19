@@ -162,6 +162,20 @@ class MainActivity : AppCompatActivity() {
         val bottomNav = findViewById<BottomNavigationView>(R.id.bottom_nav)
         bottomNav.setupWithNavController(navController)
         
+        // Override listener to ensure Home button pops back stack correctly
+        bottomNav.setOnItemSelectedListener { item ->
+            if (item.itemId == R.id.homeFragment) {
+                // If we are not on home, pop back to it
+                if (navController.currentDestination?.id != R.id.homeFragment) {
+                    navController.popBackStack(R.id.homeFragment, false)
+                }
+                true
+            } else {
+                // Use default behavior for other items
+                androidx.navigation.ui.NavigationUI.onNavDestinationSelected(item, navController)
+            }
+        }
+        
         // Initialize drawer menu
         updateDrawerMenu()
         updateToolbarUserEmail()
