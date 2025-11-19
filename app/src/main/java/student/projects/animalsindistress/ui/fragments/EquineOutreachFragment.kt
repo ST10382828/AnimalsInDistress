@@ -11,12 +11,8 @@ class EquineOutreachFragment : Fragment(R.layout.fragment_equine_outreach) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         
-        view.findViewById<View>(R.id.btn_donate_equine).setOnClickListener {
-            findNavController().navigate(R.id.donateFragment)
-        }
-        
-        view.findViewById<View>(R.id.btn_volunteer_equine).setOnClickListener {
-            findNavController().navigate(R.id.volunteerFragment)
+        view.findViewById<View>(R.id.btn_get_in_touch)?.setOnClickListener {
+            findNavController().navigate(R.id.contactFragment)
         }
     }
 }

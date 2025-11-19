@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
+import android.widget.ScrollView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import student.projects.animalsindistress.R
@@ -12,8 +13,24 @@ import com.google.firebase.auth.FirebaseAuth
 
 class MoreFragment : Fragment(R.layout.fragment_more) {
     
+    private var scrollPosition = 0
+    private var scrollView: ScrollView? = null
+    
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        
+        // Get scroll view reference
+        scrollView = view.findViewById<ScrollView>(R.id.scroll_view_more)
+        
+        // Restore scroll position if saved
+        if (savedInstanceState != null) {
+            scrollPosition = savedInstanceState.getInt("scroll_position", 0)
+        }
+        
+        // Restore scroll position after layout is complete
+        scrollView?.post {
+            scrollView?.scrollTo(0, scrollPosition)
+        }
         
         // Setup click listeners for all menu items
         view.findViewById<View>(R.id.menu_item_volunteer)?.setOnClickListener {
@@ -102,7 +119,22 @@ class MoreFragment : Fragment(R.layout.fragment_more) {
         }
         
         view.findViewById<View>(R.id.menu_item_instagram)?.setOnClickListener {
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/thesocietyforanimalsindistress"))
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.instagram.com/thesocietyforanimalsindistress/"))
+            startActivity(intent)
+        }
+
+        view.findViewById<View>(R.id.menu_item_twitter)?.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://x.com/SaidFundraiser"))
+            startActivity(intent)
+        }
+
+        view.findViewById<View>(R.id.menu_item_linkedin)?.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.linkedin.com/company/the-said/"))
+            startActivity(intent)
+        }
+
+        view.findViewById<View>(R.id.menu_item_whatsapp)?.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://wa.link/quddop"))
             startActivity(intent)
         }
         
@@ -254,6 +286,22 @@ class MoreFragment : Fragment(R.layout.fragment_more) {
             }
         }
         refreshAuthButton()
+    }
+    
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        // Save scroll position
+        scrollView?.let {
+            outState.putInt("scroll_position", it.scrollY)
+        }
+    }
+    
+    override fun onPause() {
+        super.onPause()
+        // Save scroll position in onPause as backup
+        scrollView?.let {
+            scrollPosition = it.scrollY
+        }
     }
 }
 

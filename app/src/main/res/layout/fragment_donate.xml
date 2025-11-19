@@ -19,8 +19,6 @@
             android:paddingEnd="16dp"
             android:paddingTop="16dp"
             android:paddingBottom="80dp">
-            android:paddingTop="16dp"
-            android:paddingBottom="80dp">
 
             <!-- Hero -->
             <LinearLayout
@@ -81,10 +79,10 @@
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
                             android:padding="16dp">
-                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Bank:    Standard Bank" />
-                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Account Name:    Society for Animals in Distress" />
-                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Account Number:    [Contact us for details]" />
-                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Branch Code:    [Contact us for details]" />
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Bank:    First National Bank" />
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Account Name:    The Society for Animals in Distress" />
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Account Number:    5147 0054 747" />
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Branch Code:    252105" />
                             <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Reference:    Your name + DONATION" />
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
@@ -100,7 +98,7 @@
 
             <Space android:layout_width="0dp" android:layout_height="16dp" />
 
-            <!-- Credit Card Donation -->
+            <!-- Online Donation Options -->
             <com.google.android.material.card.MaterialCardView
                 style="@style/Widget.Material3.CardView.Elevated"
                 android:layout_width="match_parent"
@@ -113,71 +111,158 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Credit Card Donation"
+                        android:text="Online Donations"
                         android:textStyle="bold"
                         android:textSize="20sp" />
-                    <Space android:layout_width="0dp" android:layout_height="12dp" />
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Make a secure donation using your credit card through our online payment system."
-                        android:textColor="@color/muted_foreground" />
                     <Space android:layout_width="0dp" android:layout_height="16dp" />
-                    <LinearLayout
+                    
+                    <!-- PayFast -->
+                    <com.google.android.material.card.MaterialCardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="2dp"
+                        android:layout_marginBottom="16dp">
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:weightSum="2">
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/btn_donate_100"
-                                style="@style/Widget.Material3.Button.OutlinedButton"
-                                android:layout_width="0dp"
+                            android:orientation="vertical"
+                            android:padding="16dp"
+                            android:gravity="center">
+                            <TextView
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="Donate R100"
-                                android:textColor="@color/primary"
-                                app:strokeColor="@color/primary" />
-                            <Space android:layout_width="8dp" android:layout_height="0dp" />
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/btn_donate_500"
-                                style="@style/Widget.Material3.Button.OutlinedButton"
-                                android:layout_width="0dp"
+                                android:text="PayFast"
+                                android:textStyle="bold"
+                                android:textSize="18sp"
+                                android:textColor="#FF0000" />
+                            <TextView
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="Donate R500"
-                                android:textColor="@color/primary"
-                                app:strokeColor="@color/primary" />
+                                android:text="A DPO Company"
+                                android:textSize="12sp"
+                                android:textColor="@color/muted_foreground"
+                                android:layout_marginTop="4dp" />
+                            <Space android:layout_width="0dp" android:layout_height="12dp" />
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btn_payfast"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Donate Now →"
+                                app:backgroundTint="#4CAF50"
+                                android:textColor="@android:color/white" />
                         </LinearLayout>
-                        <Space android:layout_width="0dp" android:layout_height="8dp" />
+                    </com.google.android.material.card.MaterialCardView>
+                    
+                    <!-- givengain -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="2dp"
+                        android:layout_marginBottom="16dp">
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:weightSum="2">
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/btn_donate_1000"
-                                style="@style/Widget.Material3.Button.OutlinedButton"
-                                android:layout_width="0dp"
+                            android:orientation="vertical"
+                            android:padding="16dp"
+                            android:gravity="center">
+                            <LinearLayout
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="Donate R1000"
-                                android:textColor="@color/primary"
-                                app:strokeColor="@color/primary" />
-                            <Space android:layout_width="8dp" android:layout_height="0dp" />
-                            <com.google.android.material.button.MaterialButton
-                                android:id="@+id/btn_donate_custom"
-                                style="@style/Widget.Material3.Button"
-                                android:layout_width="0dp"
+                                android:orientation="horizontal"
+                                android:gravity="center">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="❤"
+                                    android:textSize="24sp" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="+"
+                                    android:textSize="16sp"
+                                    android:textColor="#2196F3"
+                                    android:layout_marginStart="-8dp"
+                                    android:layout_marginTop="8dp" />
+                            </LinearLayout>
+                            <TextView
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="Custom Amount"
-                                app:backgroundTint="@color/primary" />
+                                android:text="givengain"
+                                android:textStyle="bold"
+                                android:textSize="18sp"
+                                android:textColor="#1976D2"
+                                android:layout_marginTop="4dp" />
+                            <Space android:layout_width="0dp" android:layout_height="12dp" />
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btn_givengain"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Donate Now →"
+                                app:backgroundTint="#4CAF50"
+                                android:textColor="@android:color/white" />
                         </LinearLayout>
-                    </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                    
+                    <!-- SnapScan -->
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="2dp">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="0dp">
+                            <!-- Header -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:background="#1976D2"
+                                android:padding="12dp"
+                                android:gravity="center_vertical">
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="SnapScan"
+                                    android:textColor="@android:color/white"
+                                    android:textStyle="bold"
+                                    android:textSize="16sp" />
+                            </LinearLayout>
+                            <!-- QR Code and Content -->
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical"
+                                android:padding="16dp"
+                                android:gravity="center">
+                                <ImageView
+                                    android:layout_width="200dp"
+                                    android:layout_height="200dp"
+                                    android:src="@drawable/snapscan"
+                                    android:scaleType="fitCenter"
+                                    android:contentDescription="SnapScan QR Code" />
+                                <Space android:layout_width="0dp" android:layout_height="8dp" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Snap here to pay"
+                                    android:textSize="12sp"
+                                    android:textColor="@color/muted_foreground" />
+                                <Space android:layout_width="0dp" android:layout_height="8dp" />
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Sign up with any South African bank card"
+                                    android:textSize="10sp"
+                                    android:textColor="@color/muted_foreground"
+                                    android:gravity="center" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -256,11 +341,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Phone: 011 466 0261" />
-                    <TextView
-                        android:id="@+id/contact_mobile"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Mobile: 083 640 8825" />
                     <Space android:layout_width="0dp" android:layout_height="12dp" />
                     <TextView
                         android:id="@+id/contact_email"
@@ -408,6 +488,7 @@
                     <TextView android:id="@+id/help_volunteer" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="→ Volunteer with us" android:textColor="@color/primary" android:textSize="14sp" android:layout_marginBottom="8dp" />
                     <TextView android:id="@+id/help_shop" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="→ Shop with a purpose" android:textColor="@color/primary" android:textSize="14sp" android:layout_marginBottom="8dp" />
                     <TextView android:id="@+id/help_preloved" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="→ Donate pre-loved items" android:textColor="@color/primary" android:textSize="14sp" android:layout_marginBottom="8dp" />
+                    <TextView android:id="@+id/help_shopdonation" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="→ Donate for free (ShopDonation)" android:textColor="@color/primary" android:textSize="14sp" android:layout_marginBottom="8dp" />
                     <TextView android:id="@+id/help_myschool" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="→ Register with MySchool" android:textColor="@color/primary" android:textSize="14sp" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>

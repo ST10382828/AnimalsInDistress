@@ -19,6 +19,19 @@ class ContactFragment : Fragment(R.layout.fragment_contact) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Phone and email click handlers
+        view.findViewById<View>(R.id.phone_section)?.setOnClickListener {
+            val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:0114660261"))
+            startActivity(intent)
+        }
+
+        view.findViewById<View>(R.id.email_section)?.setOnClickListener {
+            val intent = Intent(Intent.ACTION_SENDTO).apply {
+                data = Uri.parse("mailto:animals@animalsindistress.org.za")
+            }
+            startActivity(intent)
+        }
+
         // Social media buttons
         view.findViewById<View>(R.id.btn_facebook)?.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/tsfaid"))
@@ -35,23 +48,28 @@ class ContactFragment : Fragment(R.layout.fragment_contact) {
             startActivity(intent)
         }
 
-        val etFirstName = view.findViewById<EditText>(R.id.etFirstName)
-        val etLastName = view.findViewById<EditText>(R.id.etLastName)
+        view.findViewById<View>(R.id.btn_linkedin)?.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.linkedin.com/company/the-said/"))
+            startActivity(intent)
+        }
+
+        view.findViewById<View>(R.id.btn_whatsapp)?.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://wa.link/quddop"))
+            startActivity(intent)
+        }
+
+        val etName = view.findViewById<EditText>(R.id.etName)
         val etEmail = view.findViewById<EditText>(R.id.etEmail)
-        val etPhone = view.findViewById<EditText>(R.id.etPhone)
         val etMessage = view.findViewById<EditText>(R.id.etMessage)
         val btnSubmit = view.findViewById<Button>(R.id.btn_submit_contact)
 
         btnSubmit?.setOnClickListener {
-            val firstName = etFirstName?.text?.toString()?.trim() ?: ""
-            val lastName = etLastName?.text?.toString()?.trim() ?: ""
-            val name = "$firstName $lastName".trim()
+            val name = etName?.text?.toString()?.trim() ?: ""
             val email = etEmail?.text?.toString()?.trim() ?: ""
-            val phone = etPhone?.text?.toString()?.trim() ?: ""
             val message = etMessage?.text?.toString()?.trim() ?: ""
 
-            if (firstName.isEmpty() || lastName.isEmpty() || email.isEmpty() || message.isEmpty()) {
-                Toast.makeText(requireContext(), "Please fill in all required fields", Toast.LENGTH_SHORT).show()
+            if (name.isEmpty() || email.isEmpty() || message.isEmpty()) {
+                Toast.makeText(requireContext(), "Please fill in all fields", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
@@ -60,7 +78,7 @@ class ContactFragment : Fragment(R.layout.fragment_contact) {
             val submission = ContactSubmission(
                 name = name,
                 email = email,
-                phone = phone,
+                phone = "", // No phone field in simplified form
                 message = message,
                 timestamp = Timestamp.now(),
                 read = false
@@ -71,10 +89,8 @@ class ContactFragment : Fragment(R.layout.fragment_contact) {
                 .addOnSuccessListener {
                     Toast.makeText(requireContext(), "Message sent successfully!", Toast.LENGTH_SHORT).show()
                     // Clear form
-                    etFirstName?.setText("")
-                    etLastName?.setText("")
+                    etName?.setText("")
                     etEmail?.setText("")
-                    etPhone?.setText("")
                     etMessage?.setText("")
                 }
                 .addOnFailureListener {

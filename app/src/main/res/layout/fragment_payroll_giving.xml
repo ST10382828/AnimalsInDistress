@@ -24,40 +24,69 @@
             <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal">
                 <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Payroll Giving" android:textStyle="bold" android:textSize="32sp" android:textColor="@color/foreground" />
                 <Space android:layout_width="0dp" android:layout_height="12dp" />
-                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Donate directly from your salary" android:textColor="@color/muted_foreground" android:gravity="center" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Make a Difference Through Payroll Giving with SAID" android:textColor="@color/muted_foreground" android:gravity="center" android:textSize="16sp" />
             </LinearLayout>
 
             <Space android:layout_width="0dp" android:layout_height="16dp" />
 
-            <!-- Sections -->
+            <!-- Introduction -->
             <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" >
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="What is Payroll Giving?" android:textStyle="bold" android:textSize="20sp" />
-                    <Space android:layout_width="0dp" android:layout_height="12dp" />
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Payroll giving allows you to donate to SAID directly from your salary before tax. This means you get tax relief immediately and can support animals in need effortlessly." android:textColor="@color/muted_foreground" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="At the Society for Animals in Distress (SAID), we are deeply grateful for the support we receive from corporate social investment (CSI) initiatives, pledges, and donations. Payroll giving offers another meaningful way for companies to get involved, empowering staff to make a real impact and showing your company's commitment to uplifting vulnerable communities." android:textColor="@color/muted_foreground" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
             <Space android:layout_width="0dp" android:layout_height="16dp" />
 
+            <!-- Get Involved -->
             <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" >
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Advantages" android:textStyle="bold" android:textSize="20sp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Get Involved – It's Easy and Impactful!" android:textStyle="bold" android:textSize="20sp" />
                     <Space android:layout_width="0dp" android:layout_height="12dp" />
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="• Automatic monthly donations
-• Immediate tax relief
-• No admin hassle
-• Easy to set up and cancel" android:textColor="@color/muted_foreground" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Join the SAID family by incorporating payroll giving in your organization. It's simple: staff can contribute any amount, and collectively, these contributions make a monumental difference in the lives of animals. Many companies even match staff contributions, doubling the impact!" android:textColor="@color/muted_foreground" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
             <Space android:layout_width="0dp" android:layout_height="16dp" />
 
+            <!-- Why Payroll Giving -->
             <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" >
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="How to Start" android:textStyle="bold" android:textSize="20sp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Why Payroll Giving?" android:textStyle="bold" android:textSize="20sp" />
                     <Space android:layout_width="0dp" android:layout_height="12dp" />
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Speak to your company's HR or payroll department about setting up a payroll giving scheme for SAID. We can provide all necessary documentation." android:textColor="@color/muted_foreground" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Payroll giving is more than just a donation – it's a demonstration of your company's commitment to community upliftment. By encouraging your staff to participate, you foster a culture of giving that can have a ripple effect throughout your organization." android:textColor="@color/muted_foreground" />
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="• Boost Staff Morale: Employees feel good knowing their contributions are making a real difference." android:textColor="@color/muted_foreground" />
+                    <Space android:layout_width="0dp" android:layout_height="8dp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="• Cultivate a Culture of Giving: Together, your team can support animal welfare and be part of something bigger." android:textColor="@color/muted_foreground" />
+                    <Space android:layout_width="0dp" android:layout_height="8dp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="• Tax Benefits: SAID is a registered Public Benefit Organization (PBO) under Section 18A of the Income Tax Act, meaning your company and employees receive tax deductions on donations." android:textColor="@color/muted_foreground" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <Space android:layout_width="0dp" android:layout_height="16dp" />
+
+            <!-- We Make it Easy -->
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" >
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="We Make it Easy" android:textStyle="bold" android:textSize="20sp" />
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="We provide you with everything you need to make payroll giving a success, including publicity materials for your intranet or internal communications. These resources will showcase how your team's contributions are changing the lives of animals in need." android:textColor="@color/muted_foreground" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <Space android:layout_width="0dp" android:layout_height="16dp" />
+
+            <!-- Get In Touch -->
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" >
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Get In Touch" android:textStyle="bold" android:textSize="20sp" />
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="If your company is ready to join hands with SAID, please reach out to our fundraising department to get started. We'll help you every step of the way!" android:textColor="@color/muted_foreground" />
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Ready to make an impact? Contact us today and let's work together to create a better future for the animals who need us most!" android:textColor="@color/muted_foreground" />
+                    <Space android:layout_width="0dp" android:layout_height="16dp" />
+                    <com.google.android.material.button.MaterialButton android:id="@+id/btn_contact_fundraising" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Contact Fundraising Department" app:backgroundTint="@color/primary" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 

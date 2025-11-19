@@ -8,9 +8,11 @@
     <include layout="@layout/include_mobile_top_bar" />
 
     <ScrollView
+        android:id="@+id/scroll_view_more"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1">
+        android:layout_weight="1"
+        android:saveEnabled="true">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -264,6 +266,36 @@
                         <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
                             <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Instagram — @thesocietyforanimalsindistress" android:textStyle="bold" android:textColor="@color/foreground" />
                             <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Follow us on Instagram" android:textColor="@color/muted_foreground" android:textSize="13sp" />
+                        </LinearLayout>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" android:textColor="@color/muted_foreground" android:textSize="20sp" />
+                    </LinearLayout>
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/border" />
+                    <LinearLayout android:id="@+id/menu_item_twitter" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp" android:orientation="horizontal" android:gravity="center_vertical" android:background="@drawable/ripple_primary" android:clickable="true" android:focusable="true">
+                        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_news_24" app:tint="@color/primary" android:contentDescription="X/Twitter Icon" />
+                        <Space android:layout_width="16dp" android:layout_height="0dp" />
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="X (Twitter) — @SaidFundraiser" android:textStyle="bold" android:textColor="@color/foreground" />
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Follow us on X" android:textColor="@color/muted_foreground" android:textSize="13sp" />
+                        </LinearLayout>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" android:textColor="@color/muted_foreground" android:textSize="20sp" />
+                    </LinearLayout>
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/border" />
+                    <LinearLayout android:id="@+id/menu_item_linkedin" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp" android:orientation="horizontal" android:gravity="center_vertical" android:background="@drawable/ripple_primary" android:clickable="true" android:focusable="true">
+                        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_business_24" app:tint="@color/primary" android:contentDescription="LinkedIn Icon" />
+                        <Space android:layout_width="16dp" android:layout_height="0dp" />
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="LinkedIn — The Society for Animals in Distress" android:textStyle="bold" android:textColor="@color/foreground" />
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Follow us on LinkedIn" android:textColor="@color/muted_foreground" android:textSize="13sp" />
+                        </LinearLayout>
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" android:textColor="@color/muted_foreground" android:textSize="20sp" />
+                    </LinearLayout>
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@color/border" />
+                    <LinearLayout android:id="@+id/menu_item_whatsapp" android:layout_width="match_parent" android:layout_height="wrap_content" android:padding="16dp" android:orientation="horizontal" android:gravity="center_vertical" android:background="@drawable/ripple_primary" android:clickable="true" android:focusable="true">
+                        <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_phone_24" app:tint="@color/primary" android:contentDescription="WhatsApp Icon" />
+                        <Space android:layout_width="16dp" android:layout_height="0dp" />
+                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="WhatsApp" android:textStyle="bold" android:textColor="@color/foreground" />
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Chat with us on WhatsApp" android:textColor="@color/muted_foreground" android:textSize="13sp" />
                         </LinearLayout>
                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text=">" android:textColor="@color/muted_foreground" android:textSize="20sp" />
                     </LinearLayout>

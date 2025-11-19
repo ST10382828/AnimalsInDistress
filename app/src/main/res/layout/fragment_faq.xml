@@ -18,22 +18,218 @@
             android:paddingEnd="16dp"
             android:paddingTop="16dp"
             android:paddingBottom="80dp">
-            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Frequently Asked Questions" android:textStyle="bold" android:textSize="24sp" />
-            <Space android:layout_width="0dp" android:layout_height="12dp" />
-            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Q: What are your operating hours?" android:textStyle="bold" />
-            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="A: Monday–Friday 07:00–16:00, Saturday 09:00–12:00, Sunday Closed." />
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Frequently asked Questions" android:textStyle="bold" android:textSize="32sp" android:gravity="center" />
+            <Space android:layout_width="0dp" android:layout_height="16dp" />
+
+            <!-- Question 1 -->
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                    <LinearLayout android:id="@+id/faq_question_1" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:clickable="true" android:focusable="true">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="1) What Does The Society For Animals In Distress Do?" android:textStyle="bold" android:textSize="16sp" />
+                        <TextView android:id="@+id/faq_arrow_1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="▶" android:textSize="16sp" android:textColor="@color/primary" />
+                    </LinearLayout>
+                    <LinearLayout android:id="@+id/faq_answer_1" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:visibility="gone">
+                        <Space android:layout_width="0dp" android:layout_height="8dp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="The Society is a welfare veterinary care provider; we drive access to veterinary care for animals in low to no income targeted communities. Our services and foci are funded by donors and sustainable income streams and we are proudly supported by committed volunteers who increase our capacity to successfully deliver our mandate. All services are rendered within the financial and professional capacity afforded to us." android:textColor="@color/muted_foreground" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Question 2 -->
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                    <LinearLayout android:id="@+id/faq_question_2" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:clickable="true" android:focusable="true">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="2) What Happens To The Animals After The Society Has Provided Veterinary Care?" android:textStyle="bold" android:textSize="16sp" />
+                        <TextView android:id="@+id/faq_arrow_2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="▶" android:textSize="16sp" android:textColor="@color/primary" />
+                    </LinearLayout>
+                    <LinearLayout android:id="@+id/faq_answer_2" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:visibility="gone">
+                        <Space android:layout_width="0dp" android:layout_height="8dp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="The animals are returned to their owners. It is our experience that working with owners through monitoring, professional services and a regular presence, delivers the most effective results in the development of knowledge and animal care skills. Our education is directed not only to the care of the returned patient, but serves to protect every successive animal the owner may take care of. The witnessing of the circumstances of individual clients, by our mobile unit teams, directs and ensures the integrity of our intervention." android:textColor="@color/muted_foreground" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Question 3 -->
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                    <LinearLayout android:id="@+id/faq_question_3" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:clickable="true" android:focusable="true">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="3) What Is Unique To The Society?" android:textStyle="bold" android:textSize="16sp" />
+                        <TextView android:id="@+id/faq_arrow_3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="▶" android:textSize="16sp" android:textColor="@color/primary" />
+                    </LinearLayout>
+                    <LinearLayout android:id="@+id/faq_answer_3" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:visibility="gone">
+                        <Space android:layout_width="0dp" android:layout_height="8dp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="We are unique in that we integrate local communities in our processes through education, participation and skills development. Through our SAID Enterprise Engagement division of The Society, we have pioneered the Animal Health Technician (AHT) mentorship program concept and lead the way in empowering graduate youth with a widened scope of employment possibilities. While contributing and providing opportunities to the active economic participation of professional youth, we successfully promote our focus in the securing of future professional competency, commitment and the necessary capacity to achieve our mission of driving access to veterinary care across South Africa." android:textColor="@color/muted_foreground" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Question 4 -->
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                    <LinearLayout android:id="@+id/faq_question_4" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:clickable="true" android:focusable="true">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="4) How Many Animals Does The Society Provide Veterinary Care For?" android:textStyle="bold" android:textSize="16sp" />
+                        <TextView android:id="@+id/faq_arrow_4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="▶" android:textSize="16sp" android:textColor="@color/primary" />
+                    </LinearLayout>
+                    <LinearLayout android:id="@+id/faq_answer_4" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:visibility="gone">
+                        <Space android:layout_width="0dp" android:layout_height="8dp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="The Society is a daily monitor and presence in the targeted informal settlements north and north east of Johannesburg. Any public person can request assistance for their animals (T's &amp; C's apply). The Society provides an average of 80 000 animal treatments per year. Our high volume outreach services also include the support of communities outside of our targeted areas and other animal care organisations." android:textColor="@color/muted_foreground" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Question 5 -->
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                    <LinearLayout android:id="@+id/faq_question_5" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:clickable="true" android:focusable="true">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="5) How Long Has The Society Been In Existence?" android:textStyle="bold" android:textSize="16sp" />
+                        <TextView android:id="@+id/faq_arrow_5" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="▶" android:textSize="16sp" android:textColor="@color/primary" />
+                    </LinearLayout>
+                    <LinearLayout android:id="@+id/faq_answer_5" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:visibility="gone">
+                        <Space android:layout_width="0dp" android:layout_height="8dp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="The Society for Animals in Distress was established in 1958." android:textColor="@color/muted_foreground" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Question 6 -->
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                    <LinearLayout android:id="@+id/faq_question_6" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:clickable="true" android:focusable="true">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="6) In Integrating The Community In Animal Welfare, How Does The Society Provide Meaningful, Opportunities To Informal Settlement &amp; Rural Community Members?" android:textStyle="bold" android:textSize="16sp" />
+                        <TextView android:id="@+id/faq_arrow_6" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="▶" android:textSize="16sp" android:textColor="@color/primary" />
+                    </LinearLayout>
+                    <LinearLayout android:id="@+id/faq_answer_6" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:visibility="gone">
+                        <Space android:layout_width="0dp" android:layout_height="8dp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="The Society draws their graduate youth mentorship candidates from rural areas throughout South Africa. Mentorship opportunities provided to the candidates serve to address the loss of professional graduate value to unemployment. The Society also employs the services of local unskilled, informal settlement community members, in supporting roles for each employed mentored professional graduate. These supporting roles in turn increase our education platform as they share their experience with others." android:textColor="@color/muted_foreground" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Question 7 -->
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                    <LinearLayout android:id="@+id/faq_question_7" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:clickable="true" android:focusable="true">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="7) Why Is Mentorship Of Graduates Important?" android:textStyle="bold" android:textSize="16sp" />
+                        <TextView android:id="@+id/faq_arrow_7" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="▶" android:textSize="16sp" android:textColor="@color/primary" />
+                    </LinearLayout>
+                    <LinearLayout android:id="@+id/faq_answer_7" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:visibility="gone">
+                        <Space android:layout_width="0dp" android:layout_height="8dp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="One of the major contributing factors to animal abuse and neglect is the lack of knowledge and affordable, readily available access to professional veterinary care services. The mentorship of para-veterinary graduate youth provides current and future capacity solutions to address this dire need. Every mentored graduate para-veterinarian holds the key to greatly reduce the suffering of animals, they minimise the number of animals requiring rescue and in turn the over-crowding of rescue facilities. Another critical factor made possible by graduate mentorship, is the stemming of the dilution of donor funding that is currently crippling solution based progress." android:textColor="@color/muted_foreground" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Question 8 -->
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                    <LinearLayout android:id="@+id/faq_question_8" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:clickable="true" android:focusable="true">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="8) How Does The Society's Focus Positively Benefit Other Animal Welfare Organisations, Rescue Facilities Or The General Populous?" android:textStyle="bold" android:textSize="16sp" />
+                        <TextView android:id="@+id/faq_arrow_8" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="▶" android:textSize="16sp" android:textColor="@color/primary" />
+                    </LinearLayout>
+                    <LinearLayout android:id="@+id/faq_answer_8" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:visibility="gone">
+                        <Space android:layout_width="0dp" android:layout_height="8dp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="The Society provides veterinary services to several animal welfare organisations and rescue facilities at affordable rates. These rates assist these organisations and rescue facilities to conserve their income and adequately serve the animals in their charge. The Society's mandate and ethical responsibility does not exclude veterinary services to those who can afford or have access to afford private veterinary practices. These potential clients can request The Society's veterinary services, post a legally required means test. Charges are allocated according to the results of the means test. When seeking the veterinary services of The Society, it must be understood, that limited diagnostic equipment is available. Clients are advised of the veterinary limitations in a welfare environment and accept our services by completing all documentation required." android:textColor="@color/muted_foreground" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Question 9 -->
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                    <LinearLayout android:id="@+id/faq_question_9" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:clickable="true" android:focusable="true">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="9) Does The Society Charge Poor Clients For Their Services?" android:textStyle="bold" android:textSize="16sp" />
+                        <TextView android:id="@+id/faq_arrow_9" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="▶" android:textSize="16sp" android:textColor="@color/primary" />
+                    </LinearLayout>
+                    <LinearLayout android:id="@+id/faq_answer_9" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:visibility="gone">
+                        <Space android:layout_width="0dp" android:layout_height="8dp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="The Society charges a heavily discounted welfare cost for veterinary service according to the client's financial circumstances. In our experience, a nominal donation requested from clients increases the likelihood that the patient will be supported by a committed owner. Clients who are serviced by The Society receive service excellence and are dependent and grateful for the rapid response they receive. The development of trust in The Society's professional staff engenders pride in our clients' commitment to their animals." android:textColor="@color/muted_foreground" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Question 10 -->
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                    <LinearLayout android:id="@+id/faq_question_10" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:clickable="true" android:focusable="true">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="10) Does The Society Educate Communities?" android:textStyle="bold" android:textSize="16sp" />
+                        <TextView android:id="@+id/faq_arrow_10" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="▶" android:textSize="16sp" android:textColor="@color/primary" />
+                    </LinearLayout>
+                    <LinearLayout android:id="@+id/faq_answer_10" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:visibility="gone">
+                        <Space android:layout_width="0dp" android:layout_height="8dp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Education is the cornerstone of The Society's approach. Poverty has a huge impact in the communities we serve and it is only through educating animal care and backing up education with veterinary service, that we are able to make a meaningful and sustainable difference in the lives of animals." android:textColor="@color/muted_foreground" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Question 11 -->
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                    <LinearLayout android:id="@+id/faq_question_11" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:clickable="true" android:focusable="true">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="11) What Is Your Facility In Midrand Used For?" android:textStyle="bold" android:textSize="16sp" />
+                        <TextView android:id="@+id/faq_arrow_11" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="▶" android:textSize="16sp" android:textColor="@color/primary" />
+                    </LinearLayout>
+                    <LinearLayout android:id="@+id/faq_answer_11" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:visibility="gone">
+                        <Space android:layout_width="0dp" android:layout_height="8dp" />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="The Society's facility in Midrand comprises a state of the art hospital to deliver veterinary care, internal outreach programs and provide the space required to mentor graduate youth. The facility incorporates 203 fit for purpose kennels, an equine care centre, paddocking for herd animals and equine, administration offices and storage facilities." android:textColor="@color/muted_foreground" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Question 12 -->
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                    <LinearLayout android:id="@+id/faq_question_12" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:clickable="true" android:focusable="true">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="12) How Can You Assist Animals Across South Africa" android:textStyle="bold" android:textSize="16sp" />
+                        <TextView android:id="@+id/faq_arrow_12" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="▶" android:textSize="16sp" android:textColor="@color/primary" />
+                    </LinearLayout>
+                    <LinearLayout android:id="@+id/faq_answer_12" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:visibility="gone">
             <Space android:layout_width="0dp" android:layout_height="8dp" />
-            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Q: Who can use your services?" android:textStyle="bold" />
-            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="A: Persons earning low to no income. Referral letter required if previously used private veterinary clinic." />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Donating to The Society via the varied platforms is not limited to the illustrated options on the back of this communication. Your investment through the enterprise engagement focus, of the SAID division, will build capital resources to secure future developmental requirements. Your donation or investment into our solution driven cause will advance the multiple benefits derived from driving access to veterinary care. You will be instrumental in cementing the future of professional veterinary services for all, employment opportunities, sustained effective animal care education and the protection and power of donor funded resources. The ultimate prize however is the alleviation of the unnecessary suffering of animals that produces a direct, positive knock on effect for children and our people." android:textColor="@color/muted_foreground" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Question 13 -->
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                    <LinearLayout android:id="@+id/faq_question_13" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:clickable="true" android:focusable="true">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="13) Can I Trust That My Donation Will Be Invested In The Alleviation Of Animal Suffering?" android:textStyle="bold" android:textSize="16sp" />
+                        <TextView android:id="@+id/faq_arrow_13" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="▶" android:textSize="16sp" android:textColor="@color/primary" />
+                    </LinearLayout>
+                    <LinearLayout android:id="@+id/faq_answer_13" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:visibility="gone">
             <Space android:layout_width="0dp" android:layout_height="8dp" />
-            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Q: How can I volunteer?" android:textStyle="bold" />
-            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="A: Contact us at animals@animalsindistress.org.za or call 011 466 0261 to discuss opportunities." />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="The Society is singularly focused in welfare professional veterinary care. Every cent received is valued and administered directly into our mandate and proven in the results gained from our mission to drive access to veterinary care." android:textColor="@color/muted_foreground" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Question 14 -->
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                    <LinearLayout android:id="@+id/faq_question_14" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:clickable="true" android:focusable="true">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="14) Can I Visit The Society And Learn More About The Organisation?" android:textStyle="bold" android:textSize="16sp" />
+                        <TextView android:id="@+id/faq_arrow_14" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="▶" android:textSize="16sp" android:textColor="@color/primary" />
+                    </LinearLayout>
+                    <LinearLayout android:id="@+id/faq_answer_14" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:visibility="gone">
             <Space android:layout_width="0dp" android:layout_height="8dp" />
-            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Q: Do you provide tax certificates?" android:textStyle="bold" />
-            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="A: Yes, we provide Section 18A tax certificates for qualifying donations. Email us to request." />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="The Society's facility in Midrand comprises a state of the art hospital to deliver veterinary care, internal outreach programs and provide the space required to mentor graduate youth. The facility incorporates 203 fit for purpose kennels, an equine care centre, paddocking for herd animals and equine, administration offices and storage facilities." android:textColor="@color/muted_foreground" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Question 15 -->
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                    <LinearLayout android:id="@+id/faq_question_15" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:clickable="true" android:focusable="true">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="15) How Do SAID Programmes Differ From Sector Partners?" android:textStyle="bold" android:textSize="16sp" />
+                        <TextView android:id="@+id/faq_arrow_15" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="▶" android:textSize="16sp" android:textColor="@color/primary" />
+                    </LinearLayout>
+                    <LinearLayout android:id="@+id/faq_answer_15" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:visibility="gone">
             <Space android:layout_width="0dp" android:layout_height="8dp" />
-            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Q: Where is your facility located?" android:textStyle="bold" />
-            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="A: Our state-of-the-art hospital is located in Midrand with 203 kennels and equine care facilities." />
+                        <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Our One Health approach focuses on developing innovative strategies through the nationwide positioning of AHT's to engage marginalized pet owners in healthcare. 19 AHT's completed mentorship including mobile unit field work and in-hospital care. 14 AHT's progressed into the wider veterinary sector, government posts, business, and the pursuit of University Master's Degrees. 5 SAID AHT's are highly competent in delivering important roles for professional and high-pressured veterinary Outreaches 3 AHT run Mobile Units educated and provided care on average for *64 913 owners, vaccinating 23 641 animals 3 AHT Mobile Units raised Peer zoonosis awareness about ringworm, rabies, mange, worms, cat scratch disease, giardia and more. 7 656 new animal patients for sterilisation. Engaged new clients and re-engaged existing clients in health Consistent Monitoring and Evaluating the welfare of animals in the vast impoverished communities." android:textColor="@color/muted_foreground" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
         </LinearLayout>
     </ScrollView>
 

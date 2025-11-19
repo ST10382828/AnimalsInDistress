@@ -58,6 +58,12 @@
                     <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="More Information" android:textStyle="bold" android:textSize="20sp" />
                     <Space android:layout_width="0dp" android:layout_height="12dp" />
                     <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="For confidential information about leaving a legacy to SAID, please contact us. We can provide sample wording for your will and answer any questions." android:textColor="@color/muted_foreground" />
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="20 Moerdyk Avenue\nVorna Valley\nMidrand\n1686" android:textColor="@color/muted_foreground" android:textStyle="bold" />
+                    <Space android:layout_width="0dp" android:layout_height="8dp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="+27 11 466-0261" android:textColor="@color/primary" android:autoLink="phone" />
+                    <Space android:layout_width="0dp" android:layout_height="8dp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="NPO 001-249" android:textColor="@color/muted_foreground" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 

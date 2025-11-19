@@ -14,21 +14,13 @@ class DonateFragment : Fragment(R.layout.fragment_donate) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         
-        // Donation amount buttons
-        view.findViewById<View>(R.id.btn_donate_100)?.setOnClickListener {
-            openDonationLink("100")
+        // Online donation buttons
+        view.findViewById<View>(R.id.btn_payfast)?.setOnClickListener {
+            openUrl("https://www.payfast.co.za/donate/go/thesocietyforanimalsindistress")
         }
         
-        view.findViewById<View>(R.id.btn_donate_500)?.setOnClickListener {
-            openDonationLink("500")
-        }
-        
-        view.findViewById<View>(R.id.btn_donate_1000)?.setOnClickListener {
-            openDonationLink("1000")
-        }
-        
-        view.findViewById<View>(R.id.btn_donate_custom)?.setOnClickListener {
-            openDonationLink("custom")
+        view.findViewById<View>(R.id.btn_givengain)?.setOnClickListener {
+            openUrl("https://www.givengain.com/d/c/4203#amount")
         }
         
         // Monthly debit button
@@ -38,18 +30,13 @@ class DonateFragment : Fragment(R.layout.fragment_donate) {
         
         // Contact buttons
         view.findViewById<View>(R.id.contact_phone)?.setOnClickListener {
-            val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:0113231920"))
-            startActivity(intent)
-        }
-        
-        view.findViewById<View>(R.id.contact_mobile)?.setOnClickListener {
-            val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:0823707992"))
+            val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:0114660261"))
             startActivity(intent)
         }
         
         view.findViewById<View>(R.id.contact_email)?.setOnClickListener {
             val intent = Intent(Intent.ACTION_SENDTO).apply {
-                data = Uri.parse("mailto:admin@animalsindistress.org.za")
+                data = Uri.parse("mailto:animals@animalsindistress.org.za")
             }
             startActivity(intent)
         }
@@ -70,6 +57,10 @@ class DonateFragment : Fragment(R.layout.fragment_donate) {
         
         view.findViewById<View>(R.id.help_preloved)?.setOnClickListener {
             findNavController().navigate(R.id.contactFragment)
+        }
+
+        view.findViewById<View>(R.id.help_shopdonation)?.setOnClickListener {
+            openUrl("https://www.shopdonation.co.za/said")
         }
         
         view.findViewById<View>(R.id.help_myschool)?.setOnClickListener {

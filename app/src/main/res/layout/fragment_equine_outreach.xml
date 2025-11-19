@@ -44,7 +44,7 @@
             <!-- Pillar cards (4) -->
             <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp">
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Shelter" android:textStyle="bold" android:textSize="18sp" android:textColor="@color/foreground" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Shelter and Sanctuary" android:textStyle="bold" android:textSize="18sp" android:textColor="@color/foreground" />
                     <Space android:layout_width="0dp" android:layout_height="12dp" />
                     <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="For horses in the coal yards, finding shelter can be a daily struggle. That's why we're committed to building safe havens where they can find respite from the elements, ensuring they have a place to call home." android:textColor="@color/muted_foreground" />
                 </LinearLayout>
@@ -52,25 +52,25 @@
 
             <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp">
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Healthcare" android:textStyle="bold" android:textSize="18sp" android:textColor="@color/foreground" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Vital Veterinary Care" android:textStyle="bold" android:textSize="18sp" android:textColor="@color/foreground" />
                     <Space android:layout_width="0dp" android:layout_height="12dp" />
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Every horse deserves access to quality healthcare. Through our program, we provide essential veterinary services, including farrier work, dental care, deworming, and vaccinations." android:textColor="@color/muted_foreground" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Every horse deserves access to quality healthcare. Through our program, we provide essential veterinary services, including farrier work, dental care, deworming, and vaccinations. Whether it's a routine check-up or urgent medical attention, we're there for these animals every step of the way." android:textColor="@color/muted_foreground" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp">
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Rehabilitation" android:textStyle="bold" android:textSize="18sp" android:textColor="@color/foreground" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Rehabilitation and Rest" android:textStyle="bold" android:textSize="18sp" android:textColor="@color/foreground" />
                     <Space android:layout_width="0dp" android:layout_height="12dp" />
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="In times of injury or illness, horses need rest and rehabilitation to heal. We provide specialized care for injured or sick horses at our facility." android:textColor="@color/muted_foreground" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="In times of injury or illness, horses need rest and rehabilitation to heal. We provide specialized care for injured or sick horses at the Society for Animals in Distress' facility, offering them the support they need to recover and thrive once more." android:textColor="@color/muted_foreground" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content">
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Education" android:textStyle="bold" android:textSize="18sp" android:textColor="@color/foreground" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Owner Training and Tack Education" android:textStyle="bold" android:textSize="18sp" android:textColor="@color/foreground" />
                     <Space android:layout_width="0dp" android:layout_height="12dp" />
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Education is key to ensuring the well-being of horses. We provide training to owners on basic care practices, equine health, and the use of appropriate, safe, and humane tack." android:textColor="@color/muted_foreground" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Education is key to ensuring the well-being of horses. We provide training to owners on basic care practices, equine health, and the use of appropriate, safe, and humane tack. By empowering owners with knowledge and resources, we strive to create a community where horses are treated with the care and respect they deserve." android:textColor="@color/muted_foreground" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -116,13 +116,13 @@
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp" android:gravity="center_horizontal">
                     <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Join Our Stable Efforts Today" android:textStyle="bold" android:textSize="24sp" android:textColor="@color/foreground" android:gravity="center" />
                     <Space android:layout_width="0dp" android:layout_height="8dp" />
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Don't be a neigh-sayer, support Equine Outreach" android:textColor="@color/muted_foreground" android:gravity="center" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Ready to trot alongside something truly meaningful? Contact us to learn more about how you can support our Equine Support Unit and make a difference in the lives of these incredible animals." android:textColor="@color/muted_foreground" android:gravity="center" />
+                    <Space android:layout_width="0dp" android:layout_height="8dp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Thank you for believing in the power of hope. Together, we can create a world where every horse has a chance to thrive." android:textColor="@color/muted_foreground" android:gravity="center" android:textStyle="italic" />
                     <Space android:layout_width="0dp" android:layout_height="16dp" />
-                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:weightSum="2">
-                        <com.google.android.material.button.MaterialButton android:id="@+id/btn_donate_equine" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Donate Now" app:backgroundTint="@color/primary" />
-                        <Space android:layout_width="12dp" android:layout_height="0dp" />
-                        <com.google.android.material.button.MaterialButton android:id="@+id/btn_volunteer_equine" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Volunteer" app:backgroundTint="@color/secondary" />
-                    </LinearLayout>
+                    <com.google.android.material.button.MaterialButton android:id="@+id/btn_get_in_touch" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Get In Touch" app:backgroundTint="@color/primary" />
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Don't be a neigh-sayer, support Equine Outreach" android:textColor="@color/muted_foreground" android:gravity="center" android:textSize="14sp" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 

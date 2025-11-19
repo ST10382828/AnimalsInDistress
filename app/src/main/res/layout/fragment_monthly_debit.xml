@@ -22,42 +22,200 @@
 
             <!-- Hero -->
             <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:gravity="center_horizontal">
-                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Monthly Debit Order" android:textStyle="bold" android:textSize="32sp" android:textColor="@color/foreground" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="MONTHLY DEBIT ORDER" android:textStyle="bold" android:textSize="32sp" android:textColor="@color/foreground" android:gravity="center" />
                 <Space android:layout_width="0dp" android:layout_height="12dp" />
-                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Set up a monthly debit order for ongoing support" android:textColor="@color/muted_foreground" android:gravity="center" />
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Thank you for your gift by way of a debit order to The Society for Animals in Distress (SAID). Your monthly debit order safeguards regular income for the reliable care of our animals. For as little as R 100-00 a month, you contribute to 100 000 veterinary treatments and make a difference in our animals' lives." android:textColor="@color/muted_foreground" android:gravity="center" />
             </LinearLayout>
 
             <Space android:layout_width="0dp" android:layout_height="16dp" />
 
-            <!-- Sections -->
-            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" >
+            <!-- Form Instructions -->
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content">
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Why Monthly Giving?" android:textStyle="bold" android:textSize="20sp" />
-                    <Space android:layout_width="0dp" android:layout_height="12dp" />
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Monthly debit orders provide us with predictable, consistent income that helps us plan better care for animals and ensures we can maintain our services year-round." android:textColor="@color/muted_foreground" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Please complete the below, and we will greatly appreciate whatever you can comfortably afford to donate to our cause. Please COMPLETE ALL FIELDS allocated with (required) if a field is not applicable, please INSERT N/A." android:textColor="@color/muted_foreground" />
+                    <Space android:layout_width="0dp" android:layout_height="8dp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="This is vitally important so that the form does not register as incomplete." android:textStyle="bold" android:textColor="@color/primary" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
             <Space android:layout_width="0dp" android:layout_height="16dp" />
 
-            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" >
+            <!-- Debit Order Form -->
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content">
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Benefits" android:textStyle="bold" android:textSize="20sp" />
-                    <Space android:layout_width="0dp" android:layout_height="12dp" />
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="• Tax-deductible (Section 18A certificate provided)
-• Helps us plan ahead
-• Makes a sustained impact
-• Can be adjusted or cancelled anytime" android:textColor="@color/muted_foreground" />
-                </LinearLayout>
-            </com.google.android.material.card.MaterialCardView>
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Get In Touch" android:textStyle="bold" android:textSize="20sp" />
+                    <Space android:layout_width="0dp" android:layout_height="16dp" />
 
-            <Space android:layout_width="0dp" android:layout_height="16dp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Initials (required)" />
+                    <Space android:layout_width="0dp" android:layout_height="4dp" />
+                    <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/et_initials" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Initials" />
+                    </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content" >
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Set Up Your Debit Order" android:textStyle="bold" android:textSize="20sp" />
                     <Space android:layout_width="0dp" android:layout_height="12dp" />
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Contact us to set up a monthly debit order. Choose any amount that works for your budget - every contribution helps." android:textColor="@color/muted_foreground" />
+
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Title (required)" />
+                    <Space android:layout_width="0dp" android:layout_height="4dp" />
+                    <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/et_title" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Mr" android:focusable="false" android:clickable="true" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Full Name (required)" />
+                    <Space android:layout_width="0dp" android:layout_height="4dp" />
+                    <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/et_full_name" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Full Name" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Email Address (required)" />
+                    <Space android:layout_width="0dp" android:layout_height="4dp" />
+                    <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/et_email" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textEmailAddress" android:hint="Email Address" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Contact Number (required)" />
+                    <Space android:layout_width="0dp" android:layout_height="4dp" />
+                    <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/et_contact_number" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="phone" android:hint="Contact Number" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Address for Tax Certificate (required)" />
+                    <Space android:layout_width="0dp" android:layout_height="4dp" />
+                    <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/et_tax_address" android:layout_width="match_parent" android:layout_height="wrap_content" android:minLines="2" android:hint="Address for Tax Certificate" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Would You Like to Make Your Payment Via: (required)" />
+                    <Space android:layout_width="0dp" android:layout_height="4dp" />
+                    <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/et_payment_method" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Debit Order" android:focusable="false" android:clickable="true" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Space android:layout_width="0dp" android:layout_height="16dp" />
+
+                    <!-- Debit Order Details Section -->
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Debit Order Donation Instructions" android:textStyle="bold" android:textSize="18sp" />
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Bank (required)" />
+                    <Space android:layout_width="0dp" android:layout_height="4dp" />
+                    <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/et_bank" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Bank" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Branch (required)" />
+                    <Space android:layout_width="0dp" android:layout_height="4dp" />
+                    <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/et_branch" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Branch" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Branch Code (required)" />
+                    <Space android:layout_width="0dp" android:layout_height="4dp" />
+                    <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/et_branch_code" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="number" android:hint="Branch Code" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Bank Account Number (required)" />
+                    <Space android:layout_width="0dp" android:layout_height="4dp" />
+                    <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/et_account_number" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="number" android:hint="Bank Account Number" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Bank Account Type (required)" />
+                    <Space android:layout_width="0dp" android:layout_height="4dp" />
+                    <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/et_account_type" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Savings" android:focusable="false" android:clickable="true" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Debit Order Commencement Date (required)" />
+                    <Space android:layout_width="0dp" android:layout_height="4dp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Debit order batches will be processed on the first business day of each month." android:textColor="@color/muted_foreground" android:textSize="12sp" />
+                    <Space android:layout_width="0dp" android:layout_height="4dp" />
+                    <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/et_commencement_date" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="01 Jan" android:focusable="false" android:clickable="true" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Monthly Donation Amount in Rands (required)" />
+                    <Space android:layout_width="0dp" android:layout_height="4dp" />
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="R " android:textStyle="bold" android:textSize="16sp" android:paddingEnd="8dp" />
+                        <com.google.android.material.textfield.TextInputLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1">
+                            <com.google.android.material.textfield.TextInputEditText android:id="@+id/et_donation_amount" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="numberDecimal" android:hint="100.00" />
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Do you require an 18A Tax Certificate? (required)" />
+                    <Space android:layout_width="0dp" android:layout_height="4dp" />
+                    <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/et_tax_certificate" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Yes" android:focusable="false" android:clickable="true" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Space android:layout_width="0dp" android:layout_height="16dp" />
+
+                    <!-- Tax Certificate Details Section -->
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="SARS has made it a requirement for 18A Tax Certificates to include the following information in order to qualify for the Tax Exemption when donating to registered charities:" android:textColor="@color/muted_foreground" android:textSize="14sp" />
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Full name (required)" />
+                    <Space android:layout_width="0dp" android:layout_height="4dp" />
+                    <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/et_tax_full_name" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Full name" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Contact phone number (required)" />
+                    <Space android:layout_width="0dp" android:layout_height="4dp" />
+                    <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/et_tax_phone" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="phone" android:hint="Contact phone number" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="ID number (required)" />
+                    <Space android:layout_width="0dp" android:layout_height="4dp" />
+                    <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/et_id_number" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="number" android:hint="ID number" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Tax number (required)" />
+                    <Space android:layout_width="0dp" android:layout_height="4dp" />
+                    <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/et_tax_number" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="number" android:hint="Tax number" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Space android:layout_width="0dp" android:layout_height="16dp" />
+
+                    <com.google.android.material.checkbox.MaterialCheckBox android:id="@+id/checkbox_agree" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="By selecting the 'I agree' box below, you confirm that you have read and agree to all terms and conditions listed (required)" android:textSize="14sp" />
+
+                    <Space android:layout_width="0dp" android:layout_height="16dp" />
+
+                    <com.google.android.material.button.MaterialButton android:id="@+id/btn_submit_debit" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Submit" app:backgroundTint="@color/primary" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 

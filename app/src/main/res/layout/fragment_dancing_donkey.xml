@@ -120,16 +120,61 @@
 
             <Space android:layout_width="0dp" android:layout_height="16dp" />
 
-            <!-- Contact Information -->
+            <!-- Contact Form -->
             <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content">
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Contact Us" android:textStyle="bold" android:textSize="20sp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Get in touch with our Party Flock to make your party unforgettable!" android:textStyle="bold" android:textSize="20sp" />
                     <Space android:layout_width="0dp" android:layout_height="16dp" />
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Phone: 011 466 0261" />
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Mobile: 083 640 8825" android:layout_marginTop="4dp" />
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Email: animals@animalsindistress.org.za" android:layout_marginTop="12dp" />
+
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Name *" />
+                    <Space android:layout_width="0dp" android:layout_height="4dp" />
+                    <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/et_name" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Name" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Email *" />
+                    <Space android:layout_width="0dp" android:layout_height="4dp" />
+                    <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/et_email" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textEmailAddress" android:hint="Email" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Phone Number *" />
+                    <Space android:layout_width="0dp" android:layout_height="4dp" />
+                    <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/et_phone" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="phone" android:hint="Phone Number" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Date of Event *" />
+                    <Space android:layout_width="0dp" android:layout_height="4dp" />
+                    <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/et_date" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Date of Event" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Type of Event *" />
+                    <Space android:layout_width="0dp" android:layout_height="4dp" />
+                    <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/et_event_type" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Kids Party" android:focusable="false" android:clickable="true" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Message *" />
+                    <Space android:layout_width="0dp" android:layout_height="4dp" />
+                    <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/et_message" android:layout_width="match_parent" android:layout_height="wrap_content" android:minLines="4" android:hint="Message" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
                     <Space android:layout_width="0dp" android:layout_height="16dp" />
-                    <com.google.android.material.button.MaterialButton android:id="@+id/btn_book_party" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Book Your Party" app:backgroundTint="@color/primary" />
+
+                    <com.google.android.material.button.MaterialButton android:id="@+id/btn_submit_party" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Submit" app:backgroundTint="@color/primary" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 

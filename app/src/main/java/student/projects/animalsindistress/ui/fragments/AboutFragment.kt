@@ -11,8 +11,10 @@ class AboutFragment : Fragment(R.layout.fragment_about) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         
-        // AboutFragment is primarily informational
-        // Add any navigation or interactive elements here if needed
+        // Make Equine Support Unit card clickable to navigate to Equine Outreach
+        view.findViewById<View>(R.id.card_equine_support)?.setOnClickListener {
+            findNavController().navigate(R.id.equineOutreachFragment)
+        }
     }
 }
 

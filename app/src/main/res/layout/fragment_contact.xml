@@ -37,11 +37,14 @@
                             <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Mobile: 083 640 8825" android:textColor="@color/muted_foreground" />
                         </LinearLayout>
                     </LinearLayout>
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
                     <LinearLayout android:id="@+id/email_section" android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="✉" />
                         <Space android:layout_width="12dp" android:layout_height="0dp" />
                         <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Email: animals@animalsindistress.org.za" android:textStyle="bold" />
                     </LinearLayout>
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Hours: Monday: 07:00 - 16:00\nTuesday: 07:00 - 16:00\nWednesday: 07:00 - 16:00\nThursday: 07:00 - 16:00\nFriday: 07:00 - 16:00\nSaturday: 09:00 - 12:00\nSunday: Closed" android:textColor="@color/muted_foreground" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -52,29 +55,12 @@
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
                     <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Visit Us" android:textStyle="bold" android:textSize="20sp" />
                     <Space android:layout_width="0dp" android:layout_height="16dp" />
-                    <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingBottom="16dp">
+                    <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="📍" />
                         <Space android:layout_width="12dp" android:layout_height="0dp" />
                         <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
                             <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Address" android:textStyle="bold" />
-                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="The Society for Animals in Distress\nMidrand, South Africa" android:textColor="@color/muted_foreground" />
-                        </LinearLayout>
-                    </LinearLayout>
-                    <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="⏰" />
-                        <Space android:layout_width="12dp" android:layout_height="0dp" />
-                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
-                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Operating Hours" android:textStyle="bold" />
-                            <Space android:layout_width="0dp" android:layout_height="4dp" />
-                            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical">
-                                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Monday: 07:00 - 16:00" android:textColor="@color/muted_foreground" />
-                                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Tuesday: 07:00 - 16:00" android:textColor="@color/muted_foreground" />
-                                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Wednesday: 07:00 - 16:00" android:textColor="@color/muted_foreground" />
-                                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Thursday: 07:00 - 16:00" android:textColor="@color/muted_foreground" />
-                                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Friday: 07:00 - 16:00" android:textColor="@color/muted_foreground" />
-                                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Saturday: 09:00 - 12:00" android:textColor="@color/muted_foreground" />
-                                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Sunday: Closed" android:textColor="@color/muted_foreground" />
-                            </LinearLayout>
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="20 Moerdyk Avenue\nVorna Valley, Midrand\n1686" android:textColor="@color/muted_foreground" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -92,9 +78,13 @@
                     <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
                         <com.google.android.material.button.MaterialButton android:id="@+id/btn_facebook" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Facebook" app:backgroundTint="#1877F2" />
                         <Space android:layout_width="8dp" android:layout_height="0dp" />
-                        <com.google.android.material.button.MaterialButton android:id="@+id/btn_twitter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Twitter" app:backgroundTint="#1DA1F2" />
+                        <com.google.android.material.button.MaterialButton android:id="@+id/btn_twitter" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="X" app:backgroundTint="#000000" />
                         <Space android:layout_width="8dp" android:layout_height="0dp" />
                         <com.google.android.material.button.MaterialButton android:id="@+id/btn_instagram" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Instagram" app:backgroundTint="#E1306C" />
+                        <Space android:layout_width="8dp" android:layout_height="0dp" />
+                        <com.google.android.material.button.MaterialButton android:id="@+id/btn_linkedin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="LinkedIn" app:backgroundTint="#0077B5" />
+                        <Space android:layout_width="8dp" android:layout_height="0dp" />
+                        <com.google.android.material.button.MaterialButton android:id="@+id/btn_whatsapp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="WhatsApp" app:backgroundTint="#25D366" />
                     </LinearLayout>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
@@ -104,57 +94,29 @@
             <!-- Contact Form Card -->
             <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content">
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Send us a Message" android:textStyle="bold" android:textSize="20sp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Inquiries" android:textStyle="bold" android:textSize="20sp" />
                     <Space android:layout_width="0dp" android:layout_height="16dp" />
 
-                    <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:weightSum="2">
-                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
-                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="First Name *" />
-                            <Space android:layout_width="0dp" android:layout_height="4dp" />
-                            <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content">
-                                <com.google.android.material.textfield.TextInputEditText android:id="@+id/etFirstName" android:layout_width="match_parent" android:layout_height="wrap_content" />
-                            </com.google.android.material.textfield.TextInputLayout>
-                        </LinearLayout>
-                        <Space android:layout_width="8dp" android:layout_height="0dp" />
-                        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
-                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Last Name *" />
-                            <Space android:layout_width="0dp" android:layout_height="4dp" />
-                            <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content">
-                                <com.google.android.material.textfield.TextInputEditText android:id="@+id/etLastName" android:layout_width="match_parent" android:layout_height="wrap_content" />
-                            </com.google.android.material.textfield.TextInputLayout>
-                        </LinearLayout>
-                    </LinearLayout>
-
-                    <Space android:layout_width="0dp" android:layout_height="12dp" />
-
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Email Address *" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Name" />
                     <Space android:layout_width="0dp" android:layout_height="4dp" />
                     <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content">
-                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/etEmail" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textEmailAddress" />
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/etName" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Name" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <Space android:layout_width="0dp" android:layout_height="12dp" />
 
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Phone Number" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Email" />
                     <Space android:layout_width="0dp" android:layout_height="4dp" />
                     <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content">
-                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/etPhone" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="phone" />
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/etEmail" android:layout_width="match_parent" android:layout_height="wrap_content" android:inputType="textEmailAddress" android:hint="Email" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <Space android:layout_width="0dp" android:layout_height="12dp" />
 
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Subject *" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Message" />
                     <Space android:layout_width="0dp" android:layout_height="4dp" />
                     <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content">
-                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/etSubject" android:layout_width="match_parent" android:layout_height="wrap_content" android:hint="Subject" />
-                    </com.google.android.material.textfield.TextInputLayout>
-
-                    <Space android:layout_width="0dp" android:layout_height="12dp" />
-
-                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Message *" />
-                    <Space android:layout_width="0dp" android:layout_height="4dp" />
-                    <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent" android:layout_height="wrap_content">
-                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/etMessage" android:layout_width="match_parent" android:layout_height="wrap_content" android:minLines="6" android:hint="Please provide details about your inquiry..." />
+                        <com.google.android.material.textfield.TextInputEditText android:id="@+id/etMessage" android:layout_width="match_parent" android:layout_height="wrap_content" android:minLines="6" android:hint="Message" />
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <Space android:layout_width="0dp" android:layout_height="16dp" />

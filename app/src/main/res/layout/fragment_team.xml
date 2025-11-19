@@ -32,7 +32,9 @@
             <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content">
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
                     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
-                        <com.google.android.material.card.MaterialCardView android:layout_width="64dp" android:layout_height="64dp" app:cardBackgroundColor="#1A003D99" android:radius="32dp" />
+                        <com.google.android.material.card.MaterialCardView android:layout_width="64dp" android:layout_height="64dp" android:radius="32dp" app:cardCornerRadius="32dp">
+                            <ImageView android:layout_width="64dp" android:layout_height="64dp" android:src="@drawable/meg_harvey" android:scaleType="centerCrop" android:contentDescription="Meg Harvey" />
+                        </com.google.android.material.card.MaterialCardView>
                         <Space android:layout_width="16dp" android:layout_height="0dp" />
                         <LinearLayout 
                             android:layout_width="0dp"
@@ -71,6 +73,8 @@
                             <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="She believes that the change that our country and world desperately needs starts with engendering compassion to all animals in the youth – that if young people were taught to respect every creature – they would in turn respect humans too." android:textColor="#5B21B6" android:textSize="13sp" />
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="She feels incredibly privileged to be part of the Society for Animals in Distress as it is an organization that strives for the change that our country needs." android:textColor="@color/muted_foreground" android:textStyle="italic" />
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -80,7 +84,9 @@
             <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content">
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
                     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
-                        <com.google.android.material.card.MaterialCardView android:layout_width="64dp" android:layout_height="64dp" app:cardBackgroundColor="#1A3366CC" android:radius="32dp" />
+                        <com.google.android.material.card.MaterialCardView android:layout_width="64dp" android:layout_height="64dp" android:radius="32dp" app:cardCornerRadius="32dp">
+                            <ImageView android:layout_width="64dp" android:layout_height="64dp" android:src="@drawable/dr_isabel" android:scaleType="centerCrop" android:contentDescription="Dr Isabel Meyer" />
+                        </com.google.android.material.card.MaterialCardView>
                         <Space android:layout_width="16dp" android:layout_height="0dp" />
                         <LinearLayout 
                             android:layout_width="0dp"
@@ -112,10 +118,8 @@
             <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content">
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
                     <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
-                        <com.google.android.material.card.MaterialCardView android:layout_width="64dp" android:layout_height="64dp" app:cardBackgroundColor="#1AF59E0B" app:cardCornerRadius="32dp">
-                            <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center">
-                                <ImageView android:layout_width="32dp" android:layout_height="32dp" android:src="@drawable/ic_business_24" app:tint="#F59E0B" android:contentDescription="Business Icon" />
-                            </LinearLayout>
+                        <com.google.android.material.card.MaterialCardView android:layout_width="64dp" android:layout_height="64dp" android:radius="32dp" app:cardCornerRadius="32dp">
+                            <ImageView android:layout_width="64dp" android:layout_height="64dp" android:src="@drawable/andrew" android:scaleType="centerCrop" android:contentDescription="Andrew Fairlie" />
                         </com.google.android.material.card.MaterialCardView>
                         <Space android:layout_width="16dp" android:layout_height="0dp" />
                         <LinearLayout 
@@ -148,6 +152,56 @@
                             <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Personal Mission" android:textStyle="bold" android:textColor="#6D28D9" android:textSize="14sp" />
                             <Space android:layout_width="0dp" android:layout_height="8dp" />
                             <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Andrew is a family man and animal lover, dedicated to the upliftment of animals and people in impoverished communities and honoured to work alongside the heroes at the Society." android:textColor="#5B21B6" android:textSize="13sp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <Space android:layout_width="0dp" android:layout_height="16dp" />
+
+            <!-- Dr Chantelle Murray Card -->
+            <com.google.android.material.card.MaterialCardView style="@style/Widget.Material3.CardView.Elevated" android:layout_width="match_parent" android:layout_height="wrap_content">
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="20dp">
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical">
+                        <com.google.android.material.card.MaterialCardView android:layout_width="64dp" android:layout_height="64dp" android:radius="32dp" app:cardCornerRadius="32dp">
+                            <ImageView android:layout_width="64dp" android:layout_height="64dp" android:src="@drawable/chantelle" android:scaleType="centerCrop" android:contentDescription="Dr Chantelle Murray" />
+                        </com.google.android.material.card.MaterialCardView>
+                        <Space android:layout_width="16dp" android:layout_height="0dp" />
+                        <LinearLayout 
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Dr Chantelle Murray" android:textStyle="bold" android:textSize="24sp" />
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Board Member" android:textStyle="bold" android:textColor="#E1306C" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <Space android:layout_width="0dp" android:layout_height="16dp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Chantelle Murray has spent 26 years in the Human Resource Development and Organisational Development sector. She gravitated in this career direction because of her firm belief in the potential of human-beings. Her career has spanned time spent in both the public and private sector, along with private consulting." android:textColor="@color/muted_foreground" />
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Chantelle is currently the Head of the Human Resource Development Unit (HRDU) at the University of the Witwatersrand." android:textColor="@color/muted_foreground" />
+                    <Space android:layout_width="0dp" android:layout_height="16dp" />
+                    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" app:cardBackgroundColor="#1A3B82F6">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="PAWS R US (SA)" android:textStyle="bold" android:textColor="#1E40AF" />
+                            <Space android:layout_width="0dp" android:layout_height="8dp" />
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Chantelle is the Founder / Director of PAWS R US (SA), a small, private shelter for dogs, established in 2011 and based in Midrand, Johannesburg. This journey has afforded Chantelle the opportunity to gain insight into the companion animal welfare sector in South Africa – both from the hands-on perspective of running a shelter, and from the perspectives gained through the completion of her PhD study which focused on governance and donor funding in the non-profit sector." android:textColor="#1E3A8A" android:textSize="13sp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" app:cardBackgroundColor="#1A10B981">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="ONE Revolution Foundation" android:textStyle="bold" android:textColor="#047857" />
+                            <Space android:layout_width="0dp" android:layout_height="8dp" />
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Stemming from this research, she has established ONE Revolution Foundation (ONE-R) and has co-created the ONE-R digital platform – this ground-breaking work focuses on uplifting the NPO sector in SA." android:textColor="#065F46" android:textSize="13sp" />
+                        </LinearLayout>
+                    </com.google.android.material.card.MaterialCardView>
+                    <Space android:layout_width="0dp" android:layout_height="12dp" />
+                    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent" android:layout_height="wrap_content" app:cardBackgroundColor="#1A8B5CF6">
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Education &amp; Personal" android:textStyle="bold" android:textColor="#6D28D9" />
+                            <Space android:layout_width="0dp" android:layout_height="8dp" />
+                            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="Chantelle holds a PhD from the University of Johannesburg, and a Master's degree in Leadership, Performance and Change, and is the proud mom of a herd of furry friends." android:textColor="#5B21B6" android:textSize="13sp" />
                         </LinearLayout>
                     </com.google.android.material.card.MaterialCardView>
                 </LinearLayout>
